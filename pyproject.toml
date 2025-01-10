@@ -66,6 +66,13 @@ packages = ["src/cv2-stubs"]
 publish_test = "hatch build --clean && hatch publish -r test"
 publish = "hatch build --clean && hatch publish"
 
+[tool.uv]
+managed = true
+link-mode = "copy"
+
+[tool.uv.pip]
+universal = true
+
 [tool.ruff]
 line-length = 120
 select = [
