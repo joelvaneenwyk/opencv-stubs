@@ -67,6 +67,7 @@ publish_test = "hatch build --clean && hatch publish -r test"
 publish = "hatch build --clean && hatch publish"
 
 [tool.ruff]
+line-length = 120
 select = [
   "B",
   "C4",
