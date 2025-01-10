@@ -16,7 +16,6 @@ retval: TypeAlias = Any
 class BaseOCR(builtins.object): ...
 
 class ERFilter(cv2.Algorithm):
-
     class Callback(builtins.object): ...
 
 class OCRBeamSearchDecoder(BaseOCR):
