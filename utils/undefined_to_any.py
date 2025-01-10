@@ -3,6 +3,7 @@ import argparse
 import subprocess
 from collections import defaultdict
 from pathlib import Path
+import pyright
 
 
 def main() -> None:
@@ -10,7 +11,8 @@ def main() -> None:
                             formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
     print("Running pyright")
-    pyright_result = subprocess.run(["pyright", "."], stdout=subprocess.PIPE).stdout.decode().splitlines()
+    pyright_process = pyright.run(".", stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    pyright_result = pyright_process.stdout.decode("utf-8").splitlines()
 
     aliases_to_add: dict[Path, set[str]] = defaultdict(set)
     for line in pyright_result:
@@ -32,10 +34,21 @@ def main() -> None:
                 write_line += 1
                 continue
 
+        def sed(format_string: str, file_path: Path) -> None:
+            with file_path.open("r", encoding="utf-8") as stub_file:
+                lines = stub_file.readlines()
+
+            insertion_line = write_line
+            for name in names:
+                lines.insert(insertion_line, format_string.format(write_line=name))
+                insertion_line += 1
+
+            with file_path.open("w", encoding="utf-8") as stub_file:
+                stub_file.writelines(lines)
+
         write_line = max(1, write_line)
-        for name in names:
-            subprocess.run(["sed", "-i", f"{write_line}i{name}: TypeAlias = Any\n", path], stdout=subprocess.PIPE)
-        subprocess.run(["sed", "-i", f"{write_line}i\n", path], stdout=subprocess.PIPE)
+        sed("{write_line}: TypeAlias = Any\n", path)
+        sed(f"{write_line}i\n", path)
 
     print("Finished")
 
