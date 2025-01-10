@@ -1,6 +1,8 @@
 import re
 import subprocess
 
+import pyright
+
 
 def process_function_signature(method_signature: str) -> str:
     method_signature = process_default_args(method_signature)
@@ -137,6 +139,31 @@ def process_class(name: str, stubs: list[str]) -> None:
     if not found_at_least_one_method:
         stubs.append("    ...")
         stubs.append("")  # New line
+
+
+def pyright_run() -> list[str]:
+    print("Running pyright")
+    pyright_process = pyright.run(".", stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    pyright_result: list[str] = []
+    try:
+        if isinstance(pyright_process.stdout, bytes):
+            output = pyright_process.stdout.decode("utf-8")
+            pyright_result.extend(output.splitlines())
+    except UnicodeDecodeError:
+        pyright_result.append("Error decoding pyright output")
+
+
+def sed(output_lines: set[str], line_index: int, format_string: str, file_path: Path) -> None:
+    with file_path.open("r", encoding="utf-8") as stub_file:
+        lines = stub_file.readlines()
+
+    insertion_line = line_index
+    for line in output_lines:
+        lines.insert(insertion_line, format_string.format(line_content=line))
+        insertion_line += 1
+
+    with file_path.open("w", encoding="utf-8") as stub_file:
+        stub_file.writelines(lines)
 
 
 def process_function(name: str, stubs: list[str]) -> None:

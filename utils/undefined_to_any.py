@@ -5,21 +5,14 @@ import subprocess
 from collections import defaultdict
 from pathlib import Path
 
-import pyright
+from .processing_utils import sed, pyright_run
 
 
 def main() -> None:
     argparse.ArgumentParser(description="Script to set every undefined type as an alias of Any.", formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
     print("Running pyright")
-    pyright_process = pyright.run(".", stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-    pyright_result: list[str] = []
-    try:
-        if isinstance(pyright_process.stdout, bytes):
-            output = pyright_process.stdout.decode("utf-8")
-            pyright_result.extend(output.splitlines())
-    except UnicodeDecodeError:
-        pyright_result.append("Error decoding pyright output")
+    pyright_result = pyright_run()
 
     aliases_to_add: dict[Path, set[str]] = defaultdict(set)
     for line in pyright_result:
@@ -40,18 +33,6 @@ def main() -> None:
             while "from" in (line := stub_file.readline().strip()) or "import" in line or line == "":
                 write_line += 1
                 continue
-
-        def sed(output_lines: set[str], line_index: int, format_string: str, file_path: Path) -> None:
-            with file_path.open("r", encoding="utf-8") as stub_file:
-                lines = stub_file.readlines()
-
-            insertion_line = line_index
-            for line in output_lines:
-                lines.insert(insertion_line, format_string.format(line_content=line))
-                insertion_line += 1
-
-            with file_path.open("w", encoding="utf-8") as stub_file:
-                stub_file.writelines(lines)
 
         write_line = max(1, write_line)
         sed(names, write_line, "{line_content}: TypeAlias = Any\n", path)

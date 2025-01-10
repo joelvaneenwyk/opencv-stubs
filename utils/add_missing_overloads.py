@@ -4,9 +4,11 @@ import argparse
 import subprocess
 from pathlib import Path
 
+from .processing_utils import pyright_run
+
 
 def get_line() -> str | None:
-    pyright_result = subprocess.run(["pyright", "."], stdout=subprocess.PIPE).stdout.decode().splitlines()
+    pyright_result = pyright_run()
     for line in pyright_result:
         if "is obscured by a declaration of the same name" not in line:
             continue
@@ -18,8 +20,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=("Script to add the overload decorator to any method/function missing it."), formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     args = parser.parse_args()  # pyright: ignore[reportUnusedVariable]
 
-    print("Running pyright...")
-    nb_to_fix = len([1 for line in subprocess.run(["pyright", "."], stdout=subprocess.PIPE).stdout.decode().splitlines() if "is obscured by a declaration of the same name" in line])
+    nb_to_fix = len([1 for line in run_pyright() if "is obscured by a declaration of the same name" in line])
     print(f"Estimated number of overloads to add: {nb_to_fix}")
     nb_fixed = 1
     while line := get_line():
