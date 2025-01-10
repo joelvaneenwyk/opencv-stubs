@@ -24,7 +24,7 @@ numpy==1.24.2
     # via
     #   opencv-python
     #   opencv-stubs (pyproject.toml)
-opencv-python==4.7.0.72
+opencv-python==4.8.1.78
     # via opencv-stubs (pyproject.toml)
 packaging==23.0
     # via build
