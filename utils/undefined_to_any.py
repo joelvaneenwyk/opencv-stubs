@@ -1,4 +1,5 @@
 """Script to set every undefined type as an alias of Any."""
+
 import argparse
 import subprocess
 from collections import defaultdict
@@ -7,8 +8,7 @@ import pyright
 
 
 def main() -> None:
-    argparse.ArgumentParser(description="Script to set every undefined type as an alias of Any.",
-                            formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    argparse.ArgumentParser(description="Script to set every undefined type as an alias of Any.", formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
     print("Running pyright")
     pyright_process = pyright.run(".", stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
