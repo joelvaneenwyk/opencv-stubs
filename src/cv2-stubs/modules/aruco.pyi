@@ -307,7 +307,9 @@ def calibrateCameraAruco(corners, ids, counter, board, imageSize, cameraMatrix, 
     @brief It's the same function as #calibrateCameraAruco but without calibration error estimation.
     """
 
-def calibrateCameraArucoExtended(corners, ids, counter, board, imageSize, cameraMatrix, distCoeffs, rvecs=..., tvecs=..., stdDeviationsIntrinsics=..., stdDeviationsExtrinsics=..., perViewErrors=..., flags=..., criteria=...) -> tuple[retval, cameraMatrix, distCoeffs, rvecs, tvecs, stdDeviationsIntrinsics, stdDeviationsExtrinsics, perViewErrors]:
+def calibrateCameraArucoExtended(
+    corners, ids, counter, board, imageSize, cameraMatrix, distCoeffs, rvecs=..., tvecs=..., stdDeviationsIntrinsics=..., stdDeviationsExtrinsics=..., perViewErrors=..., flags=..., criteria=...
+) -> tuple[retval, cameraMatrix, distCoeffs, rvecs, tvecs, stdDeviationsIntrinsics, stdDeviationsExtrinsics, perViewErrors]:
     """
     * @brief Calibrate a camera using aruco markers
 
@@ -350,7 +352,9 @@ def calibrateCameraCharuco(charucoCorners, charucoIds, board, imageSize, cameraM
     * @brief It's the same function as #calibrateCameraCharuco but without calibration error estimation.
     """
 
-def calibrateCameraCharucoExtended(charucoCorners, charucoIds, board, imageSize, cameraMatrix, distCoeffs, rvecs=..., tvecs=..., stdDeviationsIntrinsics=..., stdDeviationsExtrinsics=..., perViewErrors=..., flags=..., criteria=...) -> tuple[retval, cameraMatrix, distCoeffs, rvecs, tvecs, stdDeviationsIntrinsics, stdDeviationsExtrinsics, perViewErrors]:
+def calibrateCameraCharucoExtended(
+    charucoCorners, charucoIds, board, imageSize, cameraMatrix, distCoeffs, rvecs=..., tvecs=..., stdDeviationsIntrinsics=..., stdDeviationsExtrinsics=..., perViewErrors=..., flags=..., criteria=...
+) -> tuple[retval, cameraMatrix, distCoeffs, rvecs, tvecs, stdDeviationsIntrinsics, stdDeviationsExtrinsics, perViewErrors]:
     """
     * @brief Calibrate a camera using Charuco corners
 

@@ -388,7 +388,9 @@ IMWRITE_PAM_TUPLETYPE: Final[int]  # specify HDR compression. For PAM, sets the 
 IMWRITE_TIFF_RESUNIT: Final[int]  # For TIFF, use to specify which DPI resolution unit to set; see libtiff documentation for valid values.
 IMWRITE_TIFF_XDPI: Final[int]  # For TIFF, use to specify the X direction DPI.
 IMWRITE_TIFF_YDPI: Final[int]  # For TIFF, use to specify the Y direction DPI.
-IMWRITE_TIFF_COMPRESSION: Final[int]  # For TIFF, use to specify the image compression scheme. See libtiff for integer constants corresponding to compression formats. Note, for images whose depth is CV_32F, only libtiff's SGILOG compression scheme is used. For other supported depths, the compression scheme can be specified by this flag; LZW compression is the default.
+IMWRITE_TIFF_COMPRESSION: Final[
+    int
+]  # For TIFF, use to specify the image compression scheme. See libtiff for integer constants corresponding to compression formats. Note, for images whose depth is CV_32F, only libtiff's SGILOG compression scheme is used. For other supported depths, the compression scheme can be specified by this flag; LZW compression is the default.
 
 # ImwritePAMFlags
 IMWRITE_PAM_FORMAT_NULL: Final[int]
