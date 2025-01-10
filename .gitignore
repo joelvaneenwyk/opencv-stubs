@@ -34,5 +34,7 @@ env/
 venv/
 
 .ruff_cache/
+.cspell/
+.mypy_cache/
 
 /.git/
