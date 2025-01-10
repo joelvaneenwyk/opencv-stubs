@@ -1,3 +1,4 @@
+import builtins
 from typing import Any, TypeAlias
 
 from .. import functions as cv2
@@ -6,6 +7,8 @@ unwrappedPhaseMap: TypeAlias = Any
 reliabilityMap: TypeAlias = Any
 
 retval: TypeAlias = Any
+
+class Params(builtins.object): ...
 
 class HistogramPhaseUnwrapping(PhaseUnwrapping):
     def getInverseReliabilityMap(self, reliabilityMap=...) -> reliabilityMap:

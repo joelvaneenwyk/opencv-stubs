@@ -1,3 +1,4 @@
+import builtins
 from typing import Any, Final, TypeAlias
 
 from .. import functions as cv2
@@ -13,6 +14,8 @@ projPix: TypeAlias = Any
 matches: TypeAlias = Any
 blackImage: TypeAlias = Any
 retval: TypeAlias = Any
+
+class Params(builtins.object): ...
 
 class GrayCodePattern(StructuredLightPattern):
     def getImagesForShadowMasks(self, blackImage, whiteImage) -> tuple[blackImage, whiteImage]:
