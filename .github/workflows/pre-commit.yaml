@@ -1,4 +1,4 @@
-name: pre-commit
+name: Lint
 
 on:
   workflow_dispatch:
@@ -6,11 +6,13 @@ on:
     branches: [ master ]
     paths:
       - "**.pyi"
+      - "**.py"
       - .github/workflows/pre-commit.yaml
       - pyproject.toml
   pull_request:
     paths:
       - "**.pyi"
+      - "**.py"
       - .github/workflows/pre-commit.yaml
       - pyproject.toml
 
