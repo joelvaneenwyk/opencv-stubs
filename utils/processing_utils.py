@@ -16,7 +16,7 @@ def process_method_signature(method_signature: str) -> str:
 
 
 def process_default_args(function_signature: str) -> str:
-    """Function to convert OpenCV's way of representing arguments with a default value to python synthax.
+    """Function to convert OpenCV's way of representing arguments with a default value to Python syntax.
 
     Examples:
         >>>s = "imdecode(buf, flags) -> retval"
@@ -43,7 +43,7 @@ def process_default_args(function_signature: str) -> str:
 
 
 def process_tuple_return(function_signature: str) -> str:
-    """Function to convert OpenCV's way of representing multiple return values to python synthax.
+    """Function to convert OpenCV's way of representing multiple return values to Python syntax.
 
     Examples:
         >>>s = "computeBitmaps(img[, tb[, eb]]) -> tb, eb"
@@ -120,7 +120,7 @@ def process_class(name: str, stubs: list[str]) -> None:
                     if line == "* @overload":
                         stubs.insert(-2, 4*" " + "@overload")
                     elif "@param" in stubs[-1] and "@param" not in line:
-                        stubs[-1] = stubs[-1] + " " + line  # pyright: ignore
+                        stubs[-1] = stubs[-1] + " " + line
                     else:
                         stubs.append(8*" " + line)
                 elif re.match(r" \|      [a-zA-Z]", help_text_lines[line_idx][:9]):
