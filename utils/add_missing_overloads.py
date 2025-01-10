@@ -20,7 +20,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=("Script to add the overload decorator to any method/function missing it."), formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     args = parser.parse_args()  # pyright: ignore[reportUnusedVariable]
 
-    nb_to_fix = len([1 for line in run_pyright() if "is obscured by a declaration of the same name" in line])
+    nb_to_fix = len([1 for line in pyright_run() if "is obscured by a declaration of the same name" in line])
     print(f"Estimated number of overloads to add: {nb_to_fix}")
     nb_fixed = 1
     while line := get_line():

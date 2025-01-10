@@ -1,6 +1,6 @@
 import re
 import subprocess
-
+from pathlib import Path
 import pyright
 
 
@@ -151,6 +151,7 @@ def pyright_run() -> list[str]:
             pyright_result.extend(output.splitlines())
     except UnicodeDecodeError:
         pyright_result.append("Error decoding pyright output")
+    return pyright_result
 
 
 def sed(output_lines: set[str], line_index: int, format_string: str, file_path: Path) -> None:
