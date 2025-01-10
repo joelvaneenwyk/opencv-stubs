@@ -74,7 +74,9 @@ link-mode = "copy"
 universal = true
 
 [tool.ruff]
-line-length = 120
+line-length = 320
+
+[tool.ruff.lint]
 select = [
   "B",
   "C4",
@@ -96,13 +98,22 @@ select = [
   "RUF",
   # "ANN",
 ]
-ignore = ["D1", "D401", "D204", "D203", "D213", "S101", "PLR2004"]
-# line-length = 20000
+ignore = [
+  "D1",
+  "D401",
+  "D204",
+  "D203",
+  "D213",
+  "S101",
+  "PLR2004",
+  # The following rule may cause conflicts when used with the formatter
+  "COM812",
+]
 
-[tool.ruff.isort]
+[tool.ruff.lint.isort]
 order-by-type = false
 
-[tool.ruff.flake8-quotes]
+[tool.ruff.lint.flake8-quotes]
 docstring-quotes = "double"
 
 [tool.pyright]
@@ -148,9 +159,9 @@ pythonPlatform = "Linux"
 
 [dependency-groups]
 dev = [
-    "mypy>=1.4.1",
-    "pre-commit>=2.21.0",
-    "pylint>=2.13.9",
-    "pyright[nodejs]>=1.1.391",
-    "ruff>=0.9.0",
+  "mypy>=1.4.1",
+  "pre-commit>=2.21.0",
+  "pylint>=2.13.9",
+  "pyright[nodejs]>=1.1.391",
+  "ruff>=0.9.0",
 ]
