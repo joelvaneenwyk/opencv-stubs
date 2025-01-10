@@ -2009,7 +2009,7 @@ def parseSSD(in_, inSz, confidenceThreshold=..., filterLabel=...) -> retval:
     """
 
 def parseYolo(in_, inSz, confidenceThreshold=..., nmsThreshold=..., anchors=...) -> retval:
-    """
+    r"""
     @brief Parses output of Yolo network.
 
     Extracts detection information (box, confidence, label) from Yolo output,
@@ -2033,7 +2033,7 @@ def parseYolo(in_, inSz, confidenceThreshold=..., nmsThreshold=..., anchors=...)
     """
 
 def phase(x, y, angleInDegrees=...) -> retval:
-    """
+    r"""
     @brief Calculates the rotation angle of 2D vectors.
 
     The function cv::phase calculates the rotation angle of each 2D vector that

@@ -4,7 +4,7 @@ from typing import Any, Literal, overload, TypeVar
 import numpy as np
 import numpy.typing as npt
 
-from .classes import *
+from .classes import *  # type: ignore[reportAssignmentType]
 from .constants import *
 
 _TImg = TypeVar("_TImg", np.uint8, np.float64)

@@ -2389,7 +2389,7 @@ class MSER(Feature2D):
         @param edge_blur_size for color image, the aperture size for edge blur
         """
 
-class Mat(numpy.ndarray): ...
+class Mat(npt.NDArray): ...
 
 class MergeDebevec(MergeExposures):
     @overload
@@ -4157,7 +4157,7 @@ text_TextDetectorCNN = text.TextDetectorCNN
 utils_ClassWithKeywordProperties = utils.ClassWithKeywordProperties
 utils_nested_ExportClassName = utils.nested.ExportClassName
 utils_nested_ExportClassName_Params = utils.nested.ExportClassName.Params
-wechat_qrcode_WeChatQRCode = wechat.WeChatQRCode
+wechat_qrcode_WeChatQRCode = wechat_qrcode.WeChatQRCode
 xfeatures2d_AffineFeature2D = xfeatures2d.AffineFeature2D
 xfeatures2d_BEBLID = xfeatures2d.BEBLID
 xfeatures2d_BoostDesc = xfeatures2d.BoostDesc
