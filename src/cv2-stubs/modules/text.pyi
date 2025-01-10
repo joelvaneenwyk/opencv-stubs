@@ -1,5 +1,5 @@
 import builtins
-from typing import Any, Final, TypeAlias, overload
+from typing import Any, Final, overload, TypeAlias
 
 from .. import functions as cv2
 
@@ -16,7 +16,6 @@ retval: TypeAlias = Any
 class BaseOCR(builtins.object): ...
 
 class ERFilter(cv2.Algorithm):
-    ...
 
     class Callback(builtins.object): ...
 

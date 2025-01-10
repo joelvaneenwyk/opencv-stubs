@@ -1,4 +1,4 @@
-from typing import Any, Final, TypeAlias, overload
+from typing import Any, Final, overload, TypeAlias
 
 from .. import functions as cv2
 
