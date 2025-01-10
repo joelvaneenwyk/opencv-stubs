@@ -138,3 +138,12 @@ reportInvalidStringEscapeSequence = false
 
 pythonVersion = "3.10"
 pythonPlatform = "Linux"
+
+[dependency-groups]
+dev = [
+    "mypy>=1.4.1",
+    "pre-commit>=2.21.0",
+    "pylint>=2.13.9",
+    "pyright[nodejs]>=1.1.391",
+    "ruff>=0.9.0",
+]
