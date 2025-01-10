@@ -99,6 +99,8 @@ docstring-quotes = "double"
 
 [tool.pyright]
 include = ["src/cv2-stubs"]
+venvPath = "."
+venv = ".venv"
 
 strictListInference = true
 strictDictionaryInference = true
