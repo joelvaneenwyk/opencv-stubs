@@ -1,6 +1,6 @@
 import builtins
 from abc import ABC, abstractmethod
-from typing import Any, overload, TypeAlias
+from typing import Any, TypeAlias, overload
 
 import numpy as np
 import numpy.typing as npt

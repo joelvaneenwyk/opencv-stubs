@@ -1,4 +1,4 @@
-from typing import Any, overload, TypeAlias
+from typing import Any, TypeAlias, overload
 
 output: TypeAlias = Any
 

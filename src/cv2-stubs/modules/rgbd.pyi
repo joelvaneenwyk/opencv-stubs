@@ -1,5 +1,5 @@
 import builtins
-from typing import Any, Final, overload, TypeAlias
+from typing import Any, Final, TypeAlias, overload
 
 from .. import functions as cv2
 
