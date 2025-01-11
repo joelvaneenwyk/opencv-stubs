@@ -5,7 +5,7 @@ import subprocess
 from collections import defaultdict
 from pathlib import Path
 
-from .processing_utils import sed, pyright_run
+from .processing_utils import pyright_run, sed
 
 
 def main() -> None:

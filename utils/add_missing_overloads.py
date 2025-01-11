@@ -28,7 +28,7 @@ def main() -> None:
 
         file_path = Path(line.split(":", maxsplit=1)[0].lstrip())
         write_line = line.split(":")[1]
-        subprocess.run(["sed", "-i", f"{write_line}i\    @overload", file_path], stdout=subprocess.PIPE)
+        sed(f"{write_line}i\    @overload", file_path)
 
         nb_fixed += 1
 
