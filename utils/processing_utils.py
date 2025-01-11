@@ -178,7 +178,7 @@ def run_pydoc(name):
     Returns:
         str: The output from the pydoc command.
     """
-    result = subprocess.run([sys.executable, "-m", "pydoc", f"cv2.{name}"], stdout=subprocess.PIPE)
+    result = subprocess.run([sys.executable, "-m", "pydoc", f"cv2.{name}"], stdout=subprocess.PIPE)  # noqa: S603
     return result.stdout.decode("utf-8")
 
 
