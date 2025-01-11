@@ -1,6 +1,7 @@
 import re
 import subprocess
 from pathlib import Path
+
 import pyright
 
 
@@ -85,7 +86,7 @@ def add_self(method_signature: str) -> str:
 def process_class(name: str, stubs: list[str]) -> None:
     """Adds the methods of `name` to the stubs."""
     print(f"    Adding class: {name}")
-    result = subprocess.run(["python", "-m", "pydoc", f"cv2.{name}"], stdout=subprocess.PIPE)
+    result = run_pydoc(f"cv2.{name}")
     help_text = result.stdout.split(b"\n\n", maxsplit=1)[1].decode()
     help_text_lines = help_text.splitlines()
 
@@ -167,9 +168,23 @@ def sed(output_lines: set[str], line_index: int, format_string: str, file_path: 
         stub_file.writelines(lines)
 
 
+def run_pydoc(name):
+    """
+    Run pydoc for a given OpenCV module or class and return the result.
+
+    Args:
+        name (str): The name of the OpenCV module or class.
+
+    Returns:
+        str: The output from the pydoc command.
+    """
+    result = subprocess.run([sys.executable, "-m", "pydoc", f"cv2.{name}"], stdout=subprocess.PIPE)
+    return result.stdout.decode("utf-8")
+
+
 def process_function(name: str, stubs: list[str]) -> None:
     print(f"    Adding function: {name}")
-    result = subprocess.run(["python", "-m", "pydoc", f"cv2.{name}"], stdout=subprocess.PIPE)
+    result = run_pydoc(name)
     help_text_lines = result.stdout.decode().splitlines()
 
     if not len(help_text_lines) >= 4:
