@@ -8,50 +8,50 @@ retval: TypeAlias = Any
 
 class CChecker(builtins.object):
     def getBox(self) -> retval:
-        """"""
+        r""""""
 
     def getCenter(self) -> retval:
-        """"""
+        r""""""
 
     def getChartsRGB(self) -> retval:
-        """"""
+        r""""""
 
     def getChartsYCbCr(self) -> retval:
-        """"""
+        r""""""
 
     def getCost(self) -> retval:
-        """"""
+        r""""""
 
     def getTarget(self) -> retval:
-        """"""
+        r""""""
 
     def setBox(self, _box) -> None:
-        """"""
+        r""""""
 
     def setCenter(self, _center) -> None:
-        """"""
+        r""""""
 
     def setChartsRGB(self, _chartsRGB) -> None:
-        """"""
+        r""""""
 
     def setChartsYCbCr(self, _chartsYCbCr) -> None:
-        """"""
+        r""""""
 
     def setCost(self, _cost) -> None:
-        """"""
+        r""""""
 
     def setTarget(self, _target) -> None:
-        """"""
+        r""""""
 
     def create(self) -> retval:
-        """
+        r"""
         \brief Create a new CChecker object.
         * \return A pointer to the implementation of the CChecker
         """
 
 class CCheckerDetector(cv2.Algorithm):
     def getBestColorChecker(self) -> retval:
-        """
+        r"""
         \brief Get the best color checker. By the best it means the one
         *         detected with the highest confidence.
         * \return checker A single colorchecker, if atleast one colorchecker
@@ -59,13 +59,13 @@ class CCheckerDetector(cv2.Algorithm):
         """
 
     def getListColorChecker(self) -> retval:
-        """
+        r"""
         \brief Get the list of all detected colorcheckers
         * \return checkers vector of colorcheckers
         """
 
     def process(self, image, chartType, nc=..., useNet=..., params=...) -> retval:
-        """
+        r"""
         \brief Find the ColorCharts in the given image.
         *
         * Differs from the above one only in the arguments.
@@ -88,7 +88,7 @@ class CCheckerDetector(cv2.Algorithm):
         """
 
     def processWithROI(self, image, chartType, regionsOfInterest, nc=..., useNet=..., params=...) -> retval:
-        """
+        r"""
         \brief Find the ColorCharts in the given image.
         *
         * The found charts are not returned but instead stored in the
@@ -110,7 +110,7 @@ class CCheckerDetector(cv2.Algorithm):
         """
 
     def setNet(self, net) -> retval:
-        """
+        r"""
         \brief Set the net which will be used to find the approximate
         *         bounding boxes for the color charts.
         *
@@ -124,21 +124,21 @@ class CCheckerDetector(cv2.Algorithm):
         """
 
     def create(self) -> retval:
-        """
+        r"""
         \brief Returns the implementation of the CCheckerDetector.
         *
         """
 
 class CCheckerDraw(builtins.object):
     def draw(self, img) -> img:
-        """
+        r"""
         \brief Draws the checker to the given image.
         * \param img image in color space BGR
         * \return void
         """
 
     def create(self, pChecker, color=..., thickness=...) -> retval:
-        """
+        r"""
         \brief Create a new CCheckerDraw object.
         * \param pChecker The checker which will be drawn by this object.
         * \param color The color by with which the squares of the checker
@@ -150,16 +150,16 @@ class CCheckerDraw(builtins.object):
 
 class DetectorParameters(builtins.object):
     def create(self) -> retval:
-        """"""
+        r""""""
 
 def CCheckerDetector_create() -> retval:
-    """
+    r"""
     \brief Returns the implementation of the CCheckerDetector.
         *
     """
 
 def CCheckerDraw_create(pChecker, color=..., thickness=...) -> retval:
-    """
+    r"""
     \brief Create a new CCheckerDraw object.
         * \param pChecker The checker which will be drawn by this object.
         * \param color The color by with which the squares of the checker
@@ -170,13 +170,13 @@ def CCheckerDraw_create(pChecker, color=..., thickness=...) -> retval:
     """
 
 def CChecker_create() -> retval:
-    """
+    r"""
     \brief Create a new CChecker object.
         * \return A pointer to the implementation of the CChecker
     """
 
 def DetectorParameters_create() -> retval:
-    """
+    r"""
     .
     """
 

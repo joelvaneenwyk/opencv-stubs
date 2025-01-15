@@ -86,52 +86,52 @@ InputArrayOfArrays: TypeAlias = npt.NDArray[Any]
 
 class AKAZE(Feature2D):
     def getDefaultName(self) -> retval:
-        """"""
+        r""""""
 
     def getDescriptorChannels(self) -> retval:
-        """"""
+        r""""""
 
     def getDescriptorSize(self) -> retval:
-        """"""
+        r""""""
 
     def getDescriptorType(self) -> retval:
-        """"""
+        r""""""
 
     def getDiffusivity(self) -> retval:
-        """"""
+        r""""""
 
     def getNOctaveLayers(self) -> retval:
-        """"""
+        r""""""
 
     def getNOctaves(self) -> retval:
-        """"""
+        r""""""
 
     def getThreshold(self) -> retval:
-        """"""
+        r""""""
 
     def setDescriptorChannels(self, dch) -> None:
-        """"""
+        r""""""
 
     def setDescriptorSize(self, dsize) -> None:
-        """"""
+        r""""""
 
     def setDescriptorType(self, dtype) -> None:
-        """"""
+        r""""""
 
     def setDiffusivity(self, diff) -> None:
-        """"""
+        r""""""
 
     def setNOctaveLayers(self, octaveLayers) -> None:
-        """"""
+        r""""""
 
     def setNOctaves(self, octaves) -> None:
-        """"""
+        r""""""
 
     def setThreshold(self, threshold) -> None:
-        """"""
+        r""""""
 
     def create(self, descriptor_type=..., descriptor_size=..., descriptor_channels=..., threshold=..., nOctaves=..., nOctaveLayers=..., diffusivity=...) -> retval:
-        """
+        r"""
         @brief The AKAZE constructor
 
         @param descriptor_type Type of the extracted descriptor: DESCRIPTOR_KAZE, DESCRIPTOR_KAZE_UPRIGHT, DESCRIPTOR_MLDB or DESCRIPTOR_MLDB_UPRIGHT.
@@ -145,16 +145,16 @@ class AKAZE(Feature2D):
 
 class AffineFeature(Feature2D):
     def getDefaultName(self) -> retval:
-        """"""
+        r""""""
 
     def getViewParams(self, tilts, rolls) -> None:
-        """"""
+        r""""""
 
     def setViewParams(self, tilts, rolls) -> None:
-        """"""
+        r""""""
 
     def create(self, backend, maxTilt=..., minTilt=..., tiltStep=..., rotateStepBase=...) -> retval:
-        """
+        r"""
         @param backend The detector/extractor you want to use as backend.
         @param maxTilt The highest power index of tilt factor. 5 is used in the paper as tilt sampling range n.
         @param minTilt The lowest power index of tilt factor. 0 is used in the paper.
@@ -164,81 +164,81 @@ class AffineFeature(Feature2D):
 
 class AffineTransformer(ShapeTransformer):
     def getFullAffine(self) -> retval:
-        """"""
+        r""""""
 
     def setFullAffine(self, fullAffine) -> None:
-        """"""
+        r""""""
 
 class AgastFeatureDetector(Feature2D):
     def getDefaultName(self) -> retval:
-        """"""
+        r""""""
 
     def getNonmaxSuppression(self) -> retval:
-        """"""
+        r""""""
 
     def getThreshold(self) -> retval:
-        """"""
+        r""""""
 
     def getType(self) -> retval:
-        """"""
+        r""""""
 
     def setNonmaxSuppression(self, f) -> None:
-        """"""
+        r""""""
 
     def setThreshold(self, threshold) -> None:
-        """"""
+        r""""""
 
     def setType(self, type) -> None:
-        """"""
+        r""""""
 
     def create(self, threshold=..., nonmaxSuppression=..., type=...) -> retval:
-        """"""
+        r""""""
 
 class Algorithm(builtins.object):
     @abstractmethod
     def clear(self) -> None:
-        """
+        r"""
         @brief Clears the algorithm state
         """
 
     @abstractmethod
     def empty(self) -> bool:
-        """
+        r"""
         @brief Returns true if the Algorithm is empty (e.g. in the very beginning or after unsuccessful read
         """
 
     @abstractmethod
     def getDefaultName(self) -> str:
-        """
+        r"""
         Returns the algorithm string identifier.
         This string is used as top level xml/yml node tag when the object is saved to a file or string.
         """
 
     def read(self, fn: FileNode) -> None:
-        """
+        r"""
         @brief Reads algorithm parameters from a file storage
         """
 
     @abstractmethod
     def save(self, filename: str) -> None:
-        """
+        r"""
         Saves the algorithm to a file.
         In order to make this method work, the derived class must implement Algorithm::write(FileStorage& fs).
         """
 
     @overload
     def write(self, fs: FileStorage) -> None:
-        """
+        r"""
         @brief Stores algorithm parameters in a file storage
         """
 
     @overload
     def write(self, fs: FileStorage, name: str) -> None:
-        """"""
+        r""""""
 
 class AlignExposures(Algorithm):
     def process(self, src, dst, times, response) -> None:
-        """
+        r"""
         @brief Aligns images
 
         @param src vector of input images
@@ -249,7 +249,7 @@ class AlignExposures(Algorithm):
 
 class AlignMTB(AlignExposures):
     def calculateShift(self, img0, img1) -> retval:
-        """
+        r"""
         @brief Calculates shift between two images, i. e. how to shift the second image to correspond it with the
         first.
 
@@ -258,7 +258,7 @@ class AlignMTB(AlignExposures):
         """
 
     def computeBitmaps(self, img, tb=..., eb=...) -> tuple[tb, eb]:
-        """
+        r"""
         @brief Computes median threshold and exclude bitmaps of given image.
 
         @param img input image
@@ -267,21 +267,21 @@ class AlignMTB(AlignExposures):
         """
 
     def getCut(self) -> retval:
-        """"""
+        r""""""
 
     def getExcludeRange(self) -> retval:
-        """"""
+        r""""""
 
     def getMaxBits(self) -> retval:
-        """"""
+        r""""""
 
     @overload
     def process(self, src, dst, times, response) -> None:
-        """"""
+        r""""""
 
     @overload
     def process(self, src, dst) -> None:
-        """
+        r"""
         @brief Short version of process, that doesn't take extra arguments.
 
         @param src vector of input images
@@ -289,16 +289,16 @@ class AlignMTB(AlignExposures):
         """
 
     def setCut(self, value) -> None:
-        """"""
+        r""""""
 
     def setExcludeRange(self, exclude_range) -> None:
-        """"""
+        r""""""
 
     def setMaxBits(self, max_bits) -> None:
-        """"""
+        r""""""
 
     def shiftMat(self, src, shift, dst=...) -> dst:
-        """
+        r"""
         @brief Helper function, that shift Mat filling new regions with zeros.
 
         @param src input image
@@ -309,31 +309,31 @@ class AlignMTB(AlignExposures):
 class AsyncArray(builtins.object):
     @overload
     def get(self, dst=...) -> dst:
-        """
+        r"""
         Fetch the result.
         @param[out] dst destination array  Waits for result until container has valid result. Throws exception if exception was stored as a result.  Throws exception on invalid container state.  @note Result or stored exception can be fetched only once.
         """
 
     @overload
     def get(self, timeoutNs, dst=...) -> tuple[retval, dst]:
-        """
+        r"""
         Retrieving the result with timeout
         @param[out] dst destination array
         @param[in] timeoutNs timeout in nanoseconds, -1 for infinite wait  @returns true if result is ready, false if the timeout has expired  @note Result or stored exception can be fetched only once.
         """
 
     def release(self) -> None:
-        """"""
+        r""""""
 
     def valid(self) -> retval:
-        """"""
+        r""""""
 
     def wait_for(self, timeoutNs) -> retval:
-        """"""
+        r""""""
 
 class BFMatcher(DescriptorMatcher):
     def create(self, normType=..., crossCheck=...) -> retval:
-        """
+        r"""
         @brief Brute-force matcher create method.
         @param normType One of NORM_L1, NORM_L2, NORM_HAMMING, NORM_HAMMING2. L1 and L2 norms are preferable choices for SIFT and SURF descriptors, NORM_HAMMING should be used with ORB, BRISK and BRIEF, NORM_HAMMING2 should be used with ORB when WTA_K==3 or 4 (see ORB::ORB constructor description).
         @param crossCheck If it is false, this is will be default BFMatcher behaviour when it finds the k nearest neighbors for each query descriptor. If crossCheck==true, then the knnMatch() method with k=1 will only return pairs (i,j) such that for i-th query descriptor the j-th descriptor in the matcher's collection is the nearest and vice versa, i.e. the BFMatcher will only return consistent pairs. Such technique usually produces best results with minimal number of outliers when there are enough matches. This is alternative to the ratio test, used by D. Lowe in SIFT paper.
@@ -341,7 +341,7 @@ class BFMatcher(DescriptorMatcher):
 
 class BOWImgDescriptorExtractor(builtins.object):
     def compute(self, image, keypoints, imgDescriptor=...) -> imgDescriptor:
-        """
+        r"""
         @overload
         @param keypointDescriptors Computed descriptors to match with vocabulary.
         @param imgDescriptor Computed output image descriptor.
@@ -349,22 +349,22 @@ class BOWImgDescriptorExtractor(builtins.object):
         """
 
     def descriptorSize(self) -> retval:
-        """
+        r"""
         @brief Returns an image descriptor size if the vocabulary is set. Otherwise, it returns 0.
         """
 
     def descriptorType(self) -> retval:
-        """
+        r"""
         @brief Returns an image descriptor type.
         """
 
     def getVocabulary(self) -> retval:
-        """
+        r"""
         @brief Returns the set vocabulary.
         """
 
     def setVocabulary(self, vocabulary) -> None:
-        """
+        r"""
         @brief Sets a visual vocabulary.
 
         @param vocabulary Vocabulary (can be trained using the inheritor of BOWTrainer ). Each row of the vocabulary is a visual word (cluster center).
@@ -373,81 +373,81 @@ class BOWImgDescriptorExtractor(builtins.object):
 class BOWKMeansTrainer(BOWTrainer):
     @overload
     def cluster(self) -> retval:
-        """"""
+        r""""""
 
     @overload
     def cluster(self, descriptors) -> retval:
-        """"""
+        r""""""
 
 class BOWTrainer(builtins.object):
     def add(self, descriptors) -> None:
-        """
+        r"""
         @brief Adds descriptors to a training set.
 
         @param descriptors Descriptors to add to a training set. Each row of the descriptors matrix is a descriptor.  The training set is clustered using clustermethod to construct the vocabulary.
         """
 
     def clear(self) -> None:
-        """"""
+        r""""""
 
     @overload
     def cluster(self) -> retval:
-        """
+        r"""
         @overload
         """
 
     @overload
     def cluster(self, descriptors) -> retval:
-        """
+        r"""
         @brief Clusters train descriptors.
 
         @param descriptors Descriptors to cluster. Each row of the descriptors matrix is a descriptor. Descriptors are not added to the inner train descriptor set.  The vocabulary consists of cluster centers. So, this method returns the vocabulary. In the first variant of the method, train descriptors stored in the object are clustered. In the second variant, input descriptors are clustered.
         """
 
     def descriptorsCount(self) -> retval:
-        """
+        r"""
         @brief Returns the count of all descriptors stored in the training set.
         """
 
     def getDescriptors(self) -> retval:
-        """
+        r"""
         @brief Returns a training set of descriptors.
         """
 
 class BRISK(Feature2D):
     def getDefaultName(self) -> retval:
-        """"""
+        r""""""
 
     def getOctaves(self) -> retval:
-        """"""
+        r""""""
 
     def getPatternScale(self) -> retval:
-        """"""
+        r""""""
 
     def getThreshold(self) -> retval:
-        """"""
+        r""""""
 
     def setOctaves(self, octaves) -> None:
-        """
+        r"""
         @brief Set detection octaves.
         @param octaves detection octaves. Use 0 to do single scale.
         """
 
     def setPatternScale(self, patternScale) -> None:
-        """
+        r"""
         @brief Set detection patternScale.
         @param patternScale apply this scale to the pattern used for sampling the neighbourhood of a keypoint.
         """
 
     def setThreshold(self, threshold) -> None:
-        """
+        r"""
         @brief Set detection threshold.
         @param threshold AGAST detection threshold score.
         """
 
     @overload
     def create(self, thresh=..., octaves=..., patternScale=...) -> retval:
-        """
+        r"""
         @brief The BRISK constructor
 
         @param thresh AGAST detection threshold score.
@@ -457,7 +457,7 @@ class BRISK(Feature2D):
 
     @overload
     def create(self, radiusList, numberList, dMax=..., dMin=..., indexChange=...) -> retval:
-        """
+        r"""
         @brief The BRISK constructor for a custom pattern
 
         @param radiusList defines the radii (in pixels) where the samples around a keypoint are taken (for keypoint scale 1).
@@ -469,7 +469,7 @@ class BRISK(Feature2D):
 
     @overload
     def create(self, thresh, octaves, radiusList, numberList, dMax=..., dMin=..., indexChange=...) -> retval:
-        """
+        r"""
         @brief The BRISK constructor for a custom pattern, detection threshold and octaves
 
         @param thresh AGAST detection threshold score.
@@ -483,7 +483,7 @@ class BRISK(Feature2D):
 
 class BackgroundSubtractor(Algorithm):
     def apply(self, image, fgmask=..., learningRate=...) -> fgmask:
-        """
+        r"""
         @brief Computes a foreground mask.
 
         @param image Next video frame.
@@ -492,7 +492,7 @@ class BackgroundSubtractor(Algorithm):
         """
 
     def getBackgroundImage(self, backgroundImage=...) -> backgroundImage:
-        """
+        r"""
         @brief Computes a background image.
 
         @param backgroundImage The output background image.  @note Sometimes the background image can be very blurry, as it contain the average background statistics.
@@ -500,7 +500,7 @@ class BackgroundSubtractor(Algorithm):
 
 class BackgroundSubtractorKNN(BackgroundSubtractor):
     def getDetectShadows(self) -> retval:
-        """
+        r"""
         @brief Returns the shadow detection flag
 
         If true, the algorithm detects shadows and marks them. See createBackgroundSubtractorKNN for
@@ -508,7 +508,7 @@ class BackgroundSubtractorKNN(BackgroundSubtractor):
         """
 
     def getDist2Threshold(self) -> retval:
-        """
+        r"""
         @brief Returns the threshold on the squared distance between the pixel and the sample
 
         The threshold on the squared distance between the pixel and the sample to decide whether a pixel is
@@ -516,17 +516,17 @@ class BackgroundSubtractorKNN(BackgroundSubtractor):
         """
 
     def getHistory(self) -> retval:
-        """
+        r"""
         @brief Returns the number of last frames that affect the background model
         """
 
     def getNSamples(self) -> retval:
-        """
+        r"""
         @brief Returns the number of data samples in the background model
         """
 
     def getShadowThreshold(self) -> retval:
-        """
+        r"""
         @brief Returns the shadow threshold
 
         A shadow is detected if pixel is a darker version of the background. The shadow threshold (Tau in
@@ -536,7 +536,7 @@ class BackgroundSubtractorKNN(BackgroundSubtractor):
         """
 
     def getShadowValue(self) -> retval:
-        """
+        r"""
         @brief Returns the shadow value
 
         Shadow value is the value used to mark shadows in the foreground mask. Default value is 127. Value 0
@@ -544,7 +544,7 @@ class BackgroundSubtractorKNN(BackgroundSubtractor):
         """
 
     def getkNNSamples(self) -> retval:
-        """
+        r"""
         @brief Returns the number of neighbours, the k in the kNN.
 
         K is the number of samples that need to be within dist2Threshold in order to decide that that
@@ -552,45 +552,45 @@ class BackgroundSubtractorKNN(BackgroundSubtractor):
         """
 
     def setDetectShadows(self, detectShadows) -> None:
-        """
+        r"""
         @brief Enables or disables shadow detection
         """
 
     def setDist2Threshold(self, _dist2Threshold) -> None:
-        """
+        r"""
         @brief Sets the threshold on the squared distance
         """
 
     def setHistory(self, history) -> None:
-        """
+        r"""
         @brief Sets the number of last frames that affect the background model
         """
 
     def setNSamples(self, _nN) -> None:
-        """
+        r"""
         @brief Sets the number of data samples in the background model.
 
         The model needs to be reinitalized to reserve memory.
         """
 
     def setShadowThreshold(self, threshold) -> None:
-        """
+        r"""
         @brief Sets the shadow threshold
         """
 
     def setShadowValue(self, value) -> None:
-        """
+        r"""
         @brief Sets the shadow value
         """
 
     def setkNNSamples(self, _nkNN) -> None:
-        """
+        r"""
         @brief Sets the k in the kNN. How many nearest neighbours need to match.
         """
 
 class BackgroundSubtractorMOG2(BackgroundSubtractor):
     def apply(self, image, fgmask=..., learningRate=...) -> fgmask:
-        """
+        r"""
         @brief Computes a foreground mask.
 
         @param image Next video frame. Floating point frame will be used without scaling and should be in range \f$[0,255]\f$.
@@ -599,7 +599,7 @@ class BackgroundSubtractorMOG2(BackgroundSubtractor):
         """
 
     def getBackgroundRatio(self) -> retval:
-        """
+        r"""
         @brief Returns the "background ratio" parameter of the algorithm
 
         If a foreground pixel keeps semi-constant value for about backgroundRatio\*history frames, it's
@@ -608,7 +608,7 @@ class BackgroundSubtractorMOG2(BackgroundSubtractor):
         """
 
     def getComplexityReductionThreshold(self) -> retval:
-        """
+        r"""
         @brief Returns the complexity reduction threshold
 
         This parameter defines the number of samples needed to accept to prove the component exists. CT=0.05
@@ -617,7 +617,7 @@ class BackgroundSubtractorMOG2(BackgroundSubtractor):
         """
 
     def getDetectShadows(self) -> retval:
-        """
+        r"""
         @brief Returns the shadow detection flag
 
         If true, the algorithm detects shadows and marks them. See createBackgroundSubtractorMOG2 for
@@ -625,17 +625,17 @@ class BackgroundSubtractorMOG2(BackgroundSubtractor):
         """
 
     def getHistory(self) -> retval:
-        """
+        r"""
         @brief Returns the number of last frames that affect the background model
         """
 
     def getNMixtures(self) -> retval:
-        """
+        r"""
         @brief Returns the number of gaussian components in the background model
         """
 
     def getShadowThreshold(self) -> retval:
-        """
+        r"""
         @brief Returns the shadow threshold
 
         A shadow is detected if pixel is a darker version of the background. The shadow threshold (Tau in
@@ -645,7 +645,7 @@ class BackgroundSubtractorMOG2(BackgroundSubtractor):
         """
 
     def getShadowValue(self) -> retval:
-        """
+        r"""
         @brief Returns the shadow value
 
         Shadow value is the value used to mark shadows in the foreground mask. Default value is 127. Value 0
@@ -653,18 +653,18 @@ class BackgroundSubtractorMOG2(BackgroundSubtractor):
         """
 
     def getVarInit(self) -> retval:
-        """
+        r"""
         @brief Returns the initial variance of each gaussian component
         """
 
     def getVarMax(self) -> retval:
-        """"""
+        r""""""
 
     def getVarMin(self) -> retval:
-        """"""
+        r""""""
 
     def getVarThreshold(self) -> retval:
-        """
+        r"""
         @brief Returns the variance threshold for the pixel-model match
 
         The main threshold on the squared Mahalanobis distance to decide if the sample is well described by
@@ -672,7 +672,7 @@ class BackgroundSubtractorMOG2(BackgroundSubtractor):
         """
 
     def getVarThresholdGen(self) -> retval:
-        """
+        r"""
         @brief Returns the variance threshold for the pixel-model match used for new mixture component generation
 
         Threshold for the squared Mahalanobis distance that helps decide when a sample is close to the
@@ -683,60 +683,60 @@ class BackgroundSubtractorMOG2(BackgroundSubtractor):
         """
 
     def setBackgroundRatio(self, ratio) -> None:
-        """
+        r"""
         @brief Sets the "background ratio" parameter of the algorithm
         """
 
     def setComplexityReductionThreshold(self, ct) -> None:
-        """
+        r"""
         @brief Sets the complexity reduction threshold
         """
 
     def setDetectShadows(self, detectShadows) -> None:
-        """
+        r"""
         @brief Enables or disables shadow detection
         """
 
     def setHistory(self, history) -> None:
-        """
+        r"""
         @brief Sets the number of last frames that affect the background model
         """
 
     def setNMixtures(self, nmixtures) -> None:
-        """
+        r"""
         @brief Sets the number of gaussian components in the background model.
 
         The model needs to be reinitalized to reserve memory.
         """
 
     def setShadowThreshold(self, threshold) -> None:
-        """
+        r"""
         @brief Sets the shadow threshold
         """
 
     def setShadowValue(self, value) -> None:
-        """
+        r"""
         @brief Sets the shadow value
         """
 
     def setVarInit(self, varInit) -> None:
-        """
+        r"""
         @brief Sets the initial variance of each gaussian component
         """
 
     def setVarMax(self, varMax) -> None:
-        """"""
+        r""""""
 
     def setVarMin(self, varMin) -> None:
-        """"""
+        r""""""
 
     def setVarThreshold(self, varThreshold) -> None:
-        """
+        r"""
         @brief Sets the variance threshold for the pixel-model match
         """
 
     def setVarThresholdGen(self, varThresholdGen) -> None:
-        """
+        r"""
         @brief Sets the variance threshold for the pixel-model match used for new mixture component generation
         """
 
@@ -744,7 +744,7 @@ class BaseCascadeClassifier(Algorithm): ...
 
 class CLAHE(Algorithm):
     def apply(self, src, dst=...) -> dst:
-        """
+        r"""
         @brief Equalizes the histogram of a grayscale image using Contrast Limited Adaptive Histogram Equalization.
 
         @param src Source image of type CV_8UC1 or CV_16UC1.
@@ -752,23 +752,23 @@ class CLAHE(Algorithm):
         """
 
     def collectGarbage(self) -> None:
-        """"""
+        r""""""
 
     def getClipLimit(self) -> retval:
-        """"""
+        r""""""
 
     def getTilesGridSize(self) -> retval:
-        """"""
+        r""""""
 
     def setClipLimit(self, clipLimit) -> None:
-        """
+        r"""
         @brief Sets threshold for contrast limiting.
 
         @param clipLimit threshold value.
         """
 
     def setTilesGridSize(self, tileGridSize) -> None:
-        """
+        r"""
         @brief Sets size of grid for histogram equalization. Input image will be divided into
         equally sized rectangular tiles.
 
@@ -777,7 +777,7 @@ class CLAHE(Algorithm):
 
 class CalibrateCRF(Algorithm):
     def process(self, src, times, dst=...) -> dst:
-        """
+        r"""
         @brief Recovers inverse camera response.
 
         @param src vector of input images
@@ -787,42 +787,42 @@ class CalibrateCRF(Algorithm):
 
 class CalibrateDebevec(CalibrateCRF):
     def getLambda(self) -> retval:
-        """"""
+        r""""""
 
     def getRandom(self) -> retval:
-        """"""
+        r""""""
 
     def getSamples(self) -> retval:
-        """"""
+        r""""""
 
     def setLambda(self, lambda_) -> None:
-        """"""
+        r""""""
 
     def setRandom(self, random) -> None:
-        """"""
+        r""""""
 
     def setSamples(self, samples) -> None:
-        """"""
+        r""""""
 
 class CalibrateRobertson(CalibrateCRF):
     def getMaxIter(self) -> retval:
-        """"""
+        r""""""
 
     def getRadiance(self) -> retval:
-        """"""
+        r""""""
 
     def getThreshold(self) -> retval:
-        """"""
+        r""""""
 
     def setMaxIter(self, max_iter) -> None:
-        """"""
+        r""""""
 
     def setThreshold(self, threshold) -> None:
-        """"""
+        r""""""
 
 class CascadeClassifier(builtins.object):
     def detectMultiScale(self, image, scaleFactor=..., minNeighbors=..., flags=..., minSize=..., maxSize=...) -> objects:
-        """
+        r"""
         @brief Detects objects of different sizes in the input image. The detected objects are returned as a list
         of rectangles.
 
@@ -836,7 +836,7 @@ class CascadeClassifier(builtins.object):
         """
 
     def detectMultiScale2(self, image, scaleFactor=..., minNeighbors=..., flags=..., minSize=..., maxSize=...) -> tuple[objects, numDetections]:
-        """
+        r"""
         @overload
         @param image Matrix of the type CV_8U containing an image where objects are detected.
         @param objects Vector of rectangles where each rectangle contains the detected object, the rectangles may be partially outside the original image.
@@ -849,7 +849,7 @@ class CascadeClassifier(builtins.object):
         """
 
     def detectMultiScale3(self, image, scaleFactor=..., minNeighbors=..., flags=..., minSize=..., maxSize=..., outputRejectLevels=...) -> tuple[objects, rejectLevels, levelWeights]:
-        """
+        r"""
         @overload
         This function allows you to retrieve the final stage decision certainty of classification.
         For this, one needs to set `outputRejectLevels` on true and provide the `rejectLevels` and `levelWeights` parameter.
@@ -869,70 +869,70 @@ class CascadeClassifier(builtins.object):
         """
 
     def empty(self) -> retval:
-        """
+        r"""
         @brief Checks whether the classifier has been loaded.
         """
 
     def getFeatureType(self) -> retval:
-        """"""
+        r""""""
 
     def getOriginalWindowSize(self) -> retval:
-        """"""
+        r""""""
 
     def isOldFormatCascade(self) -> retval:
-        """"""
+        r""""""
 
     def load(self, filename) -> retval:
-        """
+        r"""
         @brief Loads a classifier from a file.
 
         @param filename Name of the file from which the classifier is loaded. The file may contain an old HAAR classifier trained by the haartraining application or a new cascade classifier trained by the traincascade application.
         """
 
     def read(self, node) -> retval:
-        """
+        r"""
         @brief Reads a classifier from a FileStorage node.
 
         @note The file may contain a new cascade classifier (trained by the traincascade application) only.
         """
 
     def convert(self, oldcascade, newcascade) -> retval:
-        """"""
+        r""""""
 
 class ChiHistogramCostExtractor(HistogramCostExtractor): ...
 class CirclesGridFinderParameters(builtins.object): ...
 
 class DISOpticalFlow(DenseOpticalFlow):
     def getFinestScale(self) -> retval:
-        """
+        r"""
         @brief Finest level of the Gaussian pyramid on which the flow is computed (zero level
         corresponds to the original image resolution). The final flow is obtained by bilinear upscaling.
         @see setFinestScale
         """
 
     def getGradientDescentIterations(self) -> retval:
-        """
+        r"""
         @brief Maximum number of gradient descent iterations in the patch inverse search stage. Higher values
         may improve quality in some cases.
         @see setGradientDescentIterations
         """
 
     def getPatchSize(self) -> retval:
-        """
+        r"""
         @brief Size of an image patch for matching (in pixels). Normally, default 8x8 patches work well
         enough in most cases.
         @see setPatchSize
         """
 
     def getPatchStride(self) -> retval:
-        """
+        r"""
         @brief Stride between neighbor patches. Must be less than patch size. Lower values correspond
         to higher flow quality.
         @see setPatchStride
         """
 
     def getUseMeanNormalization(self) -> retval:
-        """
+        r"""
         @brief Whether to use mean-normalization of patches when computing patch distance. It is turned on
         by default as it typically provides a noticeable quality boost because of increased robustness to
         illumination variations. Turn it off if you are certain that your sequence doesn't contain any changes
@@ -941,7 +941,7 @@ class DISOpticalFlow(DenseOpticalFlow):
         """
 
     def getUseSpatialPropagation(self) -> retval:
-        """
+        r"""
         @brief Whether to use spatial propagation of good optical flow vectors. This option is turned on by
         default, as it tends to work better on average and can sometimes help recover from major errors
         introduced by the coarse-to-fine scheme employed by the DIS optical flow algorithm. Turning this
@@ -950,25 +950,25 @@ class DISOpticalFlow(DenseOpticalFlow):
         """
 
     def getVariationalRefinementAlpha(self) -> retval:
-        """
+        r"""
         @brief Weight of the smoothness term
         @see setVariationalRefinementAlpha
         """
 
     def getVariationalRefinementDelta(self) -> retval:
-        """
+        r"""
         @brief Weight of the color constancy term
         @see setVariationalRefinementDelta
         """
 
     def getVariationalRefinementGamma(self) -> retval:
-        """
+        r"""
         @brief Weight of the gradient constancy term
         @see setVariationalRefinementGamma
         """
 
     def getVariationalRefinementIterations(self) -> retval:
-        """
+        r"""
         @brief Number of fixed point iterations of variational refinement per scale. Set to zero to
         disable variational refinement completely. Higher values will typically result in more smooth and
         high-quality flow.
@@ -976,57 +976,57 @@ class DISOpticalFlow(DenseOpticalFlow):
         """
 
     def setFinestScale(self, val) -> None:
-        """
+        r"""
         @copybrief getFinestScale @see getFinestScale
         """
 
     def setGradientDescentIterations(self, val) -> None:
-        """
+        r"""
         @copybrief getGradientDescentIterations @see getGradientDescentIterations
         """
 
     def setPatchSize(self, val) -> None:
-        """
+        r"""
         @copybrief getPatchSize @see getPatchSize
         """
 
     def setPatchStride(self, val) -> None:
-        """
+        r"""
         @copybrief getPatchStride @see getPatchStride
         """
 
     def setUseMeanNormalization(self, val) -> None:
-        """
+        r"""
         @copybrief getUseMeanNormalization @see getUseMeanNormalization
         """
 
     def setUseSpatialPropagation(self, val) -> None:
-        """
+        r"""
         @copybrief getUseSpatialPropagation @see getUseSpatialPropagation
         """
 
     def setVariationalRefinementAlpha(self, val) -> None:
-        """
+        r"""
         @copybrief getVariationalRefinementAlpha @see getVariationalRefinementAlpha
         """
 
     def setVariationalRefinementDelta(self, val) -> None:
-        """
+        r"""
         @copybrief getVariationalRefinementDelta @see getVariationalRefinementDelta
         """
 
     def setVariationalRefinementGamma(self, val) -> None:
-        """
+        r"""
         @copybrief getVariationalRefinementGamma @see getVariationalRefinementGamma
         """
 
     def setVariationalRefinementIterations(self, val) -> None:
-        """
+        r"""
         @copybrief getGradientDescentIterations @see getGradientDescentIterations
         """
 
     def create(self, preset=...) -> retval:
-        """
+        r"""
         @brief Creates an instance of DISOpticalFlow
 
         @param preset one of PRESET_ULTRAFAST, PRESET_FAST and PRESET_MEDIUM
@@ -1036,7 +1036,7 @@ class DMatch(builtins.object): ...
 
 class DenseOpticalFlow(Algorithm):
     def calc(self, I0, I1, flow) -> flow:
-        """
+        r"""
         @brief Calculates an optical flow.
 
         @param I0 first 8-bit single-channel input image.
@@ -1045,13 +1045,13 @@ class DenseOpticalFlow(Algorithm):
         """
 
     def collectGarbage(self) -> None:
-        """
+        r"""
         @brief Releases all inner buffers.
         """
 
 class DescriptorMatcher(Algorithm, ABC):
     def add(self, descriptors: InputArrayOfArrays) -> None:
-        """
+        r"""
         @brief Adds descriptors to train a CPU(trainDescCollectionis) or GPU(utrainDescCollectionis) descriptor
         collection.
 
@@ -1061,35 +1061,35 @@ class DescriptorMatcher(Algorithm, ABC):
         """
 
     def clear(self) -> None:
-        """
+        r"""
         @brief Clears the train descriptor collections.
         """
 
     def clone(self, emptyTrainData=...) -> retval:
-        """
+        r"""
         @brief Clones the matcher.
 
         @param emptyTrainData If emptyTrainData is false, the method creates a deep copy of the object, that is, copies both parameters and train data. If emptyTrainData is true, the method creates an object copy with the current parameters but with empty train data.
         """
 
     def empty(self) -> retval:
-        """
+        r"""
         @brief Returns true if there are no train descriptors in the both collections.
         """
 
     def getTrainDescriptors(self) -> retval:
-        """
+        r"""
         @brief Returns a constant link to the train descriptor collection trainDescCollection .
         """
 
     def isMaskSupported(self) -> retval:
-        """
+        r"""
         @brief Returns true if the descriptor matcher supports masking permissible matches.
         """
 
     @overload
     def knnMatch(self, queryDescriptors, trainDescriptors, k, mask=..., compactResult=...) -> matches:
-        """
+        r"""
         @brief Finds the k best matches for each descriptor from a query set.
 
         @param queryDescriptors Query set of descriptors.
@@ -1102,7 +1102,7 @@ class DescriptorMatcher(Algorithm, ABC):
 
     @overload
     def knnMatch(self, queryDescriptors, k, masks=..., compactResult=...) -> matches:
-        """
+        r"""
         @overload
         @param queryDescriptors Query set of descriptors.
         @param matches Matches. Each matches[i] is k or less matches for the same query descriptor.
@@ -1113,7 +1113,7 @@ class DescriptorMatcher(Algorithm, ABC):
 
     @overload
     def match(self, queryDescriptors, trainDescriptors, mask=...) -> matches:
-        """
+        r"""
         @brief Finds the best match for each descriptor from a query set.
 
         @param queryDescriptors Query set of descriptors.
@@ -1124,7 +1124,7 @@ class DescriptorMatcher(Algorithm, ABC):
 
     @overload
     def match(self, queryDescriptors, masks=...) -> matches:
-        """
+        r"""
         @overload
         @param queryDescriptors Query set of descriptors.
         @param matches Matches. If a query descriptor is masked out in mask , no match is added for this descriptor. So, matches size may be smaller than the query descriptors count.
@@ -1133,7 +1133,7 @@ class DescriptorMatcher(Algorithm, ABC):
 
     @overload
     def radiusMatch(self, queryDescriptors, trainDescriptors, maxDistance, mask=..., compactResult=...) -> matches:
-        """
+        r"""
         @brief For each query descriptor, finds the training descriptors not farther than the specified distance.
 
         @param queryDescriptors Query set of descriptors.
@@ -1146,7 +1146,7 @@ class DescriptorMatcher(Algorithm, ABC):
 
     @overload
     def radiusMatch(self, queryDescriptors, maxDistance, masks=..., compactResult=...) -> matches:
-        """
+        r"""
         @overload
         @param queryDescriptors Query set of descriptors.
         @param matches Found matches.
@@ -1157,14 +1157,14 @@ class DescriptorMatcher(Algorithm, ABC):
 
     @overload
     def read(self, fileName) -> None:
-        """"""
+        r""""""
 
     @overload
     def read(self, arg1) -> None:
-        """"""
+        r""""""
 
     def train(self) -> None:
-        """
+        r"""
         @brief Trains a descriptor matcher
 
         Trains a descriptor matcher (for example, the flann index). In all methods to match, the method
@@ -1175,15 +1175,15 @@ class DescriptorMatcher(Algorithm, ABC):
 
     @overload
     def write(self, fileName) -> None:
-        """"""
+        r""""""
 
     @overload
     def write(self, fs, name) -> None:
-        """"""
+        r""""""
 
     @overload
     def create(self, descriptorMatcherType) -> retval:
-        """
+        r"""
         @brief Creates a descriptor matcher of a given type with the default parameters (using default
         constructor).
 
@@ -1192,20 +1192,20 @@ class DescriptorMatcher(Algorithm, ABC):
 
     @overload
     def create(self, matcherType) -> retval:
-        """"""
+        r""""""
 
 class EMDHistogramCostExtractor(HistogramCostExtractor):
     def getNormFlag(self) -> retval:
-        """"""
+        r""""""
 
     def setNormFlag(self, flag) -> None:
-        """"""
+        r""""""
 
 class EMDL1HistogramCostExtractor(HistogramCostExtractor): ...
 
 class FaceDetectorYN(builtins.object):
     def detect(self, image, faces=...) -> tuple[retval, faces]:
-        """
+        r"""
         @brief A simple interface to detect face from given image
         *
         *  @param image an image to detect
@@ -1213,47 +1213,47 @@ class FaceDetectorYN(builtins.object):
         """
 
     def getInputSize(self) -> retval:
-        """"""
+        r""""""
 
     def getNMSThreshold(self) -> retval:
-        """"""
+        r""""""
 
     def getScoreThreshold(self) -> retval:
-        """"""
+        r""""""
 
     def getTopK(self) -> retval:
-        """"""
+        r""""""
 
     def setInputSize(self, input_size) -> None:
-        """
+        r"""
         @brief Set the size for the network input, which overwrites the input size of creating model. Call this method when the size of input image does not match the input size when creating model
         *
         * @param input_size the size of the input image
         """
 
     def setNMSThreshold(self, nms_threshold) -> None:
-        """
+        r"""
         @brief Set the Non-maximum-suppression threshold to suppress bounding boxes that have IoU greater than the given value
         *
         * @param nms_threshold threshold for NMS operation
         """
 
     def setScoreThreshold(self, score_threshold) -> None:
-        """
+        r"""
         @brief Set the score threshold to filter out bounding boxes of score less than the given value
         *
         * @param score_threshold threshold for filtering out bounding boxes
         """
 
     def setTopK(self, top_k) -> None:
-        """
+        r"""
         @brief Set the number of bounding boxes preserved before NMS
         *
         * @param top_k the number of bounding boxes to preserve from top rank based on score
         """
 
     def create(self, model, config, input_size, score_threshold=..., nms_threshold=..., top_k=..., backend_id=..., target_id=...) -> retval:
-        """
+        r"""
         @brief Creates an instance of this class with given parameters
         *
         *  @param model the path to the requested model
@@ -1268,7 +1268,7 @@ class FaceDetectorYN(builtins.object):
 
 class FaceRecognizerSF(builtins.object):
     def alignCrop(self, src_img, face_box, aligned_img=...) -> aligned_img:
-        """
+        r"""
         @brief Aligning image to put face on the standard position
         *  @param src_img input image
         *  @param face_box the detection result used for indicate face in input image
@@ -1276,14 +1276,14 @@ class FaceRecognizerSF(builtins.object):
         """
 
     def feature(self, aligned_img, face_feature=...) -> face_feature:
-        """
+        r"""
         @brief Extracting face feature from aligned image
         *  @param aligned_img input aligned image
         *  @param face_feature output face feature
         """
 
     def match(self, face_feature1, face_feature2, dis_type=...) -> retval:
-        """
+        r"""
         @brief Calculating the distance between two face features
         *  @param face_feature1 the first input feature
         *  @param face_feature2 the second input feature of the same size and the same type as face_feature1
@@ -1291,7 +1291,7 @@ class FaceRecognizerSF(builtins.object):
         """
 
     def create(self, model, config, backend_id=..., target_id=...) -> retval:
-        """
+        r"""
         @brief Creates an instance of this class with given parameters
         *  @param model the path of the onnx model used for face recognition
         *  @param config the path to the config file for compability, which is not requested for ONNX models
@@ -1301,85 +1301,85 @@ class FaceRecognizerSF(builtins.object):
 
 class FarnebackOpticalFlow(DenseOpticalFlow):
     def getFastPyramids(self) -> retval:
-        """"""
+        r""""""
 
     def getFlags(self) -> retval:
-        """"""
+        r""""""
 
     def getNumIters(self) -> retval:
-        """"""
+        r""""""
 
     def getNumLevels(self) -> retval:
-        """"""
+        r""""""
 
     def getPolyN(self) -> retval:
-        """"""
+        r""""""
 
     def getPolySigma(self) -> retval:
-        """"""
+        r""""""
 
     def getPyrScale(self) -> retval:
-        """"""
+        r""""""
 
     def getWinSize(self) -> retval:
-        """"""
+        r""""""
 
     def setFastPyramids(self, fastPyramids) -> None:
-        """"""
+        r""""""
 
     def setFlags(self, flags) -> None:
-        """"""
+        r""""""
 
     def setNumIters(self, numIters) -> None:
-        """"""
+        r""""""
 
     def setNumLevels(self, numLevels) -> None:
-        """"""
+        r""""""
 
     def setPolyN(self, polyN) -> None:
-        """"""
+        r""""""
 
     def setPolySigma(self, polySigma) -> None:
-        """"""
+        r""""""
 
     def setPyrScale(self, pyrScale) -> None:
-        """"""
+        r""""""
 
     def setWinSize(self, winSize) -> None:
-        """"""
+        r""""""
 
     def create(self, numLevels=..., pyrScale=..., fastPyramids=..., winSize=..., numIters=..., polyN=..., polySigma=..., flags=...) -> retval:
-        """"""
+        r""""""
 
 class FastFeatureDetector(Feature2D):
     def getDefaultName(self) -> retval:
-        """"""
+        r""""""
 
     def getNonmaxSuppression(self) -> retval:
-        """"""
+        r""""""
 
     def getThreshold(self) -> retval:
-        """"""
+        r""""""
 
     def getType(self) -> retval:
-        """"""
+        r""""""
 
     def setNonmaxSuppression(self, f) -> None:
-        """"""
+        r""""""
 
     def setThreshold(self, threshold) -> None:
-        """"""
+        r""""""
 
     def setType(self, type) -> None:
-        """"""
+        r""""""
 
     def create(self, threshold=..., nonmaxSuppression=..., type=...) -> retval:
-        """"""
+        r""""""
 
 class Feature2D(ABC, builtins.object):
     @overload
     def compute(self, image, keypoints, descriptors=...) -> tuple[keypoints, descriptors]:
-        """
+        r"""
         @brief Computes the descriptors for a set of keypoints detected in an image (first variant) or image set
         (second variant).
 
@@ -1390,7 +1390,7 @@ class Feature2D(ABC, builtins.object):
 
     @overload
     def compute(self, images, keypoints, descriptors=...) -> tuple[keypoints, descriptors]:
-        """
+        r"""
         @overload
 
         @param images Image set.
@@ -1399,17 +1399,17 @@ class Feature2D(ABC, builtins.object):
         """
 
     def defaultNorm(self) -> retval:
-        """"""
+        r""""""
 
     def descriptorSize(self) -> retval:
-        """"""
+        r""""""
 
     def descriptorType(self) -> retval:
-        """"""
+        r""""""
 
     @overload
     def detect(self, image, mask=...) -> keypoints:
-        """
+        r"""
         @brief Detects keypoints in an image (first variant) or image set (second variant).
 
         @param image Image.
@@ -1419,7 +1419,7 @@ class Feature2D(ABC, builtins.object):
 
     @overload
     def detect(self, images, masks=...) -> keypoints:
-        """
+        r"""
         @overload
         @param images Image set.
         @param keypoints The detected keypoints. In the second variant of the method keypoints[i] is a set of keypoints detected in images[i] .
@@ -1427,127 +1427,127 @@ class Feature2D(ABC, builtins.object):
         """
 
     def detectAndCompute(self, image, mask, descriptors=..., useProvidedKeypoints=...) -> tuple[keypoints, descriptors]:
-        """
+        r"""
         Detects keypoints and computes the descriptors
         """
 
     def empty(self) -> retval:
-        """"""
+        r""""""
 
     def getDefaultName(self) -> retval:
-        """"""
+        r""""""
 
     @overload
     def read(self, fileName) -> None:
-        """"""
+        r""""""
 
     @overload
     def read(self, arg1) -> None:
-        """"""
+        r""""""
 
     @overload
     def write(self, fileName) -> None:
-        """"""
+        r""""""
 
     @overload
     def write(self, fs, name) -> None:
-        """"""
+        r""""""
 
 class FileNode(builtins.object):
     def at(self, i) -> retval:
-        """
+        r"""
         @overload
         @param i Index of an element in the sequence node.
         """
 
     def empty(self) -> retval:
-        """"""
+        r""""""
 
     def getNode(self, nodename) -> retval:
-        """
+        r"""
         @overload
         @param nodename Name of an element in the mapping node.
         """
 
     def isInt(self) -> retval:
-        """"""
+        r""""""
 
     def isMap(self) -> retval:
-        """"""
+        r""""""
 
     def isNamed(self) -> retval:
-        """"""
+        r""""""
 
     def isNone(self) -> retval:
-        """"""
+        r""""""
 
     def isReal(self) -> retval:
-        """"""
+        r""""""
 
     def isSeq(self) -> retval:
-        """"""
+        r""""""
 
     def isString(self) -> retval:
-        """"""
+        r""""""
 
     def keys(self) -> retval:
-        """
+        r"""
         @brief Returns keys of a mapping node.
         @returns Keys of a mapping node.
         """
 
     def mat(self) -> retval:
-        """"""
+        r""""""
 
     def name(self) -> retval:
-        """"""
+        r""""""
 
     def rawSize(self) -> retval:
-        """"""
+        r""""""
 
     def real(self) -> retval:
-        """
+        r"""
         Internal method used when reading FileStorage.
         Sets the type (int, real or string) and value of the previously created node.
         """
 
     def size(self) -> retval:
-        """"""
+        r""""""
 
     def string(self) -> retval:
-        """"""
+        r""""""
 
     def type(self) -> retval:
-        """
+        r"""
         @brief Returns type of the node.
         @returns Type of the node. See FileNode::Type
         """
 
 class FileStorage(builtins.object):
     def endWriteStruct(self) -> None:
-        """
+        r"""
         @brief Finishes writing nested structure (should pair startWriteStruct())
         """
 
     def getFirstTopLevelNode(self) -> FileNode:
-        """
+        r"""
         @brief Returns the first element of the top-level mapping.
         @returns The first element of the top-level mapping.
         """
 
     def getFormat(self) -> int:
-        """
+        r"""
         @brief Returns the current format.
         * @returns The current format, see FileStorage::Mode
         """
 
     def getNode(self, nodename) -> retval:
-        """
+        r"""
         @overload
         """
 
     def isOpened(self) -> bool:
-        """
+        r"""
         @brief Checks whether the file is opened.
 
         @returns true if the object is associated with the current file and false otherwise. It is a
@@ -1555,7 +1555,7 @@ class FileStorage(builtins.object):
         """
 
     def open(self, filename: str, flags: int, encoding: str = ...) -> bool:
-        """
+        r"""
         @brief Opens a file.
 
         See description of parameters in FileStorage::FileStorage. The method calls FileStorage::release
@@ -1566,14 +1566,14 @@ class FileStorage(builtins.object):
         """
 
     def release(self) -> None:
-        """
+        r"""
         @brief Closes the file and releases all the memory buffers.
 
         Call this method after all I/O operations with the storage are finished.
         """
 
     def releaseAndGetString(self) -> retval:
-        """
+        r"""
         @brief Closes the file and releases all the memory buffers.
 
         Call this method after all I/O operations with the storage are finished. If the storage was
@@ -1581,14 +1581,14 @@ class FileStorage(builtins.object):
         """
 
     def root(self, streamidx: int = ...) -> FileNode:
-        """
+        r"""
         @brief Returns the top-level mapping
         @param streamidx Zero-based index of the stream. In most cases there is only one stream in the file. However, YAML supports multiple streams and so there can be several. @returns The top-level mapping.
         """
 
     @overload
     def startWriteStruct(self, name: str, flags: int, typeName: str = ...) -> None:
-        """
+        r"""
         @brief Starts to write a nested structure (sequence or a mapping).
         @param name name of the structure. When writing to sequences (a.k.a. "arrays"), pass an empty string.
         @param flags type of the structure (FileNode::MAP or FileNode::SEQ (both with optional FileNode::FLOW)).
@@ -1597,14 +1597,14 @@ class FileStorage(builtins.object):
 
     @overload
     def startWriteStruct(self, name, flags, typeName=...) -> None:
-        """
+        r"""
         * @brief Simplified writing API to use with bindings.
         * @param name Name of the written object. When writing to sequences (a.k.a. "arrays"), pass an empty string.
         * @param val Value of the written object.
         """
 
     def writeComment(self, comment: str, append: bool = ...) -> None:
-        """
+        r"""
         @brief Writes a comment.
 
         The function writes a comment into file storage. The comments are skipped when the storage is read.
@@ -1614,20 +1614,20 @@ class FileStorage(builtins.object):
 
 class FlannBasedMatcher(DescriptorMatcher):
     def create(self) -> retval:
-        """"""
+        r""""""
 
 class GArray(builtins.object): ...
 class GArrayDesc(builtins.object): ...
 
 class GArrayT(builtins.object):
     def type(self) -> retval:
-        """"""
+        r""""""
 
 class GCompileArg(builtins.object): ...
 
 class GComputation(builtins.object):
     def apply(self, callback, args=...) -> retval:
-        """
+        r"""
         * @brief Compile graph on-the-fly and immediately execute it on
         * the inputs data vectors.
         *
@@ -1657,7 +1657,7 @@ class GComputation(builtins.object):
 
     @overload
     def compileStreaming(self, in_metas, args=...) -> retval:
-        """
+        r"""
         * @brief Compile the computation for streaming mode.
         *
         * This method triggers compilation process and produces a new
@@ -1672,7 +1672,7 @@ class GComputation(builtins.object):
 
     @overload
     def compileStreaming(self, args=...) -> retval:
-        """
+        r"""
         * @brief Compile the computation for streaming mode.
         *
         * This method triggers compilation process and produces a new
@@ -1686,125 +1686,125 @@ class GComputation(builtins.object):
 
     @overload
     def compileStreaming(self, callback, args=...) -> retval:
-        """"""
+        r""""""
 
 class GFTTDetector(Feature2D):
     def getBlockSize(self) -> retval:
-        """"""
+        r""""""
 
     def getDefaultName(self) -> retval:
-        """"""
+        r""""""
 
     def getGradientSize(self) -> retval:
-        """"""
+        r""""""
 
     def getHarrisDetector(self) -> retval:
-        """"""
+        r""""""
 
     def getK(self) -> retval:
-        """"""
+        r""""""
 
     def getMaxFeatures(self) -> retval:
-        """"""
+        r""""""
 
     def getMinDistance(self) -> retval:
-        """"""
+        r""""""
 
     def getQualityLevel(self) -> retval:
-        """"""
+        r""""""
 
     def setBlockSize(self, blockSize) -> None:
-        """"""
+        r""""""
 
     def setGradientSize(self, gradientSize_) -> None:
-        """"""
+        r""""""
 
     def setHarrisDetector(self, val) -> None:
-        """"""
+        r""""""
 
     def setK(self, k) -> None:
-        """"""
+        r""""""
 
     def setMaxFeatures(self, maxFeatures) -> None:
-        """"""
+        r""""""
 
     def setMinDistance(self, minDistance) -> None:
-        """"""
+        r""""""
 
     def setQualityLevel(self, qlevel) -> None:
-        """"""
+        r""""""
 
     @overload
     def create(self, maxCorners=..., qualityLevel=..., minDistance=..., blockSize=..., useHarrisDetector=..., k=...) -> retval:
-        """"""
+        r""""""
 
     @overload
     def create(self, maxCorners, qualityLevel, minDistance, blockSize, gradiantSize, useHarrisDetector=..., k=...) -> retval:
-        """"""
+        r""""""
 
 class GFrame(builtins.object): ...
 
 class GInferInputs(builtins.object):
     def setInput(self, name, value) -> retval:
-        """"""
+        r""""""
 
 class GInferListInputs(builtins.object):
     def setInput(self, name, value) -> retval:
-        """"""
+        r""""""
 
 class GInferListOutputs(builtins.object):
     def at(self, name) -> retval:
-        """"""
+        r""""""
 
 class GInferOutputs(builtins.object):
     def at(self, name) -> retval:
-        """"""
+        r""""""
 
 class GKernelPackage(builtins.object): ...
 class GMat(builtins.object): ...
 
 class GMatDesc(builtins.object):
     def asInterleaved(self) -> retval:
-        """"""
+        r""""""
 
     @overload
     def asPlanar(self) -> retval:
-        """"""
+        r""""""
 
     @overload
     def asPlanar(self, planes) -> retval:
-        """"""
+        r""""""
 
     def withDepth(self, ddepth) -> retval:
-        """"""
+        r""""""
 
     def withSize(self, sz) -> retval:
-        """"""
+        r""""""
 
     @overload
     def withSizeDelta(self, delta) -> retval:
-        """"""
+        r""""""
 
     @overload
     def withSizeDelta(self, dx, dy) -> retval:
-        """"""
+        r""""""
 
     def withType(self, ddepth, dchan) -> retval:
-        """"""
+        r""""""
 
 class GOpaque(builtins.object): ...
 class GOpaqueDesc(builtins.object): ...
 
 class GOpaqueT(builtins.object):
     def type(self) -> retval:
-        """"""
+        r""""""
 
 class GScalar(builtins.object): ...
 class GScalarDesc(builtins.object): ...
 
 class GStreamingCompiled(builtins.object):
     def pull(self) -> retval:
-        """
+        r"""
         * @brief Get the next processed frame from the pipeline.
         *
         * Use gout() to create an output parameter vector.
@@ -1824,7 +1824,7 @@ class GStreamingCompiled(builtins.object):
         """
 
     def running(self) -> retval:
-        """
+        r"""
         * @brief Test if the pipeline is running.
         *
         * @note This method is not thread-safe (with respect to the user
@@ -1836,7 +1836,7 @@ class GStreamingCompiled(builtins.object):
         """
 
     def setSource(self, callback) -> None:
-        """
+        r"""
         * @brief Specify the input data to GStreamingCompiled for
         * processing, a generic version.
         *
@@ -1877,7 +1877,7 @@ class GStreamingCompiled(builtins.object):
         """
 
     def start(self) -> None:
-        """
+        r"""
         * @brief Start the pipeline execution.
         *
         * Use pull()/try_pull() to obtain data. Throws an exception if
@@ -1894,7 +1894,7 @@ class GStreamingCompiled(builtins.object):
         """
 
     def stop(self) -> None:
-        """
+        r"""
         * @brief Stop (abort) processing the pipeline.
         *
         * Note - it is not pause but a complete stop. Calling start()
@@ -1906,144 +1906,144 @@ class GStreamingCompiled(builtins.object):
 class GeneralizedHough(Algorithm):
     @overload
     def detect(self, image, positions=..., votes=...) -> tuple[positions, votes]:
-        """"""
+        r""""""
 
     @overload
     def detect(self, edges, dx, dy, positions=..., votes=...) -> tuple[positions, votes]:
-        """"""
+        r""""""
 
     def getCannyHighThresh(self) -> retval:
-        """"""
+        r""""""
 
     def getCannyLowThresh(self) -> retval:
-        """"""
+        r""""""
 
     def getDp(self) -> retval:
-        """"""
+        r""""""
 
     def getMaxBufferSize(self) -> retval:
-        """"""
+        r""""""
 
     def getMinDist(self) -> retval:
-        """"""
+        r""""""
 
     def setCannyHighThresh(self, cannyHighThresh) -> None:
-        """"""
+        r""""""
 
     def setCannyLowThresh(self, cannyLowThresh) -> None:
-        """"""
+        r""""""
 
     def setDp(self, dp) -> None:
-        """"""
+        r""""""
 
     def setMaxBufferSize(self, maxBufferSize) -> None:
-        """"""
+        r""""""
 
     def setMinDist(self, minDist) -> None:
-        """"""
+        r""""""
 
     @overload
     def setTemplate(self, templ, templCenter=...) -> None:
-        """"""
+        r""""""
 
     @overload
     def setTemplate(self, edges, dx, dy, templCenter=...) -> None:
-        """"""
+        r""""""
 
 class GeneralizedHoughBallard(GeneralizedHough):
     def getLevels(self) -> retval:
-        """"""
+        r""""""
 
     def getVotesThreshold(self) -> retval:
-        """"""
+        r""""""
 
     def setLevels(self, levels) -> None:
-        """"""
+        r""""""
 
     def setVotesThreshold(self, votesThreshold) -> None:
-        """"""
+        r""""""
 
 class GeneralizedHoughGuil(GeneralizedHough):
     def getAngleEpsilon(self) -> retval:
-        """"""
+        r""""""
 
     def getAngleStep(self) -> retval:
-        """"""
+        r""""""
 
     def getAngleThresh(self) -> retval:
-        """"""
+        r""""""
 
     def getLevels(self) -> retval:
-        """"""
+        r""""""
 
     def getMaxAngle(self) -> retval:
-        """"""
+        r""""""
 
     def getMaxScale(self) -> retval:
-        """"""
+        r""""""
 
     def getMinAngle(self) -> retval:
-        """"""
+        r""""""
 
     def getMinScale(self) -> retval:
-        """"""
+        r""""""
 
     def getPosThresh(self) -> retval:
-        """"""
+        r""""""
 
     def getScaleStep(self) -> retval:
-        """"""
+        r""""""
 
     def getScaleThresh(self) -> retval:
-        """"""
+        r""""""
 
     def getXi(self) -> retval:
-        """"""
+        r""""""
 
     def setAngleEpsilon(self, angleEpsilon) -> None:
-        """"""
+        r""""""
 
     def setAngleStep(self, angleStep) -> None:
-        """"""
+        r""""""
 
     def setAngleThresh(self, angleThresh) -> None:
-        """"""
+        r""""""
 
     def setLevels(self, levels) -> None:
-        """"""
+        r""""""
 
     def setMaxAngle(self, maxAngle) -> None:
-        """"""
+        r""""""
 
     def setMaxScale(self, maxScale) -> None:
-        """"""
+        r""""""
 
     def setMinAngle(self, minAngle) -> None:
-        """"""
+        r""""""
 
     def setMinScale(self, minScale) -> None:
-        """"""
+        r""""""
 
     def setPosThresh(self, posThresh) -> None:
-        """"""
+        r""""""
 
     def setScaleStep(self, scaleStep) -> None:
-        """"""
+        r""""""
 
     def setScaleThresh(self, scaleThresh) -> None:
-        """"""
+        r""""""
 
     def setXi(self, xi) -> None:
-        """"""
+        r""""""
 
 class HOGDescriptor(builtins.object):
     def checkDetectorSize(self) -> retval:
-        """
+        r"""
         @brief Checks if detector size equal to descriptor size.
         """
 
     def compute(self, img, winStride=..., padding=..., locations=...) -> descriptors:
-        """
+        r"""
         @brief Computes HOG descriptors of given image.
         @param img Matrix of the type CV_8U containing an image where HOG features will be calculated.
         @param descriptors Matrix of the type CV_32F
@@ -2053,7 +2053,7 @@ class HOGDescriptor(builtins.object):
         """
 
     def computeGradient(self, img, grad, angleOfs, paddingTL=..., paddingBR=...) -> tuple[grad, angleOfs]:
-        """
+        r"""
         @brief  Computes gradients and quantized gradient orientations.
         @param img Matrix contains the image to be computed
         @param grad Matrix of type CV_32FC2 contains computed gradients
@@ -2063,7 +2063,7 @@ class HOGDescriptor(builtins.object):
         """
 
     def detect(self, img, hitThreshold=..., winStride=..., padding=..., searchLocations=...) -> tuple[foundLocations, weights]:
-        """
+        r"""
         @brief Performs object detection without a multi-scale window.
         @param img Matrix of the type CV_8U or CV_8UC3 containing an image where objects are detected.
         @param foundLocations Vector of point where each point contains left-top corner point of detected object boundaries.
@@ -2075,7 +2075,7 @@ class HOGDescriptor(builtins.object):
         """
 
     def detectMultiScale(self, img, hitThreshold=..., winStride=..., padding=..., scale=..., groupThreshold=..., useMeanshiftGrouping=...) -> tuple[foundLocations, foundWeights]:
-        """
+        r"""
         @brief Detects objects of different sizes in the input image. The detected objects are returned as a list
         of rectangles.
         @param img Matrix of the type CV_8U or CV_8UC3 containing an image where objects are detected.
@@ -2090,61 +2090,61 @@ class HOGDescriptor(builtins.object):
         """
 
     def getDescriptorSize(self) -> retval:
-        """
+        r"""
         @brief Returns the number of coefficients required for the classification.
         """
 
     def getWinSigma(self) -> retval:
-        """
+        r"""
         @brief Returns winSigma value
         """
 
     def load(self, filename, objname=...) -> retval:
-        """
+        r"""
         @brief loads HOGDescriptor parameters and coefficients for the linear SVM classifier from a file
         @param filename Name of the file to read.
         @param objname The optional name of the node to read (if empty, the first top-level node will be used).
         """
 
     def save(self, filename, objname=...) -> None:
-        """
+        r"""
         @brief saves HOGDescriptor parameters and coefficients for the linear SVM classifier to a file
         @param filename File name
         @param objname Object name
         """
 
     def setSVMDetector(self, svmdetector) -> None:
-        """
+        r"""
         @brief Sets coefficients for the linear SVM classifier.
         @param svmdetector coefficients for the linear SVM classifier.
         """
 
     def getDaimlerPeopleDetector(self) -> retval:
-        """
+        r"""
         @brief Returns coefficients of the classifier trained for people detection (for 48x96 windows).
         """
 
     def getDefaultPeopleDetector(self) -> retval:
-        """
+        r"""
         @brief Returns coefficients of the classifier trained for people detection (for 64x128 windows).
         """
 
 class HausdorffDistanceExtractor(ShapeDistanceExtractor):
     def getDistanceFlag(self) -> retval:
-        """"""
+        r""""""
 
     def getRankProportion(self) -> retval:
-        """"""
+        r""""""
 
     def setDistanceFlag(self, distanceFlag) -> None:
-        """
+        r"""
         @brief Set the norm used to compute the Hausdorff value between two shapes. It can be L1 or L2 norm.
 
         @param distanceFlag Flag indicating which norm is used to compute the Hausdorff distance (NORM_L1, NORM_L2).
         """
 
     def setRankProportion(self, rankProportion) -> None:
-        """
+        r"""
         @brief This method sets the rank proportion (or fractional value) that establish the Kth ranked value of
         the partial Hausdorff distance. Experimentally had been shown that 0.6 is a good value to compare
         shapes.
@@ -2154,62 +2154,62 @@ class HausdorffDistanceExtractor(ShapeDistanceExtractor):
 
 class HistogramCostExtractor(Algorithm):
     def buildCostMatrix(self, descriptors1, descriptors2, costMatrix=...) -> costMatrix:
-        """"""
+        r""""""
 
     def getDefaultCost(self) -> retval:
-        """"""
+        r""""""
 
     def getNDummies(self) -> retval:
-        """"""
+        r""""""
 
     def setDefaultCost(self, defaultCost) -> None:
-        """"""
+        r""""""
 
     def setNDummies(self, nDummies) -> None:
-        """"""
+        r""""""
 
 class KAZE(Feature2D):
     def getDefaultName(self) -> retval:
-        """"""
+        r""""""
 
     def getDiffusivity(self) -> retval:
-        """"""
+        r""""""
 
     def getExtended(self) -> retval:
-        """"""
+        r""""""
 
     def getNOctaveLayers(self) -> retval:
-        """"""
+        r""""""
 
     def getNOctaves(self) -> retval:
-        """"""
+        r""""""
 
     def getThreshold(self) -> retval:
-        """"""
+        r""""""
 
     def getUpright(self) -> retval:
-        """"""
+        r""""""
 
     def setDiffusivity(self, diff) -> None:
-        """"""
+        r""""""
 
     def setExtended(self, extended) -> None:
-        """"""
+        r""""""
 
     def setNOctaveLayers(self, octaveLayers) -> None:
-        """"""
+        r""""""
 
     def setNOctaves(self, octaves) -> None:
-        """"""
+        r""""""
 
     def setThreshold(self, threshold) -> None:
-        """"""
+        r""""""
 
     def setUpright(self, upright) -> None:
-        """"""
+        r""""""
 
     def create(self, extended=..., upright=..., threshold=..., nOctaves=..., nOctaveLayers=..., diffusivity=...) -> retval:
-        """
+        r"""
         @brief The KAZE constructor
 
         @param extended Set to enable extraction of extended (128-byte) descriptor.
@@ -2222,14 +2222,14 @@ class KAZE(Feature2D):
 
 class KalmanFilter(builtins.object):
     def correct(self, measurement) -> retval:
-        """
+        r"""
         @brief Updates the predicted state from the measurement.
 
         @param measurement The measured system parameters
         """
 
     def predict(self, control=...) -> retval:
-        """
+        r"""
         @brief Computes a predicted state.
 
         @param control The optional input control
@@ -2238,7 +2238,7 @@ class KalmanFilter(builtins.object):
 class KeyPoint(builtins.object):
     @overload
     def convert(self, keypoints, keypointIndexes=...) -> points2f:
-        """
+        r"""
         This method converts vector of keypoints to vector of points or the reverse, where each keypoint is
         assigned the same size and the same orientation.
 
@@ -2249,7 +2249,7 @@ class KeyPoint(builtins.object):
 
     @overload
     def convert(self, points2f, size=..., response=..., octave=..., class_id=...) -> keypoints:
-        """
+        r"""
         @overload
         @param points2f Array of (x,y) coordinates of each keypoint
         @param keypoints Keypoints obtained from any feature detection algorithm like SIFT/SURF/ORB
@@ -2260,7 +2260,7 @@ class KeyPoint(builtins.object):
         """
 
     def overlap(self, kp1, kp2) -> retval:
-        """
+        r"""
         This method computes overlap for pair of keypoints. Overlap is the ratio between area of keypoint
         regions' intersection and area of keypoint regions' union (considering keypoint region as circle).
         If they don't overlap, we get zero. If they coincide at same location with same size, we get 1.
@@ -2270,7 +2270,7 @@ class KeyPoint(builtins.object):
 
 class LineSegmentDetector(Algorithm):
     def compareSegments(self, size, lines1, lines2, image=...) -> tuple[retval, image]:
-        """
+        r"""
         @brief Draws two groups of lines in blue and red, counting the non overlapping (mismatching) pixels.
 
         @param size The size of the image, where lines1 and lines2 were found.
@@ -2280,7 +2280,7 @@ class LineSegmentDetector(Algorithm):
         """
 
     def detect(self, image, lines=..., width=..., prec=..., nfa=...) -> tuple[lines, width, prec, nfa]:
-        """
+        r"""
         @brief Finds lines in the input image.
 
         This is the output of the default parameters of the algorithm on the above shown image.
@@ -2295,7 +2295,7 @@ class LineSegmentDetector(Algorithm):
         """
 
     def drawSegments(self, image, lines) -> image:
-        """
+        r"""
         @brief Draws the line segments on a given image.
         @param image The image, where the lines will be drawn. Should be bigger or equal to the image, where the lines were found.
         @param lines A vector of the lines that needed to be drawn.
@@ -2303,7 +2303,7 @@ class LineSegmentDetector(Algorithm):
 
 class MSER(Feature2D):
     def detectRegions(self, image) -> tuple[msers, bboxes]:
-        """
+        r"""
         @brief Detect %MSER regions
 
         @param image input image (8UC1, 8UC3 or 8UC4, must be greater or equal than 3x3)
@@ -2312,70 +2312,70 @@ class MSER(Feature2D):
         """
 
     def getAreaThreshold(self) -> retval:
-        """"""
+        r""""""
 
     def getDefaultName(self) -> retval:
-        """"""
+        r""""""
 
     def getDelta(self) -> retval:
-        """"""
+        r""""""
 
     def getEdgeBlurSize(self) -> retval:
-        """"""
+        r""""""
 
     def getMaxArea(self) -> retval:
-        """"""
+        r""""""
 
     def getMaxEvolution(self) -> retval:
-        """"""
+        r""""""
 
     def getMaxVariation(self) -> retval:
-        """"""
+        r""""""
 
     def getMinArea(self) -> retval:
-        """"""
+        r""""""
 
     def getMinDiversity(self) -> retval:
-        """"""
+        r""""""
 
     def getMinMargin(self) -> retval:
-        """"""
+        r""""""
 
     def getPass2Only(self) -> retval:
-        """"""
+        r""""""
 
     def setAreaThreshold(self, areaThreshold) -> None:
-        """"""
+        r""""""
 
     def setDelta(self, delta) -> None:
-        """"""
+        r""""""
 
     def setEdgeBlurSize(self, edge_blur_size) -> None:
-        """"""
+        r""""""
 
     def setMaxArea(self, maxArea) -> None:
-        """"""
+        r""""""
 
     def setMaxEvolution(self, maxEvolution) -> None:
-        """"""
+        r""""""
 
     def setMaxVariation(self, maxVariation) -> None:
-        """"""
+        r""""""
 
     def setMinArea(self, minArea) -> None:
-        """"""
+        r""""""
 
     def setMinDiversity(self, minDiversity) -> None:
-        """"""
+        r""""""
 
     def setMinMargin(self, min_margin) -> None:
-        """"""
+        r""""""
 
     def setPass2Only(self, f) -> None:
-        """"""
+        r""""""
 
     def create(self, delta=..., min_area=..., max_area=..., max_variation=..., min_diversity=..., max_evolution=..., area_threshold=..., min_margin=..., edge_blur_size=...) -> retval:
-        """
+        r"""
         @brief Full constructor for %MSER detector
 
         @param delta it compares \f$(size_{i}-size_{i-delta})/size_{i-delta}\f$
@@ -2394,15 +2394,15 @@ class Mat(npt.NDArray): ...
 class MergeDebevec(MergeExposures):
     @overload
     def process(self, src, times, response, dst=...) -> dst:
-        """"""
+        r""""""
 
     @overload
     def process(self, src, times, dst=...) -> dst:
-        """"""
+        r""""""
 
 class MergeExposures(Algorithm):
     def process(self, src, times, response, dst=...) -> dst:
-        """
+        r"""
         @brief Merges images.
 
         @param src vector of input images
@@ -2413,21 +2413,21 @@ class MergeExposures(Algorithm):
 
 class MergeMertens(MergeExposures):
     def getContrastWeight(self) -> retval:
-        """"""
+        r""""""
 
     def getExposureWeight(self) -> retval:
-        """"""
+        r""""""
 
     def getSaturationWeight(self) -> retval:
-        """"""
+        r""""""
 
     @overload
     def process(self, src, times, response, dst=...) -> dst:
-        """"""
+        r""""""
 
     @overload
     def process(self, src, dst=...) -> dst:
-        """
+        r"""
         @brief Short version of process, that doesn't take extra arguments.
 
         @param src vector of input images
@@ -2435,90 +2435,90 @@ class MergeMertens(MergeExposures):
         """
 
     def setContrastWeight(self, contrast_weiht) -> None:
-        """"""
+        r""""""
 
     def setExposureWeight(self, exposure_weight) -> None:
-        """"""
+        r""""""
 
     def setSaturationWeight(self, saturation_weight) -> None:
-        """"""
+        r""""""
 
 class MergeRobertson(MergeExposures):
     @overload
     def process(self, src, times, response, dst=...) -> dst:
-        """"""
+        r""""""
 
     @overload
     def process(self, src, times, dst=...) -> dst:
-        """"""
+        r""""""
 
 class NormHistogramCostExtractor(HistogramCostExtractor):
     def getNormFlag(self) -> retval:
-        """"""
+        r""""""
 
     def setNormFlag(self, flag) -> None:
-        """"""
+        r""""""
 
 class ORB(Feature2D):
     def getDefaultName(self) -> retval:
-        """"""
+        r""""""
 
     def getEdgeThreshold(self) -> retval:
-        """"""
+        r""""""
 
     def getFastThreshold(self) -> retval:
-        """"""
+        r""""""
 
     def getFirstLevel(self) -> retval:
-        """"""
+        r""""""
 
     def getMaxFeatures(self) -> retval:
-        """"""
+        r""""""
 
     def getNLevels(self) -> retval:
-        """"""
+        r""""""
 
     def getPatchSize(self) -> retval:
-        """"""
+        r""""""
 
     def getScaleFactor(self) -> retval:
-        """"""
+        r""""""
 
     def getScoreType(self) -> retval:
-        """"""
+        r""""""
 
     def getWTA_K(self) -> retval:
-        """"""
+        r""""""
 
     def setEdgeThreshold(self, edgeThreshold) -> None:
-        """"""
+        r""""""
 
     def setFastThreshold(self, fastThreshold) -> None:
-        """"""
+        r""""""
 
     def setFirstLevel(self, firstLevel) -> None:
-        """"""
+        r""""""
 
     def setMaxFeatures(self, maxFeatures) -> None:
-        """"""
+        r""""""
 
     def setNLevels(self, nlevels) -> None:
-        """"""
+        r""""""
 
     def setPatchSize(self, patchSize) -> None:
-        """"""
+        r""""""
 
     def setScaleFactor(self, scaleFactor) -> None:
-        """"""
+        r""""""
 
     def setScoreType(self, scoreType) -> None:
-        """"""
+        r""""""
 
     def setWTA_K(self, wta_k) -> None:
-        """"""
+        r""""""
 
     def create(self, nfeatures=..., scaleFactor=..., nlevels=..., edgeThreshold=..., firstLevel=..., WTA_K=..., scoreType=..., patchSize=..., fastThreshold=...) -> retval:
-        """
+        r"""
         @brief The ORB constructor
 
         @param nfeatures The maximum number of features to retain.
@@ -2534,7 +2534,7 @@ class ORB(Feature2D):
 
 class PyRotationWarper(builtins.object):
     def buildMaps(self, src_size, K, R, xmap=..., ymap=...) -> tuple[retval, xmap, ymap]:
-        """
+        r"""
         @brief Builds the projection maps according to the given camera data.
 
         @param src_size Source image size
@@ -2545,13 +2545,13 @@ class PyRotationWarper(builtins.object):
         """
 
     def getScale(self) -> retval:
-        """"""
+        r""""""
 
     def setScale(self, arg1) -> None:
-        """"""
+        r""""""
 
     def warp(self, src, K, R, interp_mode, border_mode, dst=...) -> tuple[retval, dst]:
-        """
+        r"""
         @brief Projects the image.
 
         @param src Source image
@@ -2563,7 +2563,7 @@ class PyRotationWarper(builtins.object):
         """
 
     def warpBackward(self, src, K, R, interp_mode, border_mode, dst_size, dst=...) -> dst:
-        """
+        r"""
         @brief Projects the image backward.
 
         @param src Projected image
@@ -2576,7 +2576,7 @@ class PyRotationWarper(builtins.object):
         """
 
     def warpPoint(self, pt, K, R) -> retval:
-        """
+        r"""
         @brief Projects the image point.
 
         @param pt Source point
@@ -2585,7 +2585,7 @@ class PyRotationWarper(builtins.object):
         """
 
     def warpPointBackward(self, pt, K, R) -> retval:
-        """
+        r"""
         @brief Projects the image point backward.
 
         @param pt Projected point
@@ -2594,7 +2594,7 @@ class PyRotationWarper(builtins.object):
         """
 
     def warpRoi(self, src_size, K, R) -> retval:
-        """
+        r"""
         @param src_size Source image bounding box
         @param K Camera intrinsic parameters
         @param R Camera rotation matrix @return Projected image minimum bounding box
@@ -2602,7 +2602,7 @@ class PyRotationWarper(builtins.object):
 
 class QRCodeDetector(builtins.object):
     def decode(self, img, points, straight_qrcode=...) -> tuple[retval, straight_qrcode]:
-        """
+        r"""
         @brief Decodes QR code in image once it's found by the detect() method.
 
         Returns UTF8-encoded output string or empty string if the code cannot be decoded.
@@ -2612,7 +2612,7 @@ class QRCodeDetector(builtins.object):
         """
 
     def decodeCurved(self, img, points, straight_qrcode=...) -> tuple[retval, straight_qrcode]:
-        """
+        r"""
         @brief Decodes QR code on a curved surface in image once it's found by the detect() method.
 
         Returns UTF8-encoded output string or empty string if the code cannot be decoded.
@@ -2622,7 +2622,7 @@ class QRCodeDetector(builtins.object):
         """
 
     def decodeMulti(self, img, points, straight_qrcode=...) -> tuple[retval, decoded_info, straight_qrcode]:
-        """
+        r"""
         @brief Decodes QR codes in image once it's found by the detect() method.
         @param img grayscale or color (BGR) image containing QR codes.
         @param decoded_info UTF8-encoded output vector of string or empty vector of string if the codes cannot be decoded.
@@ -2631,14 +2631,14 @@ class QRCodeDetector(builtins.object):
         """
 
     def detect(self, img, points=...) -> tuple[retval, points]:
-        """
+        r"""
         @brief Detects QR code in image and returns the quadrangle containing the code.
         @param img grayscale or color (BGR) image containing (or not) QR code.
         @param points Output vector of vertices of the minimum-area quadrangle containing the code.
         """
 
     def detectAndDecode(self, img, points=..., straight_qrcode=...) -> tuple[retval, points, straight_qrcode]:
-        """
+        r"""
         @brief Both detects and decodes QR code
 
         @param img grayscale or color (BGR) image containing QR code.
@@ -2647,7 +2647,7 @@ class QRCodeDetector(builtins.object):
         """
 
     def detectAndDecodeCurved(self, img, points=..., straight_qrcode=...) -> tuple[retval, points, straight_qrcode]:
-        """
+        r"""
         @brief Both detects and decodes QR code on a curved surface
 
         @param img grayscale or color (BGR) image containing QR code.
@@ -2656,7 +2656,7 @@ class QRCodeDetector(builtins.object):
         """
 
     def detectAndDecodeMulti(self, img, points=..., straight_qrcode=...) -> tuple[retval, decoded_info, points, straight_qrcode]:
-        """
+        r"""
         @brief Both detects and decodes QR codes
         @param img grayscale or color (BGR) image containing QR codes.
         @param decoded_info UTF8-encoded output vector of string or empty vector of string if the codes cannot be decoded.
@@ -2665,26 +2665,26 @@ class QRCodeDetector(builtins.object):
         """
 
     def detectMulti(self, img, points=...) -> tuple[retval, points]:
-        """
+        r"""
         @brief Detects QR codes in image and returns the vector of the quadrangles containing the codes.
         @param img grayscale or color (BGR) image containing (or not) QR codes.
         @param points Output vector of vector of vertices of the minimum-area quadrangle containing the codes.
         """
 
     def setEpsX(self, epsX) -> None:
-        """
+        r"""
         @brief sets the epsilon used during the horizontal scan of QR code stop marker detection.
         @param epsX Epsilon neighborhood, which allows you to determine the horizontal pattern of the scheme 1:1:3:1:1 according to QR code standard.
         """
 
     def setEpsY(self, epsY) -> None:
-        """
+        r"""
         @brief sets the epsilon used during the vertical scan of QR code stop marker detection.
         @param epsY Epsilon neighborhood, which allows you to determine the vertical pattern of the scheme 1:1:3:1:1 according to QR code standard.
         """
 
     def setUseAlignmentMarkers(self, useAlignmentMarkers) -> None:
-        """
+        r"""
         @brief use markers to improve the position of the corners of the QR code
         *
         * alignmentMarkers using by default
@@ -2692,21 +2692,21 @@ class QRCodeDetector(builtins.object):
 
 class QRCodeEncoder(builtins.object):
     def encode(self, encoded_info, qrcode=...) -> qrcode:
-        """
+        r"""
         @brief Generates QR code from input string.
         @param encoded_info Input string to encode.
         @param qrcode Generated QR code.
         """
 
     def encodeStructuredAppend(self, encoded_info, qrcodes=...) -> qrcodes:
-        """
+        r"""
         @brief Generates QR code from input string in Structured Append mode. The encoded message is splitting over a number of QR codes.
         @param encoded_info Input string to encode.
         @param qrcodes Vector of generated QR codes.
         """
 
     def create(self, parameters=...) -> retval:
-        """
+        r"""
         @brief Constructor
         @param parameters QR code encoder parameters QRCodeEncoder::Params
         """
@@ -2715,41 +2715,41 @@ QRCodeEncoder_Params = Params
 
 class SIFT(Feature2D):
     def getContrastThreshold(self) -> retval:
-        """"""
+        r""""""
 
     def getDefaultName(self) -> retval:
-        """"""
+        r""""""
 
     def getEdgeThreshold(self) -> retval:
-        """"""
+        r""""""
 
     def getNFeatures(self) -> retval:
-        """"""
+        r""""""
 
     def getNOctaveLayers(self) -> retval:
-        """"""
+        r""""""
 
     def getSigma(self) -> retval:
-        """"""
+        r""""""
 
     def setContrastThreshold(self, contrastThreshold) -> None:
-        """"""
+        r""""""
 
     def setEdgeThreshold(self, edgeThreshold) -> None:
-        """"""
+        r""""""
 
     def setNFeatures(self, maxFeatures) -> None:
-        """"""
+        r""""""
 
     def setNOctaveLayers(self, nOctaveLayers) -> None:
-        """"""
+        r""""""
 
     def setSigma(self, sigma) -> None:
-        """"""
+        r""""""
 
     @overload
     def create(self, nfeatures=..., nOctaveLayers=..., contrastThreshold=..., edgeThreshold=..., sigma=...) -> retval:
-        """
+        r"""
         @param nfeatures The number of best features to retain. The features are ranked by their scores (measured in SIFT algorithm as the local contrast)
         @param nOctaveLayers The number of layers in each octave. 3 is the value used in D. Lowe paper. The number of octaves is computed automatically from the image resolution.
         @param contrastThreshold The contrast threshold used to filter out weak features in semi-uniform (low-contrast) regions. The larger the threshold, the less features are produced by the detector.  @note The contrast threshold will be divided by nOctaveLayers when the filtering is applied. When nOctaveLayers is set to default and if you want to use the value used in D. Lowe paper, 0.03, set this argument to 0.09.
@@ -2759,7 +2759,7 @@ class SIFT(Feature2D):
 
     @overload
     def create(self, nfeatures, nOctaveLayers, contrastThreshold, edgeThreshold, sigma, descriptorType) -> retval:
-        """
+        r"""
         @brief Create SIFT with specified descriptorType.
         @param nfeatures The number of best features to retain. The features are ranked by their scores (measured in SIFT algorithm as the local contrast)
         @param nOctaveLayers The number of layers in each octave. 3 is the value used in D. Lowe paper. The number of octaves is computed automatically from the image resolution.
@@ -2771,46 +2771,46 @@ class SIFT(Feature2D):
 
 class ShapeContextDistanceExtractor(ShapeDistanceExtractor):
     def getAngularBins(self) -> retval:
-        """"""
+        r""""""
 
     def getBendingEnergyWeight(self) -> retval:
-        """"""
+        r""""""
 
     def getCostExtractor(self) -> retval:
-        """"""
+        r""""""
 
     def getImageAppearanceWeight(self) -> retval:
-        """"""
+        r""""""
 
     def getImages(self, image1=..., image2=...) -> tuple[image1, image2]:
-        """"""
+        r""""""
 
     def getInnerRadius(self) -> retval:
-        """"""
+        r""""""
 
     def getIterations(self) -> retval:
-        """"""
+        r""""""
 
     def getOuterRadius(self) -> retval:
-        """"""
+        r""""""
 
     def getRadialBins(self) -> retval:
-        """"""
+        r""""""
 
     def getRotationInvariant(self) -> retval:
-        """"""
+        r""""""
 
     def getShapeContextWeight(self) -> retval:
-        """"""
+        r""""""
 
     def getStdDev(self) -> retval:
-        """"""
+        r""""""
 
     def getTransformAlgorithm(self) -> retval:
-        """"""
+        r""""""
 
     def setAngularBins(self, nAngularBins) -> None:
-        """
+        r"""
         @brief Establish the number of angular bins for the Shape Context Descriptor used in the shape matching
         pipeline.
 
@@ -2818,7 +2818,7 @@ class ShapeContextDistanceExtractor(ShapeDistanceExtractor):
         """
 
     def setBendingEnergyWeight(self, bendingEnergyWeight) -> None:
-        """
+        r"""
         @brief Set the weight of the Bending Energy in the final value of the shape distance. The bending energy
         definition depends on what transformation is being used to align the shapes. The final value of the
         shape distance is a user-defined linear combination of the shape context distance, an image
@@ -2828,14 +2828,14 @@ class ShapeContextDistanceExtractor(ShapeDistanceExtractor):
         """
 
     def setCostExtractor(self, comparer) -> None:
-        """
+        r"""
         @brief Set the algorithm used for building the shape context descriptor cost matrix.
 
         @param comparer Smart pointer to a HistogramCostExtractor, an algorithm that defines the cost matrix between descriptors.
         """
 
     def setImageAppearanceWeight(self, imageAppearanceWeight) -> None:
-        """
+        r"""
         @brief Set the weight of the Image Appearance cost in the final value of the shape distance. The image
         appearance cost is defined as the sum of squared brightness differences in Gaussian windows around
         corresponding image points. The final value of the shape distance is a user-defined linear
@@ -2847,7 +2847,7 @@ class ShapeContextDistanceExtractor(ShapeDistanceExtractor):
         """
 
     def setImages(self, image1, image2) -> None:
-        """
+        r"""
         @brief Set the images that correspond to each shape. This images are used in the calculation of the Image
         Appearance cost.
 
@@ -2856,24 +2856,24 @@ class ShapeContextDistanceExtractor(ShapeDistanceExtractor):
         """
 
     def setInnerRadius(self, innerRadius) -> None:
-        """
+        r"""
         @brief Set the inner radius of the shape context descriptor.
 
         @param innerRadius The value of the inner radius.
         """
 
     def setIterations(self, iterations) -> None:
-        """"""
+        r""""""
 
     def setOuterRadius(self, outerRadius) -> None:
-        """
+        r"""
         @brief Set the outer radius of the shape context descriptor.
 
         @param outerRadius The value of the outer radius.
         """
 
     def setRadialBins(self, nRadialBins) -> None:
-        """
+        r"""
         @brief Establish the number of radial bins for the Shape Context Descriptor used in the shape matching
         pipeline.
 
@@ -2881,10 +2881,10 @@ class ShapeContextDistanceExtractor(ShapeDistanceExtractor):
         """
 
     def setRotationInvariant(self, rotationInvariant) -> None:
-        """"""
+        r""""""
 
     def setShapeContextWeight(self, shapeContextWeight) -> None:
-        """
+        r"""
         @brief Set the weight of the shape context distance in the final value of the shape distance. The shape
         context distance between two shapes is defined as the symmetric sum of shape context matching costs
         over best matching points. The final value of the shape distance is a user-defined linear
@@ -2894,14 +2894,14 @@ class ShapeContextDistanceExtractor(ShapeDistanceExtractor):
         """
 
     def setStdDev(self, sigma) -> None:
-        """
+        r"""
         @brief Set the value of the standard deviation for the Gaussian window for the image appearance cost.
 
         @param sigma Standard Deviation.
         """
 
     def setTransformAlgorithm(self, transformer) -> None:
-        """
+        r"""
         @brief Set the algorithm used for aligning the shapes.
 
         @param transformer Smart pointer to a ShapeTransformer, an algorithm that defines the aligning transformation.
@@ -2909,7 +2909,7 @@ class ShapeContextDistanceExtractor(ShapeDistanceExtractor):
 
 class ShapeDistanceExtractor(Algorithm):
     def computeDistance(self, contour1, contour2) -> retval:
-        """
+        r"""
         @brief Compute the shape distance between two shapes defined by its contours.
 
         @param contour1 Contour defining first shape.
@@ -2918,7 +2918,7 @@ class ShapeDistanceExtractor(Algorithm):
 
 class ShapeTransformer(Algorithm):
     def applyTransformation(self, input, output=...) -> tuple[retval, output]:
-        """
+        r"""
         @brief Apply a transformation, given a pre-estimated transformation parameters.
 
         @param input Contour (set of points) to apply the transformation.
@@ -2926,7 +2926,7 @@ class ShapeTransformer(Algorithm):
         """
 
     def estimateTransformation(self, transformingShape, targetShape, matches) -> None:
-        """
+        r"""
         @brief Estimate the transformation parameters of the current transformer algorithm, based on point matches.
 
         @param transformingShape Contour defining first shape.
@@ -2935,7 +2935,7 @@ class ShapeTransformer(Algorithm):
         """
 
     def warpImage(self, transformingImage, output=..., flags=..., borderMode=..., borderValue=...) -> output:
-        """
+        r"""
         @brief Apply a transformation, given a pre-estimated transformation parameters, to an Image.
 
         @param transformingImage Input image.
@@ -2947,25 +2947,25 @@ class ShapeTransformer(Algorithm):
 
 class SimpleBlobDetector(Feature2D):
     def getBlobContours(self) -> retval:
-        """"""
+        r""""""
 
     def getDefaultName(self) -> retval:
-        """"""
+        r""""""
 
     def getParams(self) -> retval:
-        """"""
+        r""""""
 
     def setParams(self, params) -> None:
-        """"""
+        r""""""
 
     def create(self, parameters=...) -> retval:
-        """"""
+        r""""""
 
 SimpleBlobDetector_Params = Params
 
 class SparseOpticalFlow(Algorithm):
     def calc(self, prevImg, nextImg, prevPts, nextPts, status=..., err=...) -> tuple[nextPts, status, err]:
-        """
+        r"""
         @brief Calculates a sparse optical flow.
 
         @param prevImg First input image.
@@ -2978,89 +2978,89 @@ class SparseOpticalFlow(Algorithm):
 
 class SparsePyrLKOpticalFlow(SparseOpticalFlow):
     def getFlags(self) -> retval:
-        """"""
+        r""""""
 
     def getMaxLevel(self) -> retval:
-        """"""
+        r""""""
 
     def getMinEigThreshold(self) -> retval:
-        """"""
+        r""""""
 
     def getTermCriteria(self) -> retval:
-        """"""
+        r""""""
 
     def getWinSize(self) -> retval:
-        """"""
+        r""""""
 
     def setFlags(self, flags) -> None:
-        """"""
+        r""""""
 
     def setMaxLevel(self, maxLevel) -> None:
-        """"""
+        r""""""
 
     def setMinEigThreshold(self, minEigThreshold) -> None:
-        """"""
+        r""""""
 
     def setTermCriteria(self, crit) -> None:
-        """"""
+        r""""""
 
     def setWinSize(self, winSize) -> None:
-        """"""
+        r""""""
 
     def create(self, winSize=..., maxLevel=..., crit=..., flags=..., minEigThreshold=...) -> retval:
-        """"""
+        r""""""
 
 class StereoBM(StereoMatcher):
     def getPreFilterCap(self) -> retval:
-        """"""
+        r""""""
 
     def getPreFilterSize(self) -> retval:
-        """"""
+        r""""""
 
     def getPreFilterType(self) -> retval:
-        """"""
+        r""""""
 
     def getROI1(self) -> retval:
-        """"""
+        r""""""
 
     def getROI2(self) -> retval:
-        """"""
+        r""""""
 
     def getSmallerBlockSize(self) -> retval:
-        """"""
+        r""""""
 
     def getTextureThreshold(self) -> retval:
-        """"""
+        r""""""
 
     def getUniquenessRatio(self) -> retval:
-        """"""
+        r""""""
 
     def setPreFilterCap(self, preFilterCap) -> None:
-        """"""
+        r""""""
 
     def setPreFilterSize(self, preFilterSize) -> None:
-        """"""
+        r""""""
 
     def setPreFilterType(self, preFilterType) -> None:
-        """"""
+        r""""""
 
     def setROI1(self, roi1) -> None:
-        """"""
+        r""""""
 
     def setROI2(self, roi2) -> None:
-        """"""
+        r""""""
 
     def setSmallerBlockSize(self, blockSize) -> None:
-        """"""
+        r""""""
 
     def setTextureThreshold(self, textureThreshold) -> None:
-        """"""
+        r""""""
 
     def setUniquenessRatio(self, uniquenessRatio) -> None:
-        """"""
+        r""""""
 
     def create(self, numDisparities=..., blockSize=...) -> retval:
-        """
+        r"""
         @brief Creates StereoBM object
 
         @param numDisparities the disparity search range. For each pixel algorithm will find the best disparity from 0 (default minimum disparity) to numDisparities. The search range can then be shifted by changing the minimum disparity.
@@ -3069,7 +3069,7 @@ class StereoBM(StereoMatcher):
 
 class StereoMatcher(Algorithm):
     def compute(self, left, right, disparity=...) -> disparity:
-        """
+        r"""
         @brief Computes disparity map for the specified stereo pair
 
         @param left Left 8-bit single-channel image.
@@ -3078,74 +3078,74 @@ class StereoMatcher(Algorithm):
         """
 
     def getBlockSize(self) -> retval:
-        """"""
+        r""""""
 
     def getDisp12MaxDiff(self) -> retval:
-        """"""
+        r""""""
 
     def getMinDisparity(self) -> retval:
-        """"""
+        r""""""
 
     def getNumDisparities(self) -> retval:
-        """"""
+        r""""""
 
     def getSpeckleRange(self) -> retval:
-        """"""
+        r""""""
 
     def getSpeckleWindowSize(self) -> retval:
-        """"""
+        r""""""
 
     def setBlockSize(self, blockSize) -> None:
-        """"""
+        r""""""
 
     def setDisp12MaxDiff(self, disp12MaxDiff) -> None:
-        """"""
+        r""""""
 
     def setMinDisparity(self, minDisparity) -> None:
-        """"""
+        r""""""
 
     def setNumDisparities(self, numDisparities) -> None:
-        """"""
+        r""""""
 
     def setSpeckleRange(self, speckleRange) -> None:
-        """"""
+        r""""""
 
     def setSpeckleWindowSize(self, speckleWindowSize) -> None:
-        """"""
+        r""""""
 
 class StereoSGBM(StereoMatcher):
     def getMode(self) -> retval:
-        """"""
+        r""""""
 
     def getP1(self) -> retval:
-        """"""
+        r""""""
 
     def getP2(self) -> retval:
-        """"""
+        r""""""
 
     def getPreFilterCap(self) -> retval:
-        """"""
+        r""""""
 
     def getUniquenessRatio(self) -> retval:
-        """"""
+        r""""""
 
     def setMode(self, mode) -> None:
-        """"""
+        r""""""
 
     def setP1(self, P1) -> None:
-        """"""
+        r""""""
 
     def setP2(self, P2) -> None:
-        """"""
+        r""""""
 
     def setPreFilterCap(self, preFilterCap) -> None:
-        """"""
+        r""""""
 
     def setUniquenessRatio(self, uniquenessRatio) -> None:
-        """"""
+        r""""""
 
     def create(self, minDisparity=..., numDisparities=..., blockSize=..., P1=..., P2=..., disp12MaxDiff=..., preFilterCap=..., uniquenessRatio=..., speckleWindowSize=..., speckleRange=..., mode=...) -> retval:
-        """
+        r"""
         @brief Creates StereoSGBM object
 
         @param minDisparity Minimum possible disparity value. Normally, it is zero but sometimes rectification algorithms can shift images, so this parameter needs to be adjusted accordingly.
@@ -3165,13 +3165,13 @@ class Stitcher(builtins.object):
     @overload
     @overload
     def composePanorama(self, pano=...) -> tuple[retval, pano]:
-        """
+        r"""
         @overload
         """
 
     @overload
     def composePanorama(self, images, pano=...) -> tuple[retval, pano]:
-        """
+        r"""
         @brief These functions try to compose the given images (or images stored internally from the other function
         calls) into the final pano under the assumption that the image transformations were estimated
         before.
@@ -3184,10 +3184,10 @@ class Stitcher(builtins.object):
         """
 
     def compositingResol(self) -> retval:
-        """"""
+        r""""""
 
     def estimateTransform(self, images, masks=...) -> retval:
-        """
+        r"""
         @brief These functions try to match the given images and to estimate rotations of each camera.
 
         @note Use the functions only if you're aware of the stitching pipeline, otherwise use
@@ -3198,44 +3198,44 @@ class Stitcher(builtins.object):
         """
 
     def interpolationFlags(self) -> retval:
-        """"""
+        r""""""
 
     def panoConfidenceThresh(self) -> retval:
-        """"""
+        r""""""
 
     def registrationResol(self) -> retval:
-        """"""
+        r""""""
 
     def seamEstimationResol(self) -> retval:
-        """"""
+        r""""""
 
     def setCompositingResol(self, resol_mpx) -> None:
-        """"""
+        r""""""
 
     def setInterpolationFlags(self, interp_flags) -> None:
-        """"""
+        r""""""
 
     def setPanoConfidenceThresh(self, conf_thresh) -> None:
-        """"""
+        r""""""
 
     def setRegistrationResol(self, resol_mpx) -> None:
-        """"""
+        r""""""
 
     def setSeamEstimationResol(self, resol_mpx) -> None:
-        """"""
+        r""""""
 
     def setWaveCorrection(self, flag) -> None:
-        """"""
+        r""""""
 
     @overload
     def stitch(self, images, pano=...) -> tuple[retval, pano]:
-        """
+        r"""
         @overload
         """
 
     @overload
     def stitch(self, images, masks, pano=...) -> tuple[retval, pano]:
-        """
+        r"""
         @brief These functions try to stitch the given images.
 
         @param images Input images.
@@ -3244,13 +3244,13 @@ class Stitcher(builtins.object):
         """
 
     def waveCorrection(self) -> retval:
-        """"""
+        r""""""
 
     def workScale(self) -> retval:
-        """"""
+        r""""""
 
     def create(self, mode=...) -> retval:
-        """
+        r"""
         @brief Creates a Stitcher configured in one of the stitching modes.
 
         @param mode Scenario for stitcher operation. This is usually determined by source of images to stitch and their transformation. Default parameters will be chosen for operation in given scenario. @return Stitcher class instance.
@@ -3258,7 +3258,7 @@ class Stitcher(builtins.object):
 
 class Subdiv2D(builtins.object):
     def edgeDst(self, edge) -> tuple[retval, dstpt]:
-        """
+        r"""
         @brief Returns the edge destination.
 
         @param edge Subdivision edge ID.
@@ -3266,7 +3266,7 @@ class Subdiv2D(builtins.object):
         """
 
     def edgeOrg(self, edge) -> tuple[retval, orgpt]:
-        """
+        r"""
         @brief Returns the edge origin.
 
         @param edge Subdivision edge ID.
@@ -3274,7 +3274,7 @@ class Subdiv2D(builtins.object):
         """
 
     def findNearest(self, pt) -> tuple[retval, nearestPt]:
-        """
+        r"""
         @brief Finds the subdivision vertex closest to the given point.
 
         @param pt Input point.
@@ -3282,7 +3282,7 @@ class Subdiv2D(builtins.object):
         """
 
     def getEdge(self, edge, nextEdgeType) -> retval:
-        """
+        r"""
         @brief Returns one of the edges related to the given edge.
 
         @param edge Subdivision edge ID.
@@ -3290,28 +3290,28 @@ class Subdiv2D(builtins.object):
         """
 
     def getEdgeList(self) -> edgeList:
-        """
+        r"""
         @brief Returns a list of all edges.
 
         @param edgeList Output vector.  The function gives each edge as a 4 numbers vector, where each two are one of the edge vertices. i.e. org_x = v[0], org_y = v[1], dst_x = v[2], dst_y = v[3].
         """
 
     def getLeadingEdgeList(self) -> leadingEdgeList:
-        """
+        r"""
         @brief Returns a list of the leading edge ID connected to each triangle.
 
         @param leadingEdgeList Output vector.  The function gives one edge ID for each triangle.
         """
 
     def getTriangleList(self) -> triangleList:
-        """
+        r"""
         @brief Returns a list of all triangles.
 
         @param triangleList Output vector.  The function gives each triangle as a 6 numbers vector, where each two are one of the triangle vertices. i.e. p1_x = v[0], p1_y = v[1], p2_x = v[2], p2_y = v[3], p3_x = v[4], p3_y = v[5].
         """
 
     def getVertex(self, vertex) -> tuple[retval, firstEdge]:
-        """
+        r"""
         @brief Returns vertex location from vertex ID.
 
         @param vertex vertex ID.
@@ -3319,7 +3319,7 @@ class Subdiv2D(builtins.object):
         """
 
     def getVoronoiFacetList(self, idx) -> tuple[facetList, facetCenters]:
-        """
+        r"""
         @brief Returns a list of all Voronoi facets.
 
         @param idx Vector of vertices IDs to consider. For all vertices you can pass empty vector.
@@ -3328,7 +3328,7 @@ class Subdiv2D(builtins.object):
         """
 
     def initDelaunay(self, rect) -> None:
-        """
+        r"""
         @brief Creates a new empty Delaunay subdivision
 
         @param rect Rectangle that includes all of the 2D points that are to be added to the subdivision.
@@ -3336,7 +3336,7 @@ class Subdiv2D(builtins.object):
 
     @overload
     def insert(self, pt) -> retval:
-        """
+        r"""
         @brief Insert a single point into a Delaunay triangulation.
 
         @param pt Point to insert.  The function inserts a single point into a subdivision and modifies the subdivision topology appropriately. If a point with the same coordinates exists already, no new point is added. @returns the ID of the point.  @note If the point is outside of the triangulation specified rect a runtime error is raised.
@@ -3344,14 +3344,14 @@ class Subdiv2D(builtins.object):
 
     @overload
     def insert(self, ptvec) -> None:
-        """
+        r"""
         @brief Insert multiple points into a Delaunay triangulation.
 
         @param ptvec Points to insert.  The function inserts a vector of points into a subdivision and modifies the subdivision topology appropriately.
         """
 
     def locate(self, pt) -> tuple[retval, edge, vertex]:
-        """
+        r"""
         @brief Returns the location of a point within a Delaunay triangulation.
 
         @param pt Point to locate.
@@ -3360,14 +3360,14 @@ class Subdiv2D(builtins.object):
         """
 
     def nextEdge(self, edge) -> retval:
-        """
+        r"""
         @brief Returns next edge around the edge origin.
 
         @param edge Subdivision edge ID.  @returns an integer which is next edge ID around the edge origin: eOnext on the picture above if e is the input edge).
         """
 
     def rotateEdge(self, edge, rotate) -> retval:
-        """
+        r"""
         @brief Returns another edge of the same quad-edge.
 
         @param edge Subdivision edge ID.
@@ -3375,14 +3375,14 @@ class Subdiv2D(builtins.object):
         """
 
     def symEdge(self, edge) -> retval:
-        """"""
+        r""""""
 
 class ThinPlateSplineShapeTransformer(ShapeTransformer):
     def getRegularizationParameter(self) -> retval:
-        """"""
+        r""""""
 
     def setRegularizationParameter(self, beta) -> None:
-        """
+        r"""
         @brief Set the regularization parameter for relaxing the exact interpolation requirements of the TPS
         algorithm.
 
@@ -3391,44 +3391,44 @@ class ThinPlateSplineShapeTransformer(ShapeTransformer):
 
 class TickMeter(builtins.object):
     def getAvgTimeMilli(self) -> retval:
-        """"""
+        r""""""
 
     def getAvgTimeSec(self) -> retval:
-        """"""
+        r""""""
 
     def getCounter(self) -> retval:
-        """"""
+        r""""""
 
     def getFPS(self) -> retval:
-        """"""
+        r""""""
 
     def getTimeMicro(self) -> retval:
-        """"""
+        r""""""
 
     def getTimeMilli(self) -> retval:
-        """"""
+        r""""""
 
     def getTimeSec(self) -> retval:
-        """"""
+        r""""""
 
     def getTimeTicks(self) -> retval:
-        """"""
+        r""""""
 
     def reset(self) -> None:
-        """"""
+        r""""""
 
     def start(self) -> None:
-        """"""
+        r""""""
 
     def stop(self) -> None:
-        """"""
+        r""""""
 
 class Tonemap(Algorithm):
     def getGamma(self) -> retval:
-        """"""
+        r""""""
 
     def process(self, src, dst=...) -> dst:
-        """
+        r"""
         @brief Tonemaps image
 
         @param src source image - CV_32FC3 Mat (float 32 bits 3 channels)
@@ -3436,63 +3436,63 @@ class Tonemap(Algorithm):
         """
 
     def setGamma(self, gamma) -> None:
-        """"""
+        r""""""
 
 class TonemapDrago(Tonemap):
     def getBias(self) -> retval:
-        """"""
+        r""""""
 
     def getSaturation(self) -> retval:
-        """"""
+        r""""""
 
     def setBias(self, bias) -> None:
-        """"""
+        r""""""
 
     def setSaturation(self, saturation) -> None:
-        """"""
+        r""""""
 
 class TonemapMantiuk(Tonemap):
     def getSaturation(self) -> retval:
-        """"""
+        r""""""
 
     def getScale(self) -> retval:
-        """"""
+        r""""""
 
     def setSaturation(self, saturation) -> None:
-        """"""
+        r""""""
 
     def setScale(self, scale) -> None:
-        """"""
+        r""""""
 
 class TonemapReinhard(Tonemap):
     def getColorAdaptation(self) -> retval:
-        """"""
+        r""""""
 
     def getIntensity(self) -> retval:
-        """"""
+        r""""""
 
     def getLightAdaptation(self) -> retval:
-        """"""
+        r""""""
 
     def setColorAdaptation(self, color_adapt) -> None:
-        """"""
+        r""""""
 
     def setIntensity(self, intensity) -> None:
-        """"""
+        r""""""
 
     def setLightAdaptation(self, light_adapt) -> None:
-        """"""
+        r""""""
 
 class Tracker(builtins.object):
     def init(self, image, boundingBox) -> None:
-        """
+        r"""
         @brief Initialize the tracker with a known bounding box that surrounded the target
         @param image The initial frame
         @param boundingBox The initial bounding box
         """
 
     def update(self, image) -> tuple[retval, boundingBox]:
-        """
+        r"""
         @brief Update the tracker, find the new most likely bounding box for the target
         @param image The current frame
         @param boundingBox The bounding box that represent the new target location, if true was returned, not modified otherwise  @return True means that target was located and false means that tracker cannot locate target in current frame. Note, that latter *does not* imply that tracker has failed, maybe target is indeed missing from the frame (say, out of sight)
@@ -3500,10 +3500,10 @@ class Tracker(builtins.object):
 
 class TrackerCSRT(Tracker):
     def setInitialMask(self, mask) -> None:
-        """"""
+        r""""""
 
     def create(self, parameters=...) -> retval:
-        """
+        r"""
         @brief Create CSRT tracker instance
         @param parameters CSRT parameters TrackerCSRT::Params
         """
@@ -3512,12 +3512,12 @@ TrackerCSRT_Params = Params
 
 class TrackerDaSiamRPN(Tracker):
     def getTrackingScore(self) -> retval:
-        """
+        r"""
         @brief Return tracking score
         """
 
     def create(self, parameters=...) -> retval:
-        """
+        r"""
         @brief Constructor
         @param parameters DaSiamRPN parameters TrackerDaSiamRPN::Params
         """
@@ -3526,7 +3526,7 @@ TrackerDaSiamRPN_Params = Params
 
 class TrackerGOTURN(Tracker):
     def create(self, parameters=...) -> retval:
-        """
+        r"""
         @brief Constructor
         @param parameters GOTURN parameters TrackerGOTURN::Params
         """
@@ -3535,7 +3535,7 @@ TrackerGOTURN_Params = Params
 
 class TrackerKCF(Tracker):
     def create(self, parameters=...) -> retval:
-        """
+        r"""
         @brief Create KCF tracker instance
         @param parameters KCF parameters TrackerKCF::Params
         """
@@ -3544,7 +3544,7 @@ TrackerKCF_Params = Params
 
 class TrackerMIL(Tracker):
     def create(self, parameters=...) -> retval:
-        """
+        r"""
         @brief Create MIL tracker instance
         *  @param parameters MIL parameters TrackerMIL::Params
         """
@@ -3553,12 +3553,12 @@ TrackerMIL_Params = Params
 
 class TrackerNano(Tracker):
     def getTrackingScore(self) -> retval:
-        """
+        r"""
         @brief Return tracking score
         """
 
     def create(self, parameters=...) -> retval:
-        """
+        r"""
         @brief Constructor
         @param parameters NanoTrack parameters TrackerNano::Params
         """
@@ -3567,124 +3567,124 @@ TrackerNano_Params = Params
 
 class UMat(builtins.object):
     def get(self) -> retval:
-        """"""
+        r""""""
 
     def handle(self, accessFlags) -> retval:
-        """"""
+        r""""""
 
     def isContinuous(self) -> retval:
-        """"""
+        r""""""
 
     def isSubmatrix(self) -> retval:
-        """"""
+        r""""""
 
     def context(self) -> retval:
-        """"""
+        r""""""
 
     def queue(self) -> retval:
-        """"""
+        r""""""
 
 class UsacParams(builtins.object): ...
 
 class VariationalRefinement(DenseOpticalFlow):
     def calcUV(self, I0, I1, flow_u, flow_v) -> tuple[flow_u, flow_v]:
-        """
+        r"""
         @brief @ref calc function overload to handle separate horizontal (u) and vertical (v) flow components
         (to avoid extra splits/merges)
         """
 
     def getAlpha(self) -> retval:
-        """
+        r"""
         @brief Weight of the smoothness term
         @see setAlpha
         """
 
     def getDelta(self) -> retval:
-        """
+        r"""
         @brief Weight of the color constancy term
         @see setDelta
         """
 
     def getFixedPointIterations(self) -> retval:
-        """
+        r"""
         @brief Number of outer (fixed-point) iterations in the minimization procedure.
         @see setFixedPointIterations
         """
 
     def getGamma(self) -> retval:
-        """
+        r"""
         @brief Weight of the gradient constancy term
         @see setGamma
         """
 
     def getOmega(self) -> retval:
-        """
+        r"""
         @brief Relaxation factor in SOR
         @see setOmega
         """
 
     def getSorIterations(self) -> retval:
-        """
+        r"""
         @brief Number of inner successive over-relaxation (SOR) iterations
         in the minimization procedure to solve the respective linear system.
         @see setSorIterations
         """
 
     def setAlpha(self, val) -> None:
-        """
+        r"""
         @copybrief getAlpha @see getAlpha
         """
 
     def setDelta(self, val) -> None:
-        """
+        r"""
         @copybrief getDelta @see getDelta
         """
 
     def setFixedPointIterations(self, val) -> None:
-        """
+        r"""
         @copybrief getFixedPointIterations @see getFixedPointIterations
         """
 
     def setGamma(self, val) -> None:
-        """
+        r"""
         @copybrief getGamma @see getGamma
         """
 
     def setOmega(self, val) -> None:
-        """
+        r"""
         @copybrief getOmega @see getOmega
         """
 
     def setSorIterations(self, val) -> None:
-        """
+        r"""
         @copybrief getSorIterations @see getSorIterations
         """
 
     def create(self) -> retval:
-        """
+        r"""
         @brief Creates an instance of VariationalRefinement
         """
 
 class VideoCapture(builtins.object):
     def get(self, propId) -> retval:
-        """
+        r"""
         @brief Returns the specified VideoCapture property
 
         @param propId Property identifier from cv::VideoCaptureProperties (eg. cv::CAP_PROP_POS_MSEC, cv::CAP_PROP_POS_FRAMES, ...) or one from @ref videoio_flags_others @return Value for the specified property. Value 0 is returned when querying a property that is not supported by the backend used by the VideoCapture instance.  @note Reading / writing properties involves many layers. Some unexpected result might happens along this chain. @code{.txt} VideoCapture -> API Backend -> Operating System -> Device Driver -> Device Hardware @endcode The returned value might be different from what really used by the device or it could be encoded using device dependent rules (eg. steps or percentage). Effective behaviour depends from device driver and API Backend
         """
 
     def getBackendName(self) -> retval:
-        """
+        r"""
         @brief Returns used backend API name
 
         @note Stream should be opened.
         """
 
     def getExceptionMode(self) -> retval:
-        """"""
+        r""""""
 
     def grab(self) -> retval:
-        """
+        r"""
         @brief Grabs the next frame from video file or capturing device.
 
         @return `true` (non-zero) in the case of success.
@@ -3706,7 +3706,7 @@ class VideoCapture(builtins.object):
         """
 
     def isOpened(self) -> retval:
-        """
+        r"""
         @brief Returns true if video capturing has been initialized already.
 
         If the previous call to VideoCapture constructor or VideoCapture::open() succeeded, the method returns
@@ -3715,7 +3715,7 @@ class VideoCapture(builtins.object):
 
     @overload
     def open(self, filename, apiPreference=...) -> retval:
-        """
+        r"""
         @brief  Opens a video file or a capturing device or an IP video stream for video capturing.
 
         @overload
@@ -3728,7 +3728,7 @@ class VideoCapture(builtins.object):
 
     @overload
     def open(self, filename, apiPreference, params) -> retval:
-        """
+        r"""
         @brief  Opens a video file or a capturing device or an IP video stream for video capturing with API Preference and parameters
 
         @overload
@@ -3743,7 +3743,7 @@ class VideoCapture(builtins.object):
 
     @overload
     def open(self, index, apiPreference=...) -> retval:
-        """
+        r"""
         @brief  Opens a camera for video capturing
 
         @overload
@@ -3756,7 +3756,7 @@ class VideoCapture(builtins.object):
 
     @overload
     def open(self, index, apiPreference, params) -> retval:
-        """
+        r"""
         @brief  Opens a camera for video capturing with API Preference and parameters
 
         @overload
@@ -3770,14 +3770,14 @@ class VideoCapture(builtins.object):
         """
 
     def read(self, image=...) -> tuple[retval, image]:
-        """
+        r"""
         @brief Grabs, decodes and returns the next video frame.
 
         @param [out] image the video frame is returned here. If no frames has been grabbed the image will be empty. @return `false` if no frames has been grabbed  The method/function combines VideoCapture::grab() and VideoCapture::retrieve() in one call. This is the most convenient method for reading video files or capturing data from decode and returns the just grabbed frame. If no frames has been grabbed (camera has been disconnected, or there are no more frames in video file), the method returns false and the function returns empty image (with %cv::Mat, test it with Mat::empty()).  @note In @ref videoio_c "C API", functions cvRetrieveFrame() and cv.RetrieveFrame() return image stored inside the video capturing structure. It is not allowed to modify or release the image! You can copy the frame using cvCloneImage and then do whatever you want with the copy.
         """
 
     def release(self) -> None:
-        """
+        r"""
         @brief Closes video file or capturing device.
 
         The method is automatically called by subsequent VideoCapture::open and by VideoCapture
@@ -3787,7 +3787,7 @@ class VideoCapture(builtins.object):
         """
 
     def retrieve(self, image=..., flag=...) -> tuple[retval, image]:
-        """
+        r"""
         @brief Decodes and returns the grabbed video frame.
 
         @param [out] image the video frame is returned here. If no frames has been grabbed the image will be empty.
@@ -3795,7 +3795,7 @@ class VideoCapture(builtins.object):
         """
 
     def set(self, propId, value) -> retval:
-        """
+        r"""
         @brief Sets a property in the VideoCapture.
 
         @param propId Property identifier from cv::VideoCaptureProperties (eg. cv::CAP_PROP_POS_MSEC, cv::CAP_PROP_POS_FRAMES, ...) or one from @ref videoio_flags_others
@@ -3803,14 +3803,14 @@ class VideoCapture(builtins.object):
         """
 
     def setExceptionMode(self, enable) -> None:
-        """
+        r"""
         Switches exceptions mode
         *
         * methods raise exceptions if not successful instead of returning an error code
         """
 
     def waitAny(self, streams, timeoutNs=...) -> tuple[retval, readyIndex]:
-        """
+        r"""
         @brief Wait for ready frames from VideoCapture.
 
         @param streams input video streams
@@ -3820,27 +3820,27 @@ class VideoCapture(builtins.object):
 
 class VideoWriter(builtins.object):
     def get(self, propId) -> retval:
-        """
+        r"""
         @brief Returns the specified VideoWriter property
 
         @param propId Property identifier from cv::VideoWriterProperties (eg. cv::VIDEOWRITER_PROP_QUALITY) or one of @ref videoio_flags_others  @return Value for the specified property. Value 0 is returned when querying a property that is not supported by the backend used by the VideoWriter instance.
         """
 
     def getBackendName(self) -> retval:
-        """
+        r"""
         @brief Returns used backend API name
 
         @note Stream should be opened.
         """
 
     def isOpened(self) -> retval:
-        """
+        r"""
         @brief Returns true if video writer has been successfully initialized.
         """
 
     @overload
     def open(self, filename, fourcc, fps, frameSize, isColor=...) -> retval:
-        """
+        r"""
         @brief Initializes or reinitializes video writer.
 
         The method opens video writer. Parameters are the same as in the constructor
@@ -3852,24 +3852,24 @@ class VideoWriter(builtins.object):
 
     @overload
     def open(self, filename, apiPreference, fourcc, fps, frameSize, isColor=...) -> retval:
-        """
+        r"""
         @overload
         """
 
     @overload
     def open(self, filename, fourcc, fps, frameSize, params) -> retval:
-        """
+        r"""
         @overload
         """
 
     @overload
     def open(self, filename, apiPreference, fourcc, fps, frameSize, params) -> retval:
-        """
+        r"""
         @overload
         """
 
     def release(self) -> None:
-        """
+        r"""
         @brief Closes the video writer.
 
         The method is automatically called by subsequent VideoWriter::open and by the VideoWriter
@@ -3877,7 +3877,7 @@ class VideoWriter(builtins.object):
         """
 
     def set(self, propId, value) -> retval:
-        """
+        r"""
         @brief Sets a property in the VideoWriter.
 
         @param propId Property identifier from cv::VideoWriterProperties (eg. cv::VIDEOWRITER_PROP_QUALITY) or one of @ref videoio_flags_others
@@ -3885,14 +3885,14 @@ class VideoWriter(builtins.object):
         """
 
     def write(self, image) -> None:
-        """
+        r"""
         @brief Writes the next video frame
 
         @param image The written frame. In general, color images are expected in BGR format.  The function/method writes the specified image to video file. It must have the same size as has been specified when opening the video writer.
         """
 
     def fourcc(self, c1, c2, c3, c4) -> retval:
-        """
+        r"""
         @brief Concatenates 4 chars to a fourcc code
 
         @return a fourcc code

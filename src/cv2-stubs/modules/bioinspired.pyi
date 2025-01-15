@@ -10,21 +10,21 @@ retval: TypeAlias = Any
 
 class Retina(cv2.Algorithm):
     def activateContoursProcessing(self, activate) -> None:
-        """
+        r"""
         @brief Activate/desactivate the Parvocellular pathway processing (contours information extraction), by
         default, it is activated
         @param activate true if Parvocellular (contours information extraction) output should be activated, false if not... if activated, the Parvocellular output can be retrieved using the Retina::getParvo methods
         """
 
     def activateMovingContoursProcessing(self, activate) -> None:
-        """
+        r"""
         @brief Activate/desactivate the Magnocellular pathway processing (motion information extraction), by
         default, it is activated
         @param activate true if Magnocellular output should be activated, false if not... if activated, the Magnocellular output can be retrieved using the **getMagno** methods
         """
 
     def applyFastToneMapping(self, inputImage, outputToneMappedImage=...) -> outputToneMappedImage:
-        """
+        r"""
         @brief Method which processes an image in the aim to correct its luminance correct
         backlight problems, enhance details in shadows.
 
@@ -42,7 +42,7 @@ class Retina(cv2.Algorithm):
         """
 
     def clearBuffers(self) -> None:
-        """
+        r"""
         @brief Clears all retina buffers
 
         (equivalent to opening the eyes after a long period of eye close ;o) whatchout the temporal
@@ -50,13 +50,13 @@ class Retina(cv2.Algorithm):
         """
 
     def getInputSize(self) -> retval:
-        """
+        r"""
         @brief Retreive retina input buffer size
         @return the retina input buffer size
         """
 
     def getMagno(self, retinaOutput_magno=...) -> retinaOutput_magno:
-        """
+        r"""
         @brief Accessor of the motion channel of the retina (models peripheral vision).
 
         Warning, getMagnoRAW methods return buffers that are not rescaled within range [0;255] while
@@ -66,26 +66,26 @@ class Retina(cv2.Algorithm):
 
     @overload
     def getMagnoRAW(self, retinaOutput_magno=...) -> retinaOutput_magno:
-        """
+        r"""
         @brief Accessor of the motion channel of the retina (models peripheral vision).
         @see getMagno
         """
 
     @overload
     def getMagnoRAW(self) -> retval:
-        """
+        r"""
         @overload
         """
 
     def getOutputSize(self) -> retval:
-        """
+        r"""
         @brief Retreive retina output buffer size that can be different from the input if a spatial log
         transformation is applied
         @return the retina output buffer size
         """
 
     def getParvo(self, retinaOutput_parvo=...) -> retinaOutput_parvo:
-        """
+        r"""
         @brief Accessor of the details channel of the retina (models foveal vision).
 
         Warning, getParvoRAW methods return buffers that are not rescaled within range [0;255] while
@@ -96,25 +96,25 @@ class Retina(cv2.Algorithm):
 
     @overload
     def getParvoRAW(self, retinaOutput_parvo=...) -> retinaOutput_parvo:
-        """
+        r"""
         @brief Accessor of the details channel of the retina (models foveal vision).
         @see getParvo
         """
 
     @overload
     def getParvoRAW(self) -> retval:
-        """
+        r"""
         @overload
         """
 
     def printSetup(self) -> retval:
-        """
+        r"""
         @brief Outputs a string showing the used parameters setup
         @return a string which contains formated parameters information
         """
 
     def run(self, inputImage) -> None:
-        """
+        r"""
         @brief Method which allows retina to be applied on an input image,
 
         after run, encapsulated retina module is ready to deliver its outputs using dedicated
@@ -123,7 +123,7 @@ class Retina(cv2.Algorithm):
         """
 
     def setColorSaturation(self, saturateColors=..., colorSaturationValue=...) -> None:
-        """
+        r"""
         @brief Activate color saturation as the final step of the color demultiplexing process -\> this
         saturation is a sigmoide function applied to each channel of the demultiplexed image.
         @param saturateColors boolean that activates color saturation (if true) or desactivate (if false)
@@ -131,7 +131,7 @@ class Retina(cv2.Algorithm):
         """
 
     def setup(self, retinaParameterFile=..., applyDefaultSetupOnFailure=...) -> None:
-        """
+        r"""
         @brief Try to open an XML retina parameters file to adjust current retina instance setup
 
         - if the xml file does not exist, then default setup is applied
@@ -141,7 +141,7 @@ class Retina(cv2.Algorithm):
         """
 
     def setupIPLMagnoChannel(self, normaliseOutput=..., parasolCells_beta=..., parasolCells_tau=..., parasolCells_k=..., amacrinCellsTemporalCutFrequency=..., V0CompressionParameter=..., localAdaptintegration_tau=..., localAdaptintegration_k=...) -> None:
-        """
+        r"""
         @brief Set parameters values for the Inner Plexiform Layer (IPL) magnocellular channel
 
         this channel processes signals output from OPL processing stage in peripheral vision, it allows
@@ -159,7 +159,7 @@ class Retina(cv2.Algorithm):
         """
 
     def setupOPLandIPLParvoChannel(self, colorMode=..., normaliseOutput=..., photoreceptorsLocalAdaptationSensitivity=..., photoreceptorsTemporalConstant=..., photoreceptorsSpatialConstant=..., horizontalCellsGain=..., HcellsTemporalConstant=..., HcellsSpatialConstant=..., ganglionCellsSensitivity=...) -> None:
-        """
+        r"""
         @brief Setup the OPL and IPL parvo channels (see biologocal model)
 
         OPL is referred as Outer Plexiform Layer of the retina, it allows the spatio-temporal filtering
@@ -180,20 +180,20 @@ class Retina(cv2.Algorithm):
         """
 
     def write(self, fs) -> None:
-        """
+        r"""
         @brief Write xml/yml formated parameters information
         @param fs the filename of the xml file that will be open and writen with formatted parameters information
         """
 
     @overload
     def create(self, inputSize) -> retval:
-        """
+        r"""
         @overload
         """
 
     @overload
     def create(self, inputSize, colorMode, colorSamplingMethod=..., useRetinaLogSampling=..., reductionFactor=..., samplingStrength=...) -> retval:
-        """
+        r"""
         @brief Constructors from standardized interfaces : retreive a smart pointer to a Retina instance
 
         @param inputSize the input frame size
@@ -206,7 +206,7 @@ class Retina(cv2.Algorithm):
 
 class RetinaFastToneMapping(cv2.Algorithm):
     def applyFastToneMapping(self, inputImage, outputToneMappedImage=...) -> outputToneMappedImage:
-        """
+        r"""
         @brief applies a luminance correction (initially High Dynamic Range (HDR) tone mapping)
 
         using only the 2 local adaptation stages of the retina parvocellular channel : photoreceptors
@@ -225,7 +225,7 @@ class RetinaFastToneMapping(cv2.Algorithm):
         """
 
     def setup(self, photoreceptorsNeighborhoodRadius=..., ganglioncellsNeighborhoodRadius=..., meanLuminanceModulatorK=...) -> None:
-        """
+        r"""
         @brief updates tone mapping behaviors by adjusing the local luminance computation area
 
         @param photoreceptorsNeighborhoodRadius the first stage local adaptation area
@@ -234,40 +234,40 @@ class RetinaFastToneMapping(cv2.Algorithm):
         """
 
     def create(self, inputSize) -> retval:
-        """"""
+        r""""""
 
 class TransientAreasSegmentationModule(cv2.Algorithm):
     def clearAllBuffers(self) -> None:
-        """
+        r"""
         @brief cleans all the buffers of the instance
         """
 
     def getSegmentationPicture(self, transientAreas=...) -> transientAreas:
-        """
+        r"""
         @brief access function
         return the last segmentation result: a boolean picture which is resampled between 0 and 255 for a display purpose
         """
 
     def getSize(self) -> retval:
-        """
+        r"""
         @brief return the sze of the manage input and output images
         """
 
     def printSetup(self) -> retval:
-        """
+        r"""
         @brief parameters setup display method
         @return a string which contains formatted parameters information
         """
 
     def run(self, inputToSegment, channelIndex=...) -> None:
-        """
+        r"""
         @brief main processing method, get result using methods getSegmentationPicture()
         @param inputToSegment : the image to process, it must match the instance buffer size !
         @param channelIndex : the channel to process in case of multichannel images
         """
 
     def setup(self, segmentationParameterFile=..., applyDefaultSetupOnFailure=...) -> None:
-        """
+        r"""
         @brief try to open an XML segmentation parameters file to adjust current segmentation instance setup
 
         - if the xml file does not exist, then default setup is applied
@@ -277,31 +277,31 @@ class TransientAreasSegmentationModule(cv2.Algorithm):
         """
 
     def write(self, fs) -> None:
-        """
+        r"""
         @brief write xml/yml formated parameters information
         @param fs : the filename of the xml file that will be open and writen with formatted parameters information
         """
 
     def create(self, inputSize) -> retval:
-        """
+        r"""
         @brief allocator
         @param inputSize : size of the images input to segment (output will be the same size)
         """
 
 def RetinaFastToneMapping_create(inputSize) -> retval:
-    """
+    r"""
     .
     """
 
 @overload
 def Retina_create(inputSize) -> retval:
-    """
+    r"""
     @overload
     """
 
 @overload
 def Retina_create(inputSize) -> retval:
-    """
+    r"""
     @brief Constructors from standardized interfaces : retreive a smart pointer to a Retina instance
 
         @param inputSize the input frame size
@@ -315,26 +315,26 @@ def Retina_create(inputSize) -> retval:
 
 @overload
 def Retina_create(inputSize) -> retval:
-    """
+    r"""
     @param reductionFactor only usefull if param useRetinaLogSampling=true, specifies the reduction
     """
 
 @overload
 def Retina_create(inputSize) -> retval:
-    """ """
+    r""" """
 
 @overload
 def Retina_create(inputSize) -> retval:
-    """
+    r"""
     @param samplingStrength only usefull if param useRetinaLogSampling=true, specifies the strength of
     """
 
 @overload
 def Retina_create(inputSize) -> retval:
-    """ """
+    r""" """
 
 def TransientAreasSegmentationModule_create(inputSize) -> retval:
-    """
+    r"""
     @brief allocator
         @param inputSize : size of the images input to segment (output will be the same size)
     """

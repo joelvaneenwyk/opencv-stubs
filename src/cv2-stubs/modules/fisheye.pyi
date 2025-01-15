@@ -27,7 +27,7 @@ retval: TypeAlias = Any
 
 @overload
 def calibrate(objectPoints, imagePoints, image_size, K, D, rvecs=..., tvecs=..., flags=..., criteria=...) -> tuple[retval, K, D, rvecs, tvecs]:
-    """
+    r"""
     @brief Performs camera calibration
 
         @param objectPoints vector of vectors of calibration pattern points in the calibration pattern
@@ -35,17 +35,17 @@ def calibrate(objectPoints, imagePoints, image_size, K, D, rvecs=..., tvecs=...,
 
 @overload
 def calibrate(objectPoints, imagePoints, image_size, K, D, rvecs=..., tvecs=..., flags=..., criteria=...) -> tuple[retval, K, D, rvecs, tvecs]:
-    """
+    r"""
     @param imagePoints vector of vectors of the projections of calibration pattern points.
     """
 
 @overload
 def calibrate(objectPoints, imagePoints, image_size, K, D, rvecs=..., tvecs=..., flags=..., criteria=...) -> tuple[retval, K, D, rvecs, tvecs]:
-    """ """
+    r""" """
 
 @overload
 def calibrate(objectPoints, imagePoints, image_size, K, D, rvecs=..., tvecs=..., flags=..., criteria=...) -> tuple[retval, K, D, rvecs, tvecs]:
-    """
+    r"""
     @param image_size Size of the image used only to initialize the camera intrinsic matrix.
     @param K Output 3x3 floating-point camera intrinsic matrix
     \f$\cameramatrix{A}\f$ . If
@@ -54,26 +54,26 @@ def calibrate(objectPoints, imagePoints, image_size, K, D, rvecs=..., tvecs=...,
 
 @overload
 def calibrate(objectPoints, imagePoints, image_size, K, D, rvecs=..., tvecs=..., flags=..., criteria=...) -> tuple[retval, K, D, rvecs, tvecs]:
-    """
+    r"""
     @param D Output vector of distortion coefficients \f$\distcoeffsfisheye\f$.
     @param rvecs Output vector of rotation vectors (see Rodrigues ) estimated for each pattern view.
     """
 
 @overload
 def calibrate(objectPoints, imagePoints, image_size, K, D, rvecs=..., tvecs=..., flags=..., criteria=...) -> tuple[retval, K, D, rvecs, tvecs]:
-    """ """
+    r""" """
 
 @overload
 def calibrate(objectPoints, imagePoints, image_size, K, D, rvecs=..., tvecs=..., flags=..., criteria=...) -> tuple[retval, K, D, rvecs, tvecs]:
-    """ """
+    r""" """
 
 @overload
 def calibrate(objectPoints, imagePoints, image_size, K, D, rvecs=..., tvecs=..., flags=..., criteria=...) -> tuple[retval, K, D, rvecs, tvecs]:
-    """ """
+    r""" """
 
 @overload
 def calibrate(objectPoints, imagePoints, image_size, K, D, rvecs=..., tvecs=..., flags=..., criteria=...) -> tuple[retval, K, D, rvecs, tvecs]:
-    """
+    r"""
     @param tvecs Output vector of translation vectors estimated for each pattern view.
     @param flags Different flags that may be zero or a combination of the following values:
     -    @ref fisheye::CALIB_USE_INTRINSIC_GUESS  cameraMatrix contains valid initial values of
@@ -81,17 +81,17 @@ def calibrate(objectPoints, imagePoints, image_size, K, D, rvecs=..., tvecs=...,
 
 @overload
 def calibrate(objectPoints, imagePoints, image_size, K, D, rvecs=..., tvecs=..., flags=..., criteria=...) -> tuple[retval, K, D, rvecs, tvecs]:
-    """ """
+    r""" """
 
 @overload
 def calibrate(objectPoints, imagePoints, image_size, K, D, rvecs=..., tvecs=..., flags=..., criteria=...) -> tuple[retval, K, D, rvecs, tvecs]:
-    """
+    r"""
     -    @ref fisheye::CALIB_RECOMPUTE_EXTRINSIC  Extrinsic will be recomputed after each iteration
     """
 
 @overload
 def calibrate(objectPoints, imagePoints, image_size, K, D, rvecs=..., tvecs=..., flags=..., criteria=...) -> tuple[retval, K, D, rvecs, tvecs]:
-    """
+    r"""
     -    @ref fisheye::CALIB_CHECK_COND  The functions will check validity of condition number.
     -    @ref fisheye::CALIB_FIX_SKEW  Skew coefficient (alpha) is set to zero and stay zero.
     -    @ref fisheye::CALIB_FIX_K1,..., @ref fisheye::CALIB_FIX_K4 Selected distortion coefficients
@@ -99,7 +99,7 @@ def calibrate(objectPoints, imagePoints, image_size, K, D, rvecs=..., tvecs=...,
 
 @overload
 def calibrate(objectPoints, imagePoints, image_size, K, D, rvecs=..., tvecs=..., flags=..., criteria=...) -> tuple[retval, K, D, rvecs, tvecs]:
-    """
+    r"""
         -    @ref fisheye::CALIB_FIX_PRINCIPAL_POINT  The principal point is not changed during the global
     optimization. It stays at the center or at a different location specified when @ref fisheye::CALIB_USE_INTRINSIC_GUESS is set too.
         -    @ref fisheye::CALIB_FIX_FOCAL_LENGTH The focal length is not changed during the global
@@ -109,7 +109,7 @@ def calibrate(objectPoints, imagePoints, image_size, K, D, rvecs=..., tvecs=...,
 
 @overload
 def distortPoints(undistorted, K, D, distorted=..., alpha=...) -> distorted:
-    """
+    r"""
     @brief Distorts 2D points using fisheye model.
 
         @param undistorted Array of object points, 1xN/Nx1 2-channel (or vector\<Point2f\> ), where N is
@@ -117,7 +117,7 @@ def distortPoints(undistorted, K, D, distorted=..., alpha=...) -> distorted:
 
 @overload
 def distortPoints(undistorted, K, D, distorted=..., alpha=...) -> distorted:
-    """
+    r"""
     @param K Camera intrinsic matrix \f$cameramatrix{K}\f$.
     @param D Input vector of distortion coefficients \f$\distcoeffsfisheye\f$.
     @param alpha The skew coefficient.
@@ -126,15 +126,15 @@ def distortPoints(undistorted, K, D, distorted=..., alpha=...) -> distorted:
 
 @overload
 def distortPoints(undistorted, K, D, distorted=..., alpha=...) -> distorted:
-    """ """
+    r""" """
 
 @overload
 def distortPoints(undistorted, K, D, distorted=..., alpha=...) -> distorted:
-    """ """
+    r""" """
 
 @overload
 def estimateNewCameraMatrixForUndistortRectify(K, D, image_size, R, P=..., balance=..., new_size=..., fov_scale=...) -> P:
-    """
+    r"""
     @brief Estimates new camera intrinsic matrix for undistortion or rectification.
 
         @param K Camera intrinsic matrix \f$cameramatrix{K}\f$.
@@ -148,20 +148,20 @@ def estimateNewCameraMatrixForUndistortRectify(K, D, image_size, R, P=..., balan
 
 @overload
 def estimateNewCameraMatrixForUndistortRectify(K, D, image_size, R, P=..., balance=..., new_size=..., fov_scale=...) -> P:
-    """
+    r"""
     @param new_size the new size
     @param fov_scale Divisor for new focal length.
     """
 
 @overload
 def initUndistortRectifyMap(K, D, R, P, size, m1type, map1=..., map2=...) -> tuple[map1, map2]:
-    """
+    r"""
     @brief Computes undistortion and rectification maps for image transform by #remap. If D is empty zero
     """
 
 @overload
 def initUndistortRectifyMap(K, D, R, P, size, m1type, map1=..., map2=...) -> tuple[map1, map2]:
-    """
+    r"""
 
     @param K Camera intrinsic matrix \f$cameramatrix{K}\f$.
     @param D Input vector of distortion coefficients \f$\distcoeffsfisheye\f$.
@@ -174,19 +174,19 @@ def initUndistortRectifyMap(K, D, R, P, size, m1type, map1=..., map2=...) -> tup
 
 @overload
 def initUndistortRectifyMap(K, D, R, P, size, m1type, map1=..., map2=...) -> tuple[map1, map2]:
-    """
+    r"""
     @param map1 The first output map.
     @param map2 The second output map.
     """
 
 def projectPoints(objectPoints, rvec, tvec, K, D, imagePoints=..., alpha=..., jacobian=...) -> tuple[imagePoints, jacobian]:
-    """
+    r"""
     @overload
     """
 
 @overload
 def stereoCalibrate(objectPoints, imagePoints1, imagePoints2, K1, D1, K2, D2, imageSize, R=..., T=..., rvecs=..., tvecs=..., flags=..., criteria=...) -> tuple[retval, K1, D1, K2, D2, R, T, rvecs, tvecs]:
-    """
+    r"""
     @brief Performs stereo calibration
 
         @param objectPoints Vector of vectors of the calibration pattern points.
@@ -195,24 +195,24 @@ def stereoCalibrate(objectPoints, imagePoints1, imagePoints2, K1, D1, K2, D2, im
 
 @overload
 def stereoCalibrate(objectPoints, imagePoints1, imagePoints2, K1, D1, K2, D2, imageSize, R=..., T=..., rvecs=..., tvecs=..., flags=..., criteria=...) -> tuple[retval, K1, D1, K2, D2, R, T, rvecs, tvecs]:
-    """
+    r"""
     @param imagePoints2 Vector of vectors of the projections of the calibration pattern points,
     """
 
 @overload
 def stereoCalibrate(objectPoints, imagePoints1, imagePoints2, K1, D1, K2, D2, imageSize, R=..., T=..., rvecs=..., tvecs=..., flags=..., criteria=...) -> tuple[retval, K1, D1, K2, D2, R, T, rvecs, tvecs]:
-    """
+    r"""
     @param K1 Input/output first camera intrinsic matrix:
     \f$\vecthreethree{f_x^{(j)}}{0}{c_x^{(j)}}{0}{f_y^{(j)}}{c_y^{(j)}}{0}{0}{1}\f$ , \f$j = 0,\, 1\f$ . If
     """
 
 @overload
 def stereoCalibrate(objectPoints, imagePoints1, imagePoints2, K1, D1, K2, D2, imageSize, R=..., T=..., rvecs=..., tvecs=..., flags=..., criteria=...) -> tuple[retval, K1, D1, K2, D2, R, T, rvecs, tvecs]:
-    """ """
+    r""" """
 
 @overload
 def stereoCalibrate(objectPoints, imagePoints1, imagePoints2, K1, D1, K2, D2, imageSize, R=..., T=..., rvecs=..., tvecs=..., flags=..., criteria=...) -> tuple[retval, K1, D1, K2, D2, R, T, rvecs, tvecs]:
-    """
+    r"""
     @param D1 Input/output vector of distortion coefficients \f$\distcoeffsfisheye\f$ of 4 elements.
     @param K2 Input/output second camera intrinsic matrix. The parameter is similar to K1 .
     @param D2 Input/output lens distortion coefficients for the second camera. The parameter is
@@ -220,7 +220,7 @@ def stereoCalibrate(objectPoints, imagePoints1, imagePoints2, K1, D1, K2, D2, im
 
 @overload
 def stereoCalibrate(objectPoints, imagePoints1, imagePoints2, K1, D1, K2, D2, imageSize, R=..., T=..., rvecs=..., tvecs=..., flags=..., criteria=...) -> tuple[retval, K1, D1, K2, D2, R, T, rvecs, tvecs]:
-    """
+    r"""
     @param imageSize Size of the image used only to initialize camera intrinsic matrix.
     @param R Output rotation matrix between the 1st and the 2nd camera coordinate systems.
     @param T Output translation vector between the coordinate systems of the cameras.
@@ -229,56 +229,56 @@ def stereoCalibrate(objectPoints, imagePoints1, imagePoints2, K1, D1, K2, D2, im
 
 @overload
 def stereoCalibrate(objectPoints, imagePoints1, imagePoints2, K1, D1, K2, D2, imageSize, R=..., T=..., rvecs=..., tvecs=..., flags=..., criteria=...) -> tuple[retval, K1, D1, K2, D2, R, T, rvecs, tvecs]:
-    """ """
+    r""" """
 
 @overload
 def stereoCalibrate(objectPoints, imagePoints1, imagePoints2, K1, D1, K2, D2, imageSize, R=..., T=..., rvecs=..., tvecs=..., flags=..., criteria=...) -> tuple[retval, K1, D1, K2, D2, R, T, rvecs, tvecs]:
-    """ """
+    r""" """
 
 @overload
 def stereoCalibrate(objectPoints, imagePoints1, imagePoints2, K1, D1, K2, D2, imageSize, R=..., T=..., rvecs=..., tvecs=..., flags=..., criteria=...) -> tuple[retval, K1, D1, K2, D2, R, T, rvecs, tvecs]:
-    """ """
+    r""" """
 
 @overload
 def stereoCalibrate(objectPoints, imagePoints1, imagePoints2, K1, D1, K2, D2, imageSize, R=..., T=..., rvecs=..., tvecs=..., flags=..., criteria=...) -> tuple[retval, K1, D1, K2, D2, R, T, rvecs, tvecs]:
-    """ """
+    r""" """
 
 @overload
 def stereoCalibrate(objectPoints, imagePoints1, imagePoints2, K1, D1, K2, D2, imageSize, R=..., T=..., rvecs=..., tvecs=..., flags=..., criteria=...) -> tuple[retval, K1, D1, K2, D2, R, T, rvecs, tvecs]:
-    """ """
+    r""" """
 
 @overload
 def stereoCalibrate(objectPoints, imagePoints1, imagePoints2, K1, D1, K2, D2, imageSize, R=..., T=..., rvecs=..., tvecs=..., flags=..., criteria=...) -> tuple[retval, K1, D1, K2, D2, R, T, rvecs, tvecs]:
-    """
+    r"""
     @param tvecs Output vector of translation vectors estimated for each pattern view, see parameter description
     """
 
 @overload
 def stereoCalibrate(objectPoints, imagePoints1, imagePoints2, K1, D1, K2, D2, imageSize, R=..., T=..., rvecs=..., tvecs=..., flags=..., criteria=...) -> tuple[retval, K1, D1, K2, D2, R, T, rvecs, tvecs]:
-    """
+    r"""
     @param flags Different flags that may be zero or a combination of the following values:
     -    @ref fisheye::CALIB_FIX_INTRINSIC  Fix K1, K2? and D1, D2? so that only R, T matrices
     """
 
 @overload
 def stereoCalibrate(objectPoints, imagePoints1, imagePoints2, K1, D1, K2, D2, imageSize, R=..., T=..., rvecs=..., tvecs=..., flags=..., criteria=...) -> tuple[retval, K1, D1, K2, D2, R, T, rvecs, tvecs]:
-    """
+    r"""
     -    @ref fisheye::CALIB_USE_INTRINSIC_GUESS  K1, K2 contains valid initial values of
     """
 
 @overload
 def stereoCalibrate(objectPoints, imagePoints1, imagePoints2, K1, D1, K2, D2, imageSize, R=..., T=..., rvecs=..., tvecs=..., flags=..., criteria=...) -> tuple[retval, K1, D1, K2, D2, R, T, rvecs, tvecs]:
-    """ """
+    r""" """
 
 @overload
 def stereoCalibrate(objectPoints, imagePoints1, imagePoints2, K1, D1, K2, D2, imageSize, R=..., T=..., rvecs=..., tvecs=..., flags=..., criteria=...) -> tuple[retval, K1, D1, K2, D2, R, T, rvecs, tvecs]:
-    """
+    r"""
     -    @ref fisheye::CALIB_RECOMPUTE_EXTRINSIC  Extrinsic will be recomputed after each iteration
     """
 
 @overload
 def stereoCalibrate(objectPoints, imagePoints1, imagePoints2, K1, D1, K2, D2, imageSize, R=..., T=..., rvecs=..., tvecs=..., flags=..., criteria=...) -> tuple[retval, K1, D1, K2, D2, R, T, rvecs, tvecs]:
-    """
+    r"""
     -    @ref fisheye::CALIB_CHECK_COND  The functions will check validity of condition number.
     -    @ref fisheye::CALIB_FIX_SKEW  Skew coefficient (alpha) is set to zero and stay zero.
     -   @ref fisheye::CALIB_FIX_K1,..., @ref fisheye::CALIB_FIX_K4 Selected distortion coefficients are set to zeros and stay
@@ -286,19 +286,19 @@ def stereoCalibrate(objectPoints, imagePoints1, imagePoints2, K1, D1, K2, D2, im
 
 @overload
 def stereoCalibrate(objectPoints, imagePoints1, imagePoints2, K1, D1, K2, D2, imageSize, R=..., T=..., rvecs=..., tvecs=..., flags=..., criteria=...) -> tuple[retval, K1, D1, K2, D2, R, T, rvecs, tvecs]:
-    """
+    r"""
     @param criteria Termination criteria for the iterative optimization algorithm.
     """
 
 @overload
 def stereoCalibrate(objectPoints, imagePoints1, imagePoints2, K1, D1, K2, D2, imageSize, R=..., T=..., rvecs=..., tvecs=..., flags=..., criteria=...) -> tuple[retval, K1, D1, K2, D2, R, T, rvecs, tvecs]:
-    """
+    r"""
     .
     """
 
 @overload
 def stereoRectify(K1, D1, K2, D2, imageSize, R, tvec, flags, R1=..., R2=..., P1=..., P2=..., Q=..., newImageSize=..., balance=..., fov_scale=...) -> tuple[R1, R2, P1, P2, Q]:
-    """
+    r"""
     @brief Stereo rectification for fisheye camera model
 
         @param K1 First camera intrinsic matrix.
@@ -311,7 +311,7 @@ def stereoRectify(K1, D1, K2, D2, imageSize, R, tvec, flags, R1=..., R2=..., P1=
 
 @overload
 def stereoRectify(K1, D1, K2, D2, imageSize, R, tvec, flags, R1=..., R2=..., P1=..., P2=..., Q=..., newImageSize=..., balance=..., fov_scale=...) -> tuple[R1, R2, P1, P2, Q]:
-    """
+    r"""
     @param tvec Translation vector between coordinate systems of the cameras.
     @param R1 Output 3x3 rectification transform (rotation matrix) for the first camera.
     @param R2 Output 3x3 rectification transform (rotation matrix) for the second camera.
@@ -320,55 +320,55 @@ def stereoRectify(K1, D1, K2, D2, imageSize, R, tvec, flags, R1=..., R2=..., P1=
 
 @overload
 def stereoRectify(K1, D1, K2, D2, imageSize, R, tvec, flags, R1=..., R2=..., P1=..., P2=..., Q=..., newImageSize=..., balance=..., fov_scale=...) -> tuple[R1, R2, P1, P2, Q]:
-    """
+    r"""
     @param P2 Output 3x4 projection matrix in the new (rectified) coordinate systems for the second
     """
 
 @overload
 def stereoRectify(K1, D1, K2, D2, imageSize, R, tvec, flags, R1=..., R2=..., P1=..., P2=..., Q=..., newImageSize=..., balance=..., fov_scale=...) -> tuple[R1, R2, P1, P2, Q]:
-    """
+    r"""
     @param Q Output \f$4 \times 4\f$ disparity-to-depth mapping matrix (see #reprojectImageTo3D ).
     @param flags Operation flags that may be zero or @ref fisheye::CALIB_ZERO_DISPARITY . If the flag is set,
     """
 
 @overload
 def stereoRectify(K1, D1, K2, D2, imageSize, R, tvec, flags, R1=..., R2=..., P1=..., P2=..., Q=..., newImageSize=..., balance=..., fov_scale=...) -> tuple[R1, R2, P1, P2, Q]:
-    """ """
+    r""" """
 
 @overload
 def stereoRectify(K1, D1, K2, D2, imageSize, R, tvec, flags, R1=..., R2=..., P1=..., P2=..., Q=..., newImageSize=..., balance=..., fov_scale=...) -> tuple[R1, R2, P1, P2, Q]:
-    """ """
+    r""" """
 
 @overload
 def stereoRectify(K1, D1, K2, D2, imageSize, R, tvec, flags, R1=..., R2=..., P1=..., P2=..., Q=..., newImageSize=..., balance=..., fov_scale=...) -> tuple[R1, R2, P1, P2, Q]:
-    """ """
+    r""" """
 
 @overload
 def stereoRectify(K1, D1, K2, D2, imageSize, R, tvec, flags, R1=..., R2=..., P1=..., P2=..., Q=..., newImageSize=..., balance=..., fov_scale=...) -> tuple[R1, R2, P1, P2, Q]:
-    """
+    r"""
     @param newImageSize New image resolution after rectification. The same size should be passed to
     #initUndistortRectifyMap (see the stereo_calib.cpp sample in OpenCV samples directory). When (0,0)
     """
 
 @overload
 def stereoRectify(K1, D1, K2, D2, imageSize, R, tvec, flags, R1=..., R2=..., P1=..., P2=..., Q=..., newImageSize=..., balance=..., fov_scale=...) -> tuple[R1, R2, P1, P2, Q]:
-    """ """
+    r""" """
 
 @overload
 def stereoRectify(K1, D1, K2, D2, imageSize, R, tvec, flags, R1=..., R2=..., P1=..., P2=..., Q=..., newImageSize=..., balance=..., fov_scale=...) -> tuple[R1, R2, P1, P2, Q]:
-    """
+    r"""
     @param balance Sets the new focal length in range between the min focal length and the max focal
     """
 
 @overload
 def stereoRectify(K1, D1, K2, D2, imageSize, R, tvec, flags, R1=..., R2=..., P1=..., P2=..., Q=..., newImageSize=..., balance=..., fov_scale=...) -> tuple[R1, R2, P1, P2, Q]:
-    """
+    r"""
     @param fov_scale Divisor for new focal length.
     """
 
 @overload
 def undistortImage(distorted, K, D, undistorted=..., Knew=..., new_size=...) -> undistorted:
-    """
+    r"""
     @brief Transforms an image to compensate for fisheye lens distortion.
 
         @param distorted image with fisheye lens distortion.
@@ -380,27 +380,27 @@ def undistortImage(distorted, K, D, undistorted=..., Knew=..., new_size=...) -> 
 
 @overload
 def undistortImage(distorted, K, D, undistorted=..., Knew=..., new_size=...) -> undistorted:
-    """
+    r"""
     @param new_size the new size
     """
 
 @overload
 def undistortImage(distorted, K, D, undistorted=..., Knew=..., new_size=...) -> undistorted:
-    """ """
+    r""" """
 
 @overload
 def undistortImage(distorted, K, D, undistorted=..., Knew=..., new_size=...) -> undistorted:
-    """
+    r"""
     (with bilinear interpolation). See the former function for details of the transformation being
     """
 
 @overload
 def undistortImage(distorted, K, D, undistorted=..., Knew=..., new_size=...) -> undistorted:
-    """ """
+    r""" """
 
 @overload
 def undistortImage(distorted, K, D, undistorted=..., Knew=..., new_size=...) -> undistorted:
-    """
+    r"""
     -   a\) result of undistort of perspective camera model (all possible coefficients (k_1, k_2, k_3,
          k_4, k_5, k_6) of distortion were optimized under calibration)
      -   b\) result of #fisheye::undistortImage of fisheye camera model (all possible coefficients (k_1, k_2,
@@ -410,18 +410,18 @@ def undistortImage(distorted, K, D, undistorted=..., Knew=..., new_size=...) -> 
 
 @overload
 def undistortImage(distorted, K, D, undistorted=..., Knew=..., new_size=...) -> undistorted:
-    """ """
+    r""" """
 
 @overload
 def undistortImage(distorted, K, D, undistorted=..., Knew=..., new_size=...) -> undistorted:
-    """
+    r"""
 
     ![image](pics/fisheye_undistorted.jpg)
     """
 
 @overload
 def undistortPoints(distorted, K, D, undistorted=..., R=..., P=..., criteria=...) -> undistorted:
-    """
+    r"""
     @brief Undistorts 2D points using fisheye model
 
         @param distorted Array of object points, 1xN/Nx1 2-channel (or vector\<Point2f\> ), where N is the
@@ -429,7 +429,7 @@ def undistortPoints(distorted, K, D, undistorted=..., R=..., P=..., criteria=...
 
 @overload
 def undistortPoints(distorted, K, D, undistorted=..., R=..., P=..., criteria=...) -> undistorted:
-    """
+    r"""
     @param K Camera intrinsic matrix \f$cameramatrix{K}\f$.
     @param D Input vector of distortion coefficients \f$\distcoeffsfisheye\f$.
     @param R Rectification transformation in the object space: 3x3 1-channel, or vector: 3x1/1x3

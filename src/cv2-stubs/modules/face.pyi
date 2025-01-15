@@ -16,74 +16,74 @@ retval: TypeAlias = Any
 
 class BIF(cv2.Algorithm):
     def compute(self, image, features=...) -> features:
-        """
+        r"""
         Computes features sby input image.
         *  @param image Input image (CV_32FC1).
         *  @param features Feature vector (CV_32FC1).
         """
 
     def getNumBands(self) -> retval:
-        """
+        r"""
         @returns The number of filter bands used for computing BIF.
         """
 
     def getNumRotations(self) -> retval:
-        """
+        r"""
         @returns The number of image rotations.
         """
 
     def create(self, num_bands=..., num_rotations=...) -> retval:
-        """
+        r"""
         * @param num_bands The number of filter bands (<=8) used for computing BIF.
         * @param num_rotations The number of image rotations for computing BIF. * @returns Object for computing BIF.
         """
 
 class BasicFaceRecognizer(FaceRecognizer):
     def getEigenValues(self) -> retval:
-        """"""
+        r""""""
 
     def getEigenVectors(self) -> retval:
-        """"""
+        r""""""
 
     def getLabels(self) -> retval:
-        """"""
+        r""""""
 
     def getMean(self) -> retval:
-        """"""
+        r""""""
 
     def getNumComponents(self) -> retval:
-        """
+        r"""
         @see setNumComponents
         """
 
     def getProjections(self) -> retval:
-        """"""
+        r""""""
 
     def getThreshold(self) -> retval:
-        """
+        r"""
         @see setThreshold
         """
 
     def setNumComponents(self, val) -> None:
-        """
+        r"""
         @copybrief getNumComponents @see getNumComponents
         """
 
     def setThreshold(self, val) -> None:
-        """
+        r"""
         @copybrief getThreshold @see getThreshold
         """
 
 class EigenFaceRecognizer(BasicFaceRecognizer):
     def create(self, num_components=..., threshold=...) -> retval:
-        """
+        r"""
         @param num_components The number of components (read: Eigenfaces) kept for this Principal Component Analysis. As a hint: There's no rule how many components (read: Eigenfaces) should be kept for good reconstruction capabilities. It is based on your input data, so experiment with the number. Keeping 80 components should almost always be sufficient.
         @param threshold The threshold applied in the prediction.  ### Notes:  -   Training and prediction must be done on grayscale images, use cvtColor to convert between the color spaces. -   **THE EIGENFACES METHOD MAKES THE ASSUMPTION, THAT THE TRAINING AND TEST IMAGES ARE OF EQUAL SIZE.** (caps-lock, because I got so many mails asking for this). You have to make sure your input data has the correct shape, else a meaningful exception is thrown. Use resize to resize the images. -   This model does not support updating.  ### Model internal data:  -   num_components see EigenFaceRecognizer::create. -   threshold see EigenFaceRecognizer::create. -   eigenvalues The eigenvalues for this Principal Component Analysis (ordered descending). -   eigenvectors The eigenvectors for this Principal Component Analysis (ordered by their eigenvalue). -   mean The sample mean calculated from the training data. -   projections The projections of the training data. -   labels The threshold applied in the prediction. If the distance to the nearest neighbor is larger than the threshold, this method returns -1.
         """
 
 class FaceRecognizer(cv2.Algorithm):
     def getLabelInfo(self, label) -> retval:
-        """
+        r"""
         @brief Gets string information by label.
 
         If an unknown label id is provided or there is no label information associated with the specified
@@ -91,7 +91,7 @@ class FaceRecognizer(cv2.Algorithm):
         """
 
     def getLabelsByString(self, str) -> retval:
-        """
+        r"""
         @brief Gets vector of labels by string.
 
         The function searches for the labels containing the specified sub-string in the associated string
@@ -99,7 +99,7 @@ class FaceRecognizer(cv2.Algorithm):
         """
 
     def predict(self, src) -> tuple[label, confidence]:
-        """
+        r"""
         @brief Predicts a label and associated confidence (e.g. distance) for a given input image.
 
         @param src Sample image to get a prediction from.
@@ -108,19 +108,19 @@ class FaceRecognizer(cv2.Algorithm):
         """
 
     def predict_collect(self, src, collector) -> None:
-        """
+        r"""
         @brief - if implemented - send all result of prediction to collector that can be used for somehow custom result handling
         @param src Sample image to get a prediction from.
         @param collector User-defined collector object that accepts all results  To implement this method u just have to do same internal cycle as in predict(InputArray src, CV_OUT int &label, CV_OUT double &confidence) but not try to get "best@ result, just resend it to caller side with given collector
         """
 
     def predict_label(self, src) -> retval:
-        """
+        r"""
         @overload
         """
 
     def read(self, filename) -> None:
-        """
+        r"""
         @brief Loads a FaceRecognizer and its model state.
 
         Loads a persisted model and state from a given XML or YAML file . Every FaceRecognizer has to
@@ -130,14 +130,14 @@ class FaceRecognizer(cv2.Algorithm):
         """
 
     def setLabelInfo(self, label, strInfo) -> None:
-        """
+        r"""
         @brief Sets string info for the specified model's label.
 
         The string info is replaced by the provided value if it was set before for the specified label.
         """
 
     def train(self, src, labels) -> None:
-        """
+        r"""
         @brief Trains a FaceRecognizer with given data and associated labels.
 
         @param src The training images, that means the faces you want to learn. The data has to be given as a vector\<Mat\>.
@@ -145,7 +145,7 @@ class FaceRecognizer(cv2.Algorithm):
         """
 
     def update(self, src, labels) -> None:
-        """
+        r"""
         @brief Updates a FaceRecognizer with given data and associated labels.
 
         @param src The training images, that means the faces you want to learn. The data has to be given as a vector\<Mat\>.
@@ -153,7 +153,7 @@ class FaceRecognizer(cv2.Algorithm):
         """
 
     def write(self, filename) -> None:
-        """
+        r"""
         @brief Saves a FaceRecognizer and its model state.
 
         Saves this model to a given filename, either as XML or YAML.
@@ -162,7 +162,7 @@ class FaceRecognizer(cv2.Algorithm):
 
 class Facemark(cv2.Algorithm):
     def fit(self, image, faces, landmarks=...) -> tuple[retval, landmarks]:
-        """
+        r"""
         @brief Detect facial landmarks from an image.
         @param image Input image.
         @param faces Output of the function which represent region of interest of the detected faces. Each face is stored in cv::Rect container.
@@ -170,7 +170,7 @@ class Facemark(cv2.Algorithm):
         """
 
     def loadModel(self, model) -> None:
-        """
+        r"""
         @brief A function to load the trained model before the fitting process.
         @param model A string represent the filename of a trained model.  <B>Example of usage</B> @code facemark->loadModel("../data/lbf.model"); @endcode
         """
@@ -182,70 +182,70 @@ class FacemarkTrain(Facemark): ...
 
 class FisherFaceRecognizer(BasicFaceRecognizer):
     def create(self, num_components=..., threshold=...) -> retval:
-        """
+        r"""
         @param num_components The number of components (read: Fisherfaces) kept for this Linear Discriminant Analysis with the Fisherfaces criterion. It's useful to keep all components, that means the number of your classes c (read: subjects, persons you want to recognize). If you leave this at the default (0) or set it to a value less-equal 0 or greater (c-1), it will be set to the correct number (c-1) automatically.
         @param threshold The threshold applied in the prediction. If the distance to the nearest neighbor is larger than the threshold, this method returns -1.  ### Notes:  -   Training and prediction must be done on grayscale images, use cvtColor to convert between the color spaces. -   **THE FISHERFACES METHOD MAKES THE ASSUMPTION, THAT THE TRAINING AND TEST IMAGES ARE OF EQUAL SIZE.** (caps-lock, because I got so many mails asking for this). You have to make sure your input data has the correct shape, else a meaningful exception is thrown. Use resize to resize the images. -   This model does not support updating.  ### Model internal data:  -   num_components see FisherFaceRecognizer::create. -   threshold see FisherFaceRecognizer::create. -   eigenvalues The eigenvalues for this Linear Discriminant Analysis (ordered descending). -   eigenvectors The eigenvectors for this Linear Discriminant Analysis (ordered by their eigenvalue). -   mean The sample mean calculated from the training data. -   projections The projections of the training data. -   labels The labels corresponding to the projections.
         """
 
 class LBPHFaceRecognizer(FaceRecognizer):
     def getGridX(self) -> retval:
-        """
+        r"""
         @see setGridX
         """
 
     def getGridY(self) -> retval:
-        """
+        r"""
         @see setGridY
         """
 
     def getHistograms(self) -> retval:
-        """"""
+        r""""""
 
     def getLabels(self) -> retval:
-        """"""
+        r""""""
 
     def getNeighbors(self) -> retval:
-        """
+        r"""
         @see setNeighbors
         """
 
     def getRadius(self) -> retval:
-        """
+        r"""
         @see setRadius
         """
 
     def getThreshold(self) -> retval:
-        """
+        r"""
         @see setThreshold
         """
 
     def setGridX(self, val) -> None:
-        """
+        r"""
         @copybrief getGridX @see getGridX
         """
 
     def setGridY(self, val) -> None:
-        """
+        r"""
         @copybrief getGridY @see getGridY
         """
 
     def setNeighbors(self, val) -> None:
-        """
+        r"""
         @copybrief getNeighbors @see getNeighbors
         """
 
     def setRadius(self, val) -> None:
-        """
+        r"""
         @copybrief getRadius @see getRadius
         """
 
     def setThreshold(self, val) -> None:
-        """
+        r"""
         @copybrief getThreshold @see getThreshold
         """
 
     def create(self, radius=..., neighbors=..., grid_x=..., grid_y=..., threshold=...) -> retval:
-        """
+        r"""
         @param radius The radius used for building the Circular Local Binary Pattern. The greater the radius, the smoother the image but more spatial information you can get.
         @param neighbors The number of sample points to build a Circular Local Binary Pattern from. An appropriate value is to use `8` sample points. Keep in mind: the more sample points you include, the higher the computational cost.
         @param grid_x The number of cells in the horizontal direction, 8 is a common value used in publications. The more cells, the finer the grid, the higher the dimensionality of the resulting feature vector.
@@ -255,19 +255,19 @@ class LBPHFaceRecognizer(FaceRecognizer):
 
 class MACE(cv2.Algorithm):
     def salt(self, passphrase) -> None:
-        """
+        r"""
         @brief optionally encrypt images with random convolution
         @param passphrase a crc64 random seed will get generated from this
         """
 
     def same(self, query) -> retval:
-        """
+        r"""
         @brief correlate query img and threshold to min class value
         @param query  a Mat with query image
         """
 
     def train(self, images) -> None:
-        """
+        r"""
         @brief train it on positive features
         compute the mace filter: `h = D(-1) * X * (X(+) * D(-1) * X)(-1) * C`
         also calculate a minimal threshold for this class, the smallest self-similarity from the train images
@@ -275,13 +275,13 @@ class MACE(cv2.Algorithm):
         """
 
     def create(self, IMGSIZE=...) -> retval:
-        """
+        r"""
         @brief constructor
         @param IMGSIZE  images will get resized to this (should be an even number)
         """
 
     def load(self, filename, objname=...) -> retval:
-        """
+        r"""
         @brief constructor
         @param filename  build a new MACE instance from a pre-serialized FileStorage
         @param objname (optional) top-level node in the FileStorage
@@ -291,23 +291,23 @@ class PredictCollector(builtins.object): ...
 
 class StandardCollector(PredictCollector):
     def getMinDist(self) -> retval:
-        """
+        r"""
         @brief Returns minimal distance value
         """
 
     def getMinLabel(self) -> retval:
-        """
+        r"""
         @brief Returns label with minimal distance
         """
 
     def getResults(self, sorted=...) -> retval:
-        """
+        r"""
         @brief Return results as vector
         @param sorted If set, results will be sorted by distance Each values is a pair of label and distance.
         """
 
     def create(self, threshold=...) -> retval:
-        """
+        r"""
         @brief Static constructor
         @param threshold set threshold
         """

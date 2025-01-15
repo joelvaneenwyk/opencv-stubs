@@ -28,10 +28,10 @@ retval: TypeAlias = Any
 
 class AdaptiveManifoldFilter(cv2.Algorithm):
     def collectGarbage(self) -> None:
-        """"""
+        r""""""
 
     def filter(self, src, dst=..., joint=...) -> dst:
-        """
+        r"""
         @brief Apply high-dimensional filtering using adaptive manifolds.
 
         @param src filtering image with any numbers of channels.
@@ -40,11 +40,11 @@ class AdaptiveManifoldFilter(cv2.Algorithm):
         """
 
     def create(self) -> retval:
-        """"""
+        r""""""
 
 class ContourFitting(cv2.Algorithm):
     def estimateTransformation(self, src, dst, alphaPhiST=..., fdContour=...) -> tuple[alphaPhiST, dist]:
-        """
+        r"""
         @brief Fit two closed curves using fourier descriptors. More details in @cite PersoonFu1977 and @cite BergerRaghunathan1998
 
         @param src Contour defining first shape.
@@ -55,24 +55,24 @@ class ContourFitting(cv2.Algorithm):
         """
 
     def getCtrSize(self) -> retval:
-        """
+        r"""
         @returns number of fourier descriptors
         """
 
     def getFDSize(self) -> retval:
-        """
+        r"""
         @returns number of fourier descriptors used for optimal curve matching
         """
 
     def setCtrSize(self, n) -> None:
-        """
+        r"""
         @brief set number of Fourier descriptors used in estimateTransformation
 
         @param n number of Fourier descriptors equal to number of contour points after resampling.
         """
 
     def setFDSize(self, n) -> None:
-        """
+        r"""
         @brief set number of Fourier descriptors when estimateTransformation used vector<Point>
 
         @param n number of fourier descriptors used for optimal curve matching.
@@ -80,7 +80,7 @@ class ContourFitting(cv2.Algorithm):
 
 class DTFilter(cv2.Algorithm):
     def filter(self, src, dst=..., dDepth=...) -> dst:
-        """
+        r"""
         @brief Produce domain transform filtering operation on source image.
 
         @param src filtering image with unsigned 8-bit or floating-point 32-bit depth and up to 4 channels.
@@ -90,7 +90,7 @@ class DTFilter(cv2.Algorithm):
 
 class DisparityFilter(cv2.Algorithm):
     def filter(self, disparity_map_left, left_view, filtered_disparity_map=..., disparity_map_right=..., ROI=..., right_view=...) -> filtered_disparity_map:
-        """
+        r"""
         @brief Apply filtering to the disparity map.
 
         @param disparity_map_left disparity map of the left view, 1 channel, CV_16S type. Implicitly assumes that disparity values are scaled by 16 (one-pixel disparity corresponds to the value of 16 in the disparity map). Disparity map can have any resolution, it will be automatically resized to fit left_view resolution.
@@ -103,95 +103,95 @@ class DisparityFilter(cv2.Algorithm):
 
 class DisparityWLSFilter(DisparityFilter):
     def getConfidenceMap(self) -> retval:
-        """
+        r"""
         @brief Get the confidence map that was used in the last filter call. It is a CV_32F one-channel image
         with values ranging from 0.0 (totally untrusted regions of the raw disparity map) to 255.0 (regions containing
         correct disparity values with a high degree of confidence).
         """
 
     def getDepthDiscontinuityRadius(self) -> retval:
-        """
+        r"""
         @brief DepthDiscontinuityRadius is a parameter used in confidence computation. It defines the size of
         low-confidence regions around depth discontinuities.
         """
 
     def getLRCthresh(self) -> retval:
-        """
+        r"""
         @brief LRCthresh is a threshold of disparity difference used in left-right-consistency check during
         confidence map computation. The default value of 24 (1.5 pixels) is virtually always good enough.
         """
 
     def getLambda(self) -> retval:
-        """
+        r"""
         @brief Lambda is a parameter defining the amount of regularization during filtering. Larger values force
         filtered disparity map edges to adhere more to source image edges. Typical value is 8000.
         """
 
     def getROI(self) -> retval:
-        """
+        r"""
         @brief Get the ROI used in the last filter call
         """
 
     def getSigmaColor(self) -> retval:
-        """
+        r"""
         @brief SigmaColor is a parameter defining how sensitive the filtering process is to source image edges.
         Large values can lead to disparity leakage through low-contrast edges. Small values can make the filter too
         sensitive to noise and textures in the source image. Typical values range from 0.8 to 2.0.
         """
 
     def setDepthDiscontinuityRadius(self, _disc_radius) -> None:
-        """
+        r"""
         @see getDepthDiscontinuityRadius
         """
 
     def setLRCthresh(self, _LRC_thresh) -> None:
-        """
+        r"""
         @see getLRCthresh
         """
 
     def setLambda(self, _lambda) -> None:
-        """
+        r"""
         @see getLambda
         """
 
     def setSigmaColor(self, _sigma_color) -> None:
-        """
+        r"""
         @see getSigmaColor
         """
 
 class EdgeAwareInterpolator(SparseMatchInterpolator):
     def getFGSLambda(self) -> retval:
-        """
+        r"""
         @see setFGSLambda
         """
 
     def getFGSSigma(self) -> retval:
-        """
+        r"""
         @see setFGSLambda
         """
 
     def getK(self) -> retval:
-        """
+        r"""
         @see setK
         """
 
     def getLambda(self) -> retval:
-        """
+        r"""
         @see setLambda
         """
 
     def getSigma(self) -> retval:
-        """
+        r"""
         @see setSigma
         """
 
     def getUsePostProcessing(self) -> retval:
-        """
+        r"""
         @see setUsePostProcessing
         """
 
     def setCostMap(self, _costMap) -> None:
-        """
+        r"""
         @brief Interface to provide a more elaborated cost map, i.e. edge map, for the edge-aware term.
         *  This implementation is based on a rather simple gradient-based edge map estimation.
         *  To used more complex edge map estimator (e.g. StructuredEdgeDetection that has been
@@ -201,54 +201,54 @@ class EdgeAwareInterpolator(SparseMatchInterpolator):
         """
 
     def setFGSLambda(self, _lambda) -> None:
-        """
+        r"""
         @brief Sets the respective fastGlobalSmootherFilter() parameter.
         """
 
     def setFGSSigma(self, _sigma) -> None:
-        """
+        r"""
         @see setFGSLambda
         """
 
     def setK(self, _k) -> None:
-        """
+        r"""
         @brief K is a number of nearest-neighbor matches considered, when fitting a locally affine
         model. Usually it should be around 128. However, lower values would make the interpolation
         noticeably faster.
         """
 
     def setLambda(self, _lambda) -> None:
-        """
+        r"""
         @brief Lambda is a parameter defining the weight of the edge-aware term in geodesic distance,
         should be in the range of 0 to 1000.
         """
 
     def setSigma(self, _sigma) -> None:
-        """
+        r"""
         @brief Sigma is a parameter defining how fast the weights decrease in the locally-weighted affine
         fitting. Higher values can help preserve fine details, lower values can help to get rid of noise in the
         output flow.
         """
 
     def setUsePostProcessing(self, _use_post_proc) -> None:
-        """
+        r"""
         @brief Sets whether the fastGlobalSmootherFilter() post-processing is employed. It is turned on by
         default.
         """
 
 class EdgeBoxes(cv2.Algorithm):
     def getAlpha(self) -> retval:
-        """
+        r"""
         @brief Returns the step size of sliding window search.
         """
 
     def getBeta(self) -> retval:
-        """
+        r"""
         @brief Returns the nms threshold for object proposals.
         """
 
     def getBoundingBoxes(self, edge_map, orientation_map, scores=...) -> tuple[boxes, scores]:
-        """
+        r"""
         @brief Returns array containing proposal boxes.
 
         @param edge_map edge image.
@@ -258,163 +258,163 @@ class EdgeBoxes(cv2.Algorithm):
         """
 
     def getClusterMinMag(self) -> retval:
-        """
+        r"""
         @brief Returns the cluster min magnitude.
         """
 
     def getEdgeMergeThr(self) -> retval:
-        """
+        r"""
         @brief Returns the edge merge threshold.
         """
 
     def getEdgeMinMag(self) -> retval:
-        """
+        r"""
         @brief Returns the edge min magnitude.
         """
 
     def getEta(self) -> retval:
-        """
+        r"""
         @brief Returns adaptation rate for nms threshold.
         """
 
     def getGamma(self) -> retval:
-        """
+        r"""
         @brief Returns the affinity sensitivity.
         """
 
     def getKappa(self) -> retval:
-        """
+        r"""
         @brief Returns the scale sensitivity.
         """
 
     def getMaxAspectRatio(self) -> retval:
-        """
+        r"""
         @brief Returns the max aspect ratio of boxes.
         """
 
     def getMaxBoxes(self) -> retval:
-        """
+        r"""
         @brief Returns the max number of boxes to detect.
         """
 
     def getMinBoxArea(self) -> retval:
-        """
+        r"""
         @brief Returns the minimum area of boxes.
         """
 
     def getMinScore(self) -> retval:
-        """
+        r"""
         @brief Returns the min score of boxes to detect.
         """
 
     def setAlpha(self, value) -> None:
-        """
+        r"""
         @brief Sets the step size of sliding window search.
         """
 
     def setBeta(self, value) -> None:
-        """
+        r"""
         @brief Sets the nms threshold for object proposals.
         """
 
     def setClusterMinMag(self, value) -> None:
-        """
+        r"""
         @brief Sets the cluster min magnitude.
         """
 
     def setEdgeMergeThr(self, value) -> None:
-        """
+        r"""
         @brief Sets the edge merge threshold.
         """
 
     def setEdgeMinMag(self, value) -> None:
-        """
+        r"""
         @brief Sets the edge min magnitude.
         """
 
     def setEta(self, value) -> None:
-        """
+        r"""
         @brief Sets the adaptation rate for nms threshold.
         """
 
     def setGamma(self, value) -> None:
-        """
+        r"""
         @brief Sets the affinity sensitivity
         """
 
     def setKappa(self, value) -> None:
-        """
+        r"""
         @brief Sets the scale sensitivity.
         """
 
     def setMaxAspectRatio(self, value) -> None:
-        """
+        r"""
         @brief Sets the max aspect ratio of boxes.
         """
 
     def setMaxBoxes(self, value) -> None:
-        """
+        r"""
         @brief Sets max number of boxes to detect.
         """
 
     def setMinBoxArea(self, value) -> None:
-        """
+        r"""
         @brief Sets the minimum area of boxes.
         """
 
     def setMinScore(self, value) -> None:
-        """
+        r"""
         @brief Sets the min score of boxes to detect.
         """
 
 class EdgeDrawing(cv2.Algorithm):
     def detectEdges(self, src) -> None:
-        """
+        r"""
         @brief Detects edges in a grayscale image and prepares them to detect lines and ellipses.
 
         @param src 8-bit, single-channel, grayscale input image.
         """
 
     def detectEllipses(self, ellipses=...) -> ellipses:
-        """
+        r"""
         @brief Detects circles and ellipses.
 
         @param ellipses  output Vec<6d> contains center point and perimeter for circles, center point, axes and angle for ellipses. @note you should call detectEdges() before calling this function.
         """
 
     def detectLines(self, lines=...) -> lines:
-        """
+        r"""
         @brief Detects lines.
 
         @param lines  output Vec<4f> contains the start point and the end point of detected lines. @note you should call detectEdges() before calling this function.
         """
 
     def getEdgeImage(self, dst=...) -> dst:
-        """
+        r"""
         @brief returns Edge Image prepared by detectEdges() function.
 
         @param dst returns 8-bit, single-channel output image.
         """
 
     def getGradientImage(self, dst=...) -> dst:
-        """
+        r"""
         @brief returns Gradient Image prepared by detectEdges() function.
 
         @param dst returns 16-bit, single-channel output image.
         """
 
     def getSegmentIndicesOfLines(self) -> retval:
-        """
+        r"""
         @brief Returns for each line found in detectLines() its edge segment index in getSegments()
         """
 
     def getSegments(self) -> retval:
-        """
+        r"""
         @brief Returns std::vector<std::vector<Point>> of detected edge segments, see detectEdges()
         """
 
     def setParams(self, parameters) -> None:
-        """
+        r"""
         @brief sets parameters.
 
         this function is meant to be used for parameter setting in other languages than c++ like python.
@@ -438,7 +438,7 @@ class EdgeDrawing(cv2.Algorithm):
 
 class FastBilateralSolverFilter(cv2.Algorithm):
     def filter(self, src, confidence, dst=...) -> dst:
-        """
+        r"""
         @brief Apply smoothing operation to the source image.
 
         @param src source image for filtering with unsigned 8-bit or signed 16-bit or floating-point 32-bit depth and up to 3 channels.
@@ -448,7 +448,7 @@ class FastBilateralSolverFilter(cv2.Algorithm):
 
 class FastGlobalSmootherFilter(cv2.Algorithm):
     def filter(self, src, dst=...) -> dst:
-        """
+        r"""
         @brief Apply smoothing operation to the source image.
 
         @param src source image for filtering with unsigned 8-bit or signed 16-bit or floating-point 32-bit depth and up to 4 channels.
@@ -457,7 +457,7 @@ class FastGlobalSmootherFilter(cv2.Algorithm):
 
 class FastLineDetector(cv2.Algorithm):
     def detect(self, image, lines=...) -> lines:
-        """
+        r"""
         @brief Finds lines in the input image.
         This is the output of the default parameters of the algorithm on the above
         shown image.
@@ -469,7 +469,7 @@ class FastLineDetector(cv2.Algorithm):
         """
 
     def drawSegments(self, image, lines, draw_arrow=..., linecolor=..., linethickness=...) -> image:
-        """
+        r"""
         @brief Draws the line segments on a given image.
         @param image The image, where the lines will be drawn. Should be bigger or equal to the image, where the lines were found.
         @param lines A vector of the lines that needed to be drawn.
@@ -480,7 +480,7 @@ class FastLineDetector(cv2.Algorithm):
 
 class GuidedFilter(cv2.Algorithm):
     def filter(self, src, dst=..., dDepth=...) -> dst:
-        """
+        r"""
         @brief Apply Guided Filter to the filtering image.
 
         @param src filtering image with any numbers of channels.
@@ -490,94 +490,94 @@ class GuidedFilter(cv2.Algorithm):
 
 class RFFeatureGetter(cv2.Algorithm):
     def getFeatures(self, src, features, gnrmRad, gsmthRad, shrink, outNum, gradNum) -> None:
-        """"""
+        r""""""
 
 class RICInterpolator(SparseMatchInterpolator):
     def getAlpha(self) -> retval:
-        """
+        r"""
         @copybrief setAlpha
         *  @see setAlpha
         """
 
     def getFGSLambda(self) -> retval:
-        """
+        r"""
         @copybrief setFGSLambda
         *  @see setFGSLambda
         """
 
     def getFGSSigma(self) -> retval:
-        """
+        r"""
         @copybrief setFGSSigma
         *  @see setFGSSigma
         """
 
     def getK(self) -> retval:
-        """
+        r"""
         @copybrief setK
         *  @see setK
         """
 
     def getMaxFlow(self) -> retval:
-        """
+        r"""
         @copybrief setMaxFlow
         *  @see setMaxFlow
         """
 
     def getModelIter(self) -> retval:
-        """
+        r"""
         @copybrief setModelIter
         *  @see setModelIter
         """
 
     def getRefineModels(self) -> retval:
-        """
+        r"""
         @copybrief setRefineModels
         *  @see setRefineModels
         """
 
     def getSuperpixelMode(self) -> retval:
-        """
+        r"""
         @copybrief setSuperpixelMode
         *  @see setSuperpixelMode
         """
 
     def getSuperpixelNNCnt(self) -> retval:
-        """
+        r"""
         @copybrief setSuperpixelNNCnt
         *  @see setSuperpixelNNCnt
         """
 
     def getSuperpixelRuler(self) -> retval:
-        """
+        r"""
         @copybrief setSuperpixelRuler
         *  @see setSuperpixelRuler
         """
 
     def getSuperpixelSize(self) -> retval:
-        """
+        r"""
         @copybrief setSuperpixelSize
         *  @see setSuperpixelSize
         """
 
     def getUseGlobalSmootherFilter(self) -> retval:
-        """
+        r"""
         @copybrief setUseGlobalSmootherFilter
         *  @see setUseGlobalSmootherFilter
         """
 
     def getUseVariationalRefinement(self) -> retval:
-        """
+        r"""
         @copybrief setUseVariationalRefinement
         *  @see setUseVariationalRefinement
         """
 
     def setAlpha(self, alpha=...) -> None:
-        """
+        r"""
         @brief Alpha is a parameter defining a global weight for transforming geodesic distance into weight.
         """
 
     def setCostMap(self, costMap) -> None:
-        """
+        r"""
         @brief Interface to provide a more elaborated cost map, i.e. edge map, for the edge-aware term.
         *  This implementation is based on a rather simple gradient-based edge map estimation.
         *  To used more complex edge map estimator (e.g. StructuredEdgeDetection that has been
@@ -587,40 +587,40 @@ class RICInterpolator(SparseMatchInterpolator):
         """
 
     def setFGSLambda(self, lambda_=...) -> None:
-        """
+        r"""
         @brief Sets the respective fastGlobalSmootherFilter() parameter.
         """
 
     def setFGSSigma(self, sigma=...) -> None:
-        """
+        r"""
         @brief Sets the respective fastGlobalSmootherFilter() parameter.
         """
 
     def setK(self, k=...) -> None:
-        """
+        r"""
         @brief K is a number of nearest-neighbor matches considered, when fitting a locally affine
         *model for a superpixel segment. However, lower values would make the interpolation
         *noticeably faster. The original implementation of @cite Hu2017 uses 32.
         """
 
     def setMaxFlow(self, maxFlow=...) -> None:
-        """
+        r"""
         @brief MaxFlow is a threshold to validate the predictions using a certain piece-wise affine model.
         * If the prediction exceeds the treshold the translational model will be applied instead.
         """
 
     def setModelIter(self, modelIter=...) -> None:
-        """
+        r"""
         @brief Parameter defining the number of iterations for piece-wise affine model estimation.
         """
 
     def setRefineModels(self, refineModles=...) -> None:
-        """
+        r"""
         @brief Parameter to choose wether additional refinement of the piece-wise affine models is employed.
         """
 
     def setSuperpixelMode(self, mode=...) -> None:
-        """
+        r"""
         @brief Parameter to choose superpixel algorithm variant to use:
         * - cv::ximgproc::SLICType SLIC segments image using a desired region_size (value: 100)
         * - cv::ximgproc::SLICType SLICO will optimize using adaptive compactness factor (value: 101)
@@ -629,43 +629,43 @@ class RICInterpolator(SparseMatchInterpolator):
         """
 
     def setSuperpixelNNCnt(self, spNN=...) -> None:
-        """
+        r"""
         @brief Parameter defines the number of nearest-neighbor matches for each superpixel considered, when fitting a locally affine
         *model.
         """
 
     def setSuperpixelRuler(self, ruler=...) -> None:
-        """
+        r"""
         @brief Parameter to tune enforcement of superpixel smoothness factor used for oversegmentation.
         *  @see cv::ximgproc::createSuperpixelSLIC
         """
 
     def setSuperpixelSize(self, spSize=...) -> None:
-        """
+        r"""
         @brief Get the internal cost, i.e. edge map, used for estimating the edge-aware term.
         *  @see setCostMap
         """
 
     def setUseGlobalSmootherFilter(self, use_FGS=...) -> None:
-        """
+        r"""
         @brief Sets whether the fastGlobalSmootherFilter() post-processing is employed.
         """
 
     def setUseVariationalRefinement(self, use_variational_refinement=...) -> None:
-        """
+        r"""
         @brief Parameter to choose wether the VariationalRefinement post-processing  is employed.
         """
 
 class RidgeDetectionFilter(cv2.Algorithm):
     def getRidgeFilteredImage(self, _img, out=...) -> out:
-        """
+        r"""
         @brief Apply Ridge detection filter on input image.
         @param _img InputArray as supported by Sobel. img can be 1-Channel or 3-Channels.
         @param out OutputAray of structure as RidgeDetectionFilter::ddepth. Output image with ridges.
         """
 
     def create(self, ddepth=..., dx=..., dy=..., ksize=..., out_dtype=..., scale=..., delta=..., borderType=...) -> retval:
-        """
+        r"""
         @brief Create pointer to the Ridge detection filter.
         @param ddepth  Specifies output image depth. Defualt is CV_32FC1
         @param dx Order of derivative x, default is 1
@@ -679,7 +679,7 @@ class RidgeDetectionFilter(cv2.Algorithm):
 
 class ScanSegment(cv2.Algorithm):
     def getLabelContourMask(self, image=..., thick_line=...) -> image:
-        """
+        r"""
         @brief Returns the mask of the superpixel segmentation stored in the ScanSegment object.
 
         The function return the boundaries of the superpixel segmentation.
@@ -689,7 +689,7 @@ class ScanSegment(cv2.Algorithm):
         """
 
     def getLabels(self, labels_out=...) -> labels_out:
-        """
+        r"""
         @brief Returns the segmentation labeling of the image.
 
         Each label represents a superpixel, and each pixel is assigned to one superpixel label.
@@ -698,14 +698,14 @@ class ScanSegment(cv2.Algorithm):
         """
 
     def getNumberOfSuperpixels(self) -> retval:
-        """
+        r"""
         @brief Returns the actual superpixel segmentation from the last image processed using iterate.
 
         Returns zero if no image has been processed.
         """
 
     def iterate(self, img) -> None:
-        """
+        r"""
         @brief Calculates the superpixel segmentation on a given image with the initialized
         parameters in the ScanSegment object.
 
@@ -717,7 +717,7 @@ class ScanSegment(cv2.Algorithm):
 
 class SparseMatchInterpolator(cv2.Algorithm):
     def interpolate(self, from_image, from_points, to_image, to_points, dense_flow=...) -> dense_flow:
-        """
+        r"""
         @brief Interpolate input sparse matches.
 
         @param from_image first of the two matched images, 8-bit single-channel or three-channel.
@@ -729,7 +729,7 @@ class SparseMatchInterpolator(cv2.Algorithm):
 
 class StructuredEdgeDetection(cv2.Algorithm):
     def computeOrientation(self, src, dst=...) -> dst:
-        """
+        r"""
         @brief The function computes orientation from edge image.
 
         @param src edge image.
@@ -737,7 +737,7 @@ class StructuredEdgeDetection(cv2.Algorithm):
         """
 
     def detectEdges(self, src, dst=...) -> dst:
-        """
+        r"""
         @brief The function detects edges in src and draw them to dst.
 
         The algorithm underlies this function is much more robust to texture presence, than common
@@ -747,7 +747,7 @@ class StructuredEdgeDetection(cv2.Algorithm):
         """
 
     def edgesNms(self, edge_image, orientation_image, dst=..., r=..., s=..., m=..., isParallel=...) -> dst:
-        """
+        r"""
         @brief The function edgenms in edge image and suppress edges where edge is stronger in orthogonal direction.
 
         @param edge_image edge image from detectEdges function.
@@ -761,14 +761,14 @@ class StructuredEdgeDetection(cv2.Algorithm):
 
 class SuperpixelLSC(cv2.Algorithm):
     def enforceLabelConnectivity(self, min_element_size=...) -> None:
-        """
+        r"""
         @brief Enforce label connectivity.
 
         @param min_element_size The minimum element size in percents that should be absorbed into a bigger superpixel. Given resulted average superpixel size valid value should be in 0-100 range, 25 means that less then a quarter sized superpixel should be absorbed, this is default.  The function merge component that is too small, assigning the previously found adjacent label to this component. Calling this function may change the final number of superpixels.
         """
 
     def getLabelContourMask(self, image=..., thick_line=...) -> image:
-        """
+        r"""
         @brief Returns the mask of the superpixel segmentation stored in SuperpixelLSC object.
 
         @param image Return: CV_8U1 image mask where -1 indicates that the pixel is a superpixel border, and 0 otherwise.
@@ -776,7 +776,7 @@ class SuperpixelLSC(cv2.Algorithm):
         """
 
     def getLabels(self, labels_out=...) -> labels_out:
-        """
+        r"""
         @brief Returns the segmentation labeling of the image.
 
         Each label represents a superpixel, and each pixel is assigned to one superpixel label.
@@ -785,13 +785,13 @@ class SuperpixelLSC(cv2.Algorithm):
         """
 
     def getNumberOfSuperpixels(self) -> retval:
-        """
+        r"""
         @brief Calculates the actual amount of superpixels on a given segmentation computed
         and stored in SuperpixelLSC object.
         """
 
     def iterate(self, num_iterations=...) -> None:
-        """
+        r"""
         @brief Calculates the superpixel segmentation on a given image with the initialized
         parameters in the SuperpixelLSC object.
 
@@ -804,7 +804,7 @@ class SuperpixelLSC(cv2.Algorithm):
 
 class SuperpixelSEEDS(cv2.Algorithm):
     def getLabelContourMask(self, image=..., thick_line=...) -> image:
-        """
+        r"""
         @brief Returns the mask of the superpixel segmentation stored in SuperpixelSEEDS object.
 
         @param image Return: CV_8UC1 image mask where -1 indicates that the pixel is a superpixel border, and 0 otherwise.
@@ -812,7 +812,7 @@ class SuperpixelSEEDS(cv2.Algorithm):
         """
 
     def getLabels(self, labels_out=...) -> labels_out:
-        """
+        r"""
         @brief Returns the segmentation labeling of the image.
 
         Each label represents a superpixel, and each pixel is assigned to one superpixel label.
@@ -821,7 +821,7 @@ class SuperpixelSEEDS(cv2.Algorithm):
         """
 
     def getNumberOfSuperpixels(self) -> retval:
-        """
+        r"""
         @brief Calculates the superpixel segmentation on a given image stored in SuperpixelSEEDS object.
 
         The function computes the superpixels segmentation of an image with the parameters initialized
@@ -829,7 +829,7 @@ class SuperpixelSEEDS(cv2.Algorithm):
         """
 
     def iterate(self, img, num_iterations=...) -> None:
-        """
+        r"""
         @brief Calculates the superpixel segmentation on a given image with the initialized
         parameters in the SuperpixelSEEDS object.
 
@@ -843,14 +843,14 @@ class SuperpixelSEEDS(cv2.Algorithm):
 
 class SuperpixelSLIC(cv2.Algorithm):
     def enforceLabelConnectivity(self, min_element_size=...) -> None:
-        """
+        r"""
         @brief Enforce label connectivity.
 
         @param min_element_size The minimum element size in percents that should be absorbed into a bigger superpixel. Given resulted average superpixel size valid value should be in 0-100 range, 25 means that less then a quarter sized superpixel should be absorbed, this is default.  The function merge component that is too small, assigning the previously found adjacent label to this component. Calling this function may change the final number of superpixels.
         """
 
     def getLabelContourMask(self, image=..., thick_line=...) -> image:
-        """
+        r"""
         @brief Returns the mask of the superpixel segmentation stored in SuperpixelSLIC object.
 
         @param image Return: CV_8U1 image mask where -1 indicates that the pixel is a superpixel border, and 0 otherwise.
@@ -858,7 +858,7 @@ class SuperpixelSLIC(cv2.Algorithm):
         """
 
     def getLabels(self, labels_out=...) -> labels_out:
-        """
+        r"""
         @brief Returns the segmentation labeling of the image.
 
         Each label represents a superpixel, and each pixel is assigned to one superpixel label.
@@ -867,13 +867,13 @@ class SuperpixelSLIC(cv2.Algorithm):
         """
 
     def getNumberOfSuperpixels(self) -> retval:
-        """
+        r"""
         @brief Calculates the actual amount of superpixels on a given segmentation computed
         and stored in SuperpixelSLIC object.
         """
 
     def iterate(self, num_iterations=...) -> None:
-        """
+        r"""
         @brief Calculates the superpixel segmentation on a given image with the initialized
         parameters in the SuperpixelSLIC object.
 
@@ -885,12 +885,12 @@ class SuperpixelSLIC(cv2.Algorithm):
         """
 
 def AdaptiveManifoldFilter_create() -> retval:
-    """
+    r"""
     .
     """
 
 def FastHoughTransform(src, dstMatDepth, dst=..., angleRange=..., op=..., makeSkew=...) -> dst:
-    """
+    r"""
     * @brief   Calculates 2D Fast Hough transform of an image.
     * @param   dst         The destination image, result of transformation.
     * @param   src         The source (input) image.
@@ -904,7 +904,7 @@ def FastHoughTransform(src, dstMatDepth, dst=..., angleRange=..., op=..., makeSk
     """
 
 def GradientDericheX(op, alpha, omega, dst=...) -> dst:
-    """
+    r"""
     * @brief   Applies X Deriche filter to an image.
     *
     * For more details about this implementation, please see http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.476.5736&rep=rep1&type=pdf
@@ -917,7 +917,7 @@ def GradientDericheX(op, alpha, omega, dst=...) -> dst:
     """
 
 def GradientDericheY(op, alpha, omega, dst=...) -> dst:
-    """
+    r"""
     * @brief   Applies Y Deriche filter to an image.
     *
     * For more details about this implementation, please see http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.476.5736&rep=rep1&type=pdf
@@ -930,7 +930,7 @@ def GradientDericheY(op, alpha, omega, dst=...) -> dst:
     """
 
 def HoughPoint2Line(houghPoint, srcImgInfo, angleRange=..., makeSkew=..., rules=...) -> retval:
-    """
+    r"""
     * @brief   Calculates coordinates of line segment corresponded by point in Hough space.
     * @param   houghPoint  Point in Hough space.
     * @param   srcImgInfo The source (input) image of Hough transform.
@@ -947,7 +947,7 @@ def HoughPoint2Line(houghPoint, srcImgInfo, angleRange=..., makeSkew=..., rules=
     """
 
 def PeiLinNormalization(I: _npt.NDArray[_np.float64], T: _npt.NDArray[_np.float64] = ...) -> _npt.NDArray[_np.float64]:
-    """Calculates an affine transformation that normalize given image using Pei&Lin Normalization.
+    r"""Calculates an affine transformation that normalize given image using Pei&Lin Normalization.
 
     Assume given image I=T(I¯) where I¯ is a normalized image and T is an affine transformation distorting this image by translation, rotation, scaling and skew. The function returns an affine transformation matrix corresponding to the transformation T-1 described in [PeiLin95]. For more details about this implementation, please see [PeiLin95] Soo-Chang Pei and Chao-Nan Lin. Image normalization for pattern recognition. Image and Vision Computing, Vol. 13, N.10, pp. 711-723, 1995.
 
@@ -960,7 +960,7 @@ def PeiLinNormalization(I: _npt.NDArray[_np.float64], T: _npt.NDArray[_np.float6
     """
 
 def RadonTransform(src, dst=..., theta=..., start_angle=..., end_angle=..., crop=..., norm=...) -> dst:
-    """
+    r"""
     * @brief   Calculate Radon Transform of an image.
     * @param   src         The source (input) image.
     * @param   dst         The destination image, result of transformation.
@@ -981,7 +981,7 @@ def RadonTransform(src, dst=..., theta=..., start_angle=..., end_angle=..., crop
     """
 
 def RidgeDetectionFilter_create(ddepth=..., dx=..., dy=..., ksize=..., out_dtype=..., scale=..., delta=..., borderType=...) -> retval:
-    """
+    r"""
     @brief Create pointer to the Ridge detection filter.
         @param ddepth  Specifies output image depth. Defualt is CV_32FC1
         @param dx Order of derivative x, default is 1
@@ -995,7 +995,7 @@ def RidgeDetectionFilter_create(ddepth=..., dx=..., dy=..., ksize=..., out_dtype
     """
 
 def amFilter(joint, src, sigma_s, sigma_r, dst=..., adjust_outliers=...) -> dst:
-    """
+    r"""
     @brief Simple one-line Adaptive Manifold Filter call.
 
     @param joint joint (also called as guided) image or array of images with any numbers of channels.
@@ -1018,7 +1018,7 @@ def amFilter(joint, src, sigma_s, sigma_r, dst=..., adjust_outliers=...) -> dst:
     """
 
 def anisotropicDiffusion(src, alpha, K, niters, dst=...) -> dst:
-    """
+    r"""
     @brief Performs anisotropic diffusion on an image.
 
      The function applies Perona-Malik anisotropic diffusion to an image. This is the solution to the partial differential equation:
@@ -1041,7 +1041,7 @@ def anisotropicDiffusion(src, alpha, K, niters, dst=...) -> dst:
     """
 
 def bilateralTextureFilter(src, dst=..., fr=..., numIter=..., sigmaAlpha=..., sigmaAvg=...) -> dst:
-    """
+    r"""
     @brief Applies the bilateral texture filter to an image. It performs structure-preserving texture filter.
     For more details about this filter see @cite Cho2014.
 
@@ -1063,7 +1063,7 @@ def bilateralTextureFilter(src, dst=..., fr=..., numIter=..., sigmaAlpha=..., si
     """
 
 def colorMatchTemplate(img, templ, result=...) -> result:
-    """
+    r"""
     * @brief    Compares a color template against overlapped color image regions.
     *
     * @param   img        Image where the search is running. It must be 3 channels image
@@ -1072,7 +1072,7 @@ def colorMatchTemplate(img, templ, result=...) -> result:
     """
 
 def computeBadPixelPercent(GT, src, ROI, thresh=...) -> retval:
-    """
+    r"""
     @brief Function for computing the percent of "bad" pixels in the disparity map
     (pixels where error is higher than a specified threshold)
 
@@ -1088,7 +1088,7 @@ def computeBadPixelPercent(GT, src, ROI, thresh=...) -> retval:
     """
 
 def computeMSE(GT, src, ROI) -> retval:
-    """
+    r"""
     @brief Function for computing mean square error for disparity maps
 
     @param GT ground truth disparity map
@@ -1101,7 +1101,7 @@ def computeMSE(GT, src, ROI) -> retval:
     """
 
 def contourSampling(src, nbElt, out=...) -> out:
-    """
+    r"""
     * @brief   Contour sampling .
         *
         * @param   src   contour type vector<Point> , vector<Point2f>  or vector<Point2d>
@@ -1111,7 +1111,7 @@ def contourSampling(src, nbElt, out=...) -> out:
     """
 
 def covarianceEstimation(src, windowRows, windowCols, dst=...) -> dst:
-    """
+    r"""
     @brief Computes the estimated covariance matrix of an image using the sliding
     window forumlation.
 
@@ -1128,7 +1128,7 @@ def covarianceEstimation(src, windowRows, windowCols, dst=...) -> dst:
     """
 
 def createAMFilter(sigma_s, sigma_r, adjust_outliers=...) -> retval:
-    """
+    r"""
     @brief Factory method, create instance of AdaptiveManifoldFilter and produce some initialization routines.
 
     @param sigma_s spatial standard deviation.
@@ -1147,7 +1147,7 @@ def createAMFilter(sigma_s, sigma_r, adjust_outliers=...) -> retval:
     """
 
 def createContourFitting(ctr=..., fd=...) -> retval:
-    """
+    r"""
     * @brief create ContourFitting algorithm object
         *
         * @param ctr number of Fourier descriptors equal to number of contour points after resampling.
@@ -1155,7 +1155,7 @@ def createContourFitting(ctr=..., fd=...) -> retval:
     """
 
 def createDTFilter(guide, sigmaSpatial, sigmaColor, mode=..., numIters=...) -> retval:
-    """
+    r"""
     @brief Factory method, create instance of DTFilter and produce initialization routines.
 
     @param guide guided image (used to build transformed distance, which describes edge structure of
@@ -1177,7 +1177,7 @@ def createDTFilter(guide, sigmaSpatial, sigmaColor, mode=..., numIters=...) -> r
     """
 
 def createDisparityWLSFilter(matcher_left) -> retval:
-    """
+    r"""
     @brief Convenience factory method that creates an instance of DisparityWLSFilter and sets up all the relevant
     filter parameters automatically based on the matcher instance. Currently supports only StereoBM and StereoSGBM.
 
@@ -1185,7 +1185,7 @@ def createDisparityWLSFilter(matcher_left) -> retval:
     """
 
 def createDisparityWLSFilterGeneric(use_confidence) -> retval:
-    """
+    r"""
     @brief More generic factory method, create instance of DisparityWLSFilter and execute basic
     initialization routines. When using this method you will need to set-up the ROI, matchers and
     other parameters by yourself.
@@ -1195,13 +1195,13 @@ def createDisparityWLSFilterGeneric(use_confidence) -> retval:
     """
 
 def createEdgeAwareInterpolator() -> retval:
-    """
+    r"""
     @brief Factory method that creates an instance of the
     EdgeAwareInterpolator.
     """
 
 def createEdgeBoxes(alpha=..., beta=..., eta=..., minScore=..., maxBoxes=..., edgeMinMag=..., edgeMergeThr=..., clusterMinMag=..., maxAspectRatio=..., minBoxArea=..., gamma=..., kappa=...) -> retval:
-    """
+    r"""
     @brief Creates a Edgeboxes
 
     @param alpha step size of sliding window search.
@@ -1219,12 +1219,12 @@ def createEdgeBoxes(alpha=..., beta=..., eta=..., minScore=..., maxBoxes=..., ed
     """
 
 def createEdgeDrawing() -> retval:
-    """
+    r"""
     @brief Creates a smart pointer to a EdgeDrawing object and initializes it
     """
 
 def createFastBilateralSolverFilter(guide, sigma_spatial, sigma_luma, sigma_chroma, lambda_=..., num_iter=..., max_tol=...) -> retval:
-    """
+    r"""
     @brief Factory method, create instance of FastBilateralSolverFilter and execute the initialization routines.
 
     @param guide image serving as guide for filtering. It should have 8-bit depth and either 1 or 3 channels.
@@ -1245,7 +1245,7 @@ def createFastBilateralSolverFilter(guide, sigma_spatial, sigma_luma, sigma_chro
     """
 
 def createFastGlobalSmootherFilter(guide, lambda_, sigma_color, lambda_attenuation=..., num_iter=...) -> retval:
-    """
+    r"""
     @brief Factory method, create instance of FastGlobalSmootherFilter and execute the initialization routines.
 
     @param guide image serving as guide for filtering. It should have 8-bit depth and either 1 or 3 channels.
@@ -1268,7 +1268,7 @@ def createFastGlobalSmootherFilter(guide, lambda_, sigma_color, lambda_attenuati
     """
 
 def createFastLineDetector(length_threshold=..., distance_threshold=..., canny_th1=..., canny_th2=..., canny_aperture_size=..., do_merge=...) -> retval:
-    """
+    r"""
     @brief Creates a smart pointer to a FastLineDetector object and initializes it
 
     @param length_threshold    Segment shorter than this will be discarded
@@ -1282,7 +1282,7 @@ def createFastLineDetector(length_threshold=..., distance_threshold=..., canny_t
     """
 
 def createGuidedFilter(guide, radius, eps) -> retval:
-    """
+    r"""
     @brief Factory method, create instance of GuidedFilter and produce initialization routines.
 
     @param guide guided image (or array of images) with up to 3 channels, if it have more then 3
@@ -1297,7 +1297,7 @@ def createGuidedFilter(guide, radius, eps) -> retval:
     """
 
 def createQuaternionImage(img, qimg=...) -> qimg:
-    """
+    r"""
     * @brief   creates a quaternion image.
     *
     * @param   img         Source 8-bit, 32-bit or 64-bit image, with 3-channel image.
@@ -1305,18 +1305,18 @@ def createQuaternionImage(img, qimg=...) -> qimg:
     """
 
 def createRFFeatureGetter() -> retval:
-    """
+    r"""
     .
     """
 
 def createRICInterpolator() -> retval:
-    """
+    r"""
     @brief Factory method that creates an instance of the
     RICInterpolator.
     """
 
 def createRightMatcher(matcher_left) -> retval:
-    """
+    r"""
     @brief Convenience method to set up the matcher for computing the right-view disparity map
     that is required in case of filtering with confidence.
 
@@ -1324,7 +1324,7 @@ def createRightMatcher(matcher_left) -> retval:
     """
 
 def createScanSegment(image_width, image_height, num_superpixels, slices=..., merge_small=...) -> retval:
-    """
+    r"""
     @brief Initializes a ScanSegment object.
 
     The function initializes a ScanSegment object for the input image. It stores the parameters of
@@ -1343,12 +1343,12 @@ def createScanSegment(image_width, image_height, num_superpixels, slices=..., me
     """
 
 def createStructuredEdgeDetection(model, howToGetFeatures=...) -> retval:
-    """
+    r"""
     .
     """
 
 def createSuperpixelLSC(image, region_size=..., ratio=...) -> retval:
-    """
+    r"""
     @brief Class implementing the LSC (Linear Spectral Clustering) superpixels
 
     @param image Image to segment
@@ -1365,7 +1365,7 @@ def createSuperpixelLSC(image, region_size=..., ratio=...) -> retval:
     """
 
 def createSuperpixelSEEDS(image_width, image_height, image_channels, num_superpixels, num_levels, prior=..., histogram_bins=..., double_step=...) -> retval:
-    """
+    r"""
     @brief Initializes a SuperpixelSEEDS object.
 
     @param image_width Image width.
@@ -1397,7 +1397,7 @@ def createSuperpixelSEEDS(image_width, image_height, image_channels, num_superpi
     """
 
 def createSuperpixelSLIC(image, algorithm=..., region_size=..., ruler=...) -> retval:
-    """
+    r"""
     @brief Initialize a SuperpixelSLIC object
 
     @param image Image to segment
@@ -1417,7 +1417,7 @@ def createSuperpixelSLIC(image, algorithm=..., region_size=..., ruler=...) -> re
     """
 
 def dtFilter(guide, src, sigmaSpatial, sigmaColor, dst=..., mode=..., numIters=...) -> dst:
-    """
+    r"""
     @brief Simple one-line Domain Transform filter call. If you have multiple images to filter with the same
     guided image then use DTFilter interface to avoid extra computations on initialization stage.
 
@@ -1436,7 +1436,7 @@ def dtFilter(guide, src, sigmaSpatial, sigmaColor, dst=..., mode=..., numIters=.
     """
 
 def edgePreservingFilter(src, d, threshold, dst=...) -> dst:
-    """
+    r"""
     * @brief Smoothes an image using the Edge-Preserving filter.
         *
         * The function smoothes Gaussian noise as well as salt & pepper noise.
@@ -1450,7 +1450,7 @@ def edgePreservingFilter(src, d, threshold, dst=...) -> dst:
     """
 
 def fastBilateralSolverFilter(guide, src, confidence, dst=..., sigma_spatial=..., sigma_luma=..., sigma_chroma=..., lambda_=..., num_iter=..., max_tol=...) -> dst:
-    """
+    r"""
     @brief Simple one-line Fast Bilateral Solver filter call. If you have multiple images to filter with the same
     guide then use FastBilateralSolverFilter interface to avoid extra computations.
 
@@ -1480,7 +1480,7 @@ def fastBilateralSolverFilter(guide, src, confidence, dst=..., sigma_spatial=...
     """
 
 def fastGlobalSmootherFilter(guide, src, lambda_, sigma_color, dst=..., lambda_attenuation=..., num_iter=...) -> dst:
-    """
+    r"""
     @brief Simple one-line Fast Global Smoother filter call. If you have multiple images to filter with the same
     guide then use FastGlobalSmootherFilter interface to avoid extra computations.
 
@@ -1501,7 +1501,7 @@ def fastGlobalSmootherFilter(guide, src, lambda_, sigma_color, dst=..., lambda_a
     """
 
 def findEllipses(image, ellipses=..., scoreThreshold=..., reliabilityThreshold=..., centerDistanceThreshold=...) -> ellipses:
-    """
+    r"""
     @brief Finds ellipses fastly in an image using projective invariant pruning.
     *
     * The function detects ellipses in images using projective invariant pruning.
@@ -1517,7 +1517,7 @@ def findEllipses(image, ellipses=..., scoreThreshold=..., reliabilityThreshold=.
     """
 
 def fourierDescriptor(src, dst=..., nbElt=..., nbFD=...) -> dst:
-    """
+    r"""
     * @brief   Fourier descriptors for planed closed curves
         *
         * For more details about this implementation, please see @cite PersoonFu1977
@@ -1530,7 +1530,7 @@ def fourierDescriptor(src, dst=..., nbElt=..., nbFD=...) -> dst:
     """
 
 def getDisparityVis(src, dst=..., scale=...) -> dst:
-    """
+    r"""
     @brief Function for creating a disparity map visualization (clamped CV_8U image)
 
     @param src input disparity map (CV_16S depth)
@@ -1541,7 +1541,7 @@ def getDisparityVis(src, dst=..., scale=...) -> dst:
     """
 
 def guidedFilter(guide, src, radius, eps, dst=..., dDepth=...) -> dst:
-    """
+    r"""
     @brief Simple one-line Guided Filter call.
 
     If you have multiple images to filter with the same guided image then use GuidedFilter interface to
@@ -1565,7 +1565,7 @@ def guidedFilter(guide, src, radius, eps, dst=..., dDepth=...) -> dst:
     """
 
 def jointBilateralFilter(joint, src, d, sigmaColor, sigmaSpace, dst=..., borderType=...) -> dst:
-    """
+    r"""
     @brief Applies the joint bilateral filter to an image.
 
     @param joint Joint 8-bit or floating-point, 1-channel or 3-channel image.
@@ -1595,7 +1595,7 @@ def jointBilateralFilter(joint, src, d, sigmaColor, sigmaSpace, dst=..., borderT
     """
 
 def l0Smooth(src, dst=..., lambda_=..., kappa=...) -> dst:
-    """
+    r"""
     @brief Global image smoothing via L0 gradient minimization.
 
     @param src source image for filtering with unsigned 8-bit or signed 16-bit or floating-point depth.
@@ -1610,7 +1610,7 @@ def l0Smooth(src, dst=..., lambda_=..., kappa=...) -> dst:
     """
 
 def niBlackThreshold(_src, maxValue, type, blockSize, k, _dst=..., binarizationMethod=..., r=...) -> _dst:
-    """
+    r"""
     @brief Performs thresholding on input images using Niblack's technique or some of the
     popular variations it inspired.
 
@@ -1645,7 +1645,7 @@ def niBlackThreshold(_src, maxValue, type, blockSize, k, _dst=..., binarizationM
     """
 
 def qconj(qimg, qcimg=...) -> qcimg:
-    """
+    r"""
     * @brief   calculates conjugate of a quaternion image.
     *
     * @param   qimg         quaternion image.
@@ -1653,7 +1653,7 @@ def qconj(qimg, qcimg=...) -> qcimg:
     """
 
 def qdft(img, flags, sideLeft, qimg=...) -> qimg:
-    """
+    r"""
     * @brief    Performs a forward or inverse Discrete quaternion Fourier transform of a 2D quaternion array.
     *
     * @param   img        quaternion image.
@@ -1663,7 +1663,7 @@ def qdft(img, flags, sideLeft, qimg=...) -> qimg:
     """
 
 def qmultiply(src1, src2, dst=...) -> dst:
-    """
+    r"""
     * @brief   Calculates the per-element quaternion product of two arrays
     *
     * @param   src1         quaternion image.
@@ -1672,7 +1672,7 @@ def qmultiply(src1, src2, dst=...) -> dst:
     """
 
 def qunitary(qimg, qnimg=...) -> qnimg:
-    """
+    r"""
     * @brief   divides each element by its modulus.
     *
     * @param   qimg         quaternion image.
@@ -1680,7 +1680,7 @@ def qunitary(qimg, qnimg=...) -> qnimg:
     """
 
 def readGT(src_path, dst=...) -> tuple[retval, dst]:
-    """
+    r"""
     @brief Function for reading ground truth disparity maps. Supports basic Middlebury
     and MPI-Sintel formats. Note that the resulting disparity map is scaled by 16.
 
@@ -1692,7 +1692,7 @@ def readGT(src_path, dst=...) -> tuple[retval, dst]:
     """
 
 def rollingGuidanceFilter(src, dst=..., d=..., sigmaColor=..., sigmaSpace=..., numOfIter=..., borderType=...) -> dst:
-    """
+    r"""
     @brief Applies the rolling guidance filter to an image.
 
     For more details, please see @cite zhang2014rolling
@@ -1723,7 +1723,7 @@ def rollingGuidanceFilter(src, dst=..., d=..., sigmaColor=..., sigmaSpace=..., n
     """
 
 def thinning(src, dst=..., thinningType=...) -> dst:
-    """
+    r"""
     @brief Applies a binary blob thinning operation, to achieve a skeletization of the input image.
 
     The function transforms a binary blob image into a skeletized form using the technique of Zhang-Suen.
@@ -1734,7 +1734,7 @@ def thinning(src, dst=..., thinningType=...) -> dst:
     """
 
 def transformFD(src, t, dst=..., fdContour=...) -> dst:
-    """
+    r"""
     * @brief   transform a contour
         *
         * @param   src   contour or Fourier Descriptors if fd is true
@@ -1745,7 +1745,7 @@ def transformFD(src, t, dst=..., fdContour=...) -> dst:
     """
 
 def weightedMedianFilter(joint, src, r, dst=..., sigma=..., weightType=..., mask=...) -> dst:
-    """
+    r"""
     * @brief   Applies weighted median filter to an image.
     *
     * For more details about this implementation, please see @cite zhang2014100+

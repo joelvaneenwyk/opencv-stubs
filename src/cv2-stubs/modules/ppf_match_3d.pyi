@@ -13,7 +13,7 @@ retval: TypeAlias = Any
 class ICP(builtins.object):
     @overload
     def registerModelToScene(self, srcPC, dstPC) -> tuple[retval, residual, pose]:
-        """
+        r"""
         *  \brief Perform registration
         *
         *  @param [in] srcPC The input point cloud for the model. Expected to have the normals (Nx6). Currently, *  CV_32F is the only supported data type.
@@ -24,7 +24,7 @@ class ICP(builtins.object):
 
     @overload
     def registerModelToScene(self, srcPC, dstPC, poses) -> tuple[retval, poses]:
-        """
+        r"""
         *  \brief Perform registration with multiple initial poses
         *
         *  @param [in] srcPC The input point cloud for the model. Expected to have the normals (Nx6). Currently, *  CV_32F is the only supported data type.
@@ -34,7 +34,7 @@ class ICP(builtins.object):
 
 class PPF3DDetector(builtins.object):
     def match(self, scene, relativeSceneSampleStep=..., relativeSceneDistance=...) -> results:
-        """
+        r"""
         *  \brief Matches a trained model across a provided scene.
         *
         *  @param [in] scene Point cloud for the scene
@@ -44,7 +44,7 @@ class PPF3DDetector(builtins.object):
         """
 
     def trainModel(self, Model) -> None:
-        """
+        r"""
         *  \brief Trains a new model.
         *
         *  @param [in] Model The input point cloud with normals (Nx6) * *  \details Uses the parameters set in the constructor to downsample and learn a new model. When the model is learnt, the instance gets ready for calling "match".
@@ -52,29 +52,29 @@ class PPF3DDetector(builtins.object):
 
 class Pose3D(builtins.object):
     def appendPose(self, IncrementalPose) -> None:
-        """
+        r"""
         *  \brief Left multiplies the existing pose in order to update the transformation
         *  \param [in] IncrementalPose New pose to apply
         """
 
     def printPose(self) -> None:
-        """"""
+        r""""""
 
     @overload
     def updatePose(self, NewPose) -> None:
-        """
+        r"""
         *  \brief Updates the pose with the new one
         *  \param [in] NewPose New pose to overwrite
         """
 
     @overload
     def updatePose(self, NewR, NewT) -> None:
-        """
+        r"""
         *  \brief Updates the pose with the new one
         """
 
     def updatePoseQuat(self, Q, NewT) -> None:
-        """
+        r"""
         *  \brief Updates the pose with the new one, but this time using quaternions to represent rotation
         """
 

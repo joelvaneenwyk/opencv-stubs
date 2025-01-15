@@ -12,7 +12,7 @@ retval: TypeAlias = Any
 
 class ColorGradient(Modality):
     def create(self, weak_threshold, num_features, strong_threshold) -> retval:
-        """
+        r"""
         * \brief Constructor.
         *
         * \param weak_threshold   When quantizing, discard gradients with magnitude less than this.
@@ -23,7 +23,7 @@ class ColorGradient(Modality):
 
 class DepthNormal(Modality):
     def create(self, distance_threshold, difference_threshold, num_features, extract_threshold) -> retval:
-        """
+        r"""
         * \brief Constructor.
         *
         * \param distance_threshold   Ignore pixels beyond this distance.
@@ -36,12 +36,12 @@ class DepthNormal(Modality):
 
 class Detector(builtins.object):
     def addSyntheticTemplate(self, templates, class_id) -> retval:
-        """
+        r"""
         * \brief Add a new object template computed by external means.
         """
 
     def addTemplate(self, sources, class_id, object_mask) -> tuple[retval, bounding_box]:
-        """
+        r"""
         * \brief Add new object template.
         *
         * \param      sources      Source images, one for each modality.
@@ -53,10 +53,10 @@ class Detector(builtins.object):
         """
 
     def classIds(self) -> retval:
-        """"""
+        r""""""
 
     def getModalities(self) -> retval:
-        """
+        r"""
         * \brief Get the modalities used by this detector.
         *
         * You are not permitted to add/remove modalities, but you may dynamic_cast them to
@@ -64,12 +64,12 @@ class Detector(builtins.object):
         """
 
     def getT(self, pyramid_level) -> retval:
-        """
+        r"""
         * \brief Get sampling step T at pyramid_level.
         """
 
     def getTemplates(self, class_id, template_id) -> retval:
-        """
+        r"""
         * \brief Get the template pyramid identified by template_id.
         *
         * For example, with 2 modalities (Gradient, Normal) and two pyramid levels
@@ -77,7 +77,7 @@ class Detector(builtins.object):
         """
 
     def match(self, sources, threshold, class_ids=..., quantized_images=..., masks=...) -> tuple[matches, quantized_images]:
-        """
+        r"""
         * \brief Detect objects by template matching.
         *
         * Matches globally at the lowest pyramid level, then refines locally stepping up the pyramid.
@@ -94,39 +94,39 @@ class Detector(builtins.object):
         """
 
     def numClasses(self) -> retval:
-        """"""
+        r""""""
 
     @overload
     def numTemplates(self) -> retval:
-        """"""
+        r""""""
 
     @overload
     def numTemplates(self, class_id) -> retval:
-        """"""
+        r""""""
 
     def pyramidLevels(self) -> retval:
-        """
+        r"""
         * \brief Get number of pyramid levels used by this detector.
         """
 
     def read(self, fn) -> None:
-        """"""
+        r""""""
 
     def readClasses(self, class_ids, format=...) -> None:
-        """"""
+        r""""""
 
     def writeClasses(self, format=...) -> None:
-        """"""
+        r""""""
 
 class Feature(builtins.object): ...
 class Match(builtins.object): ...
 
 class Modality(builtins.object):
     def name(self) -> retval:
-        """"""
+        r""""""
 
     def process(self, src, mask=...) -> retval:
-        """
+        r"""
         * \brief Form a quantized image pyramid from a source image.
         *
         * \param[in] src  The source image. Type depends on the modality.
@@ -135,11 +135,11 @@ class Modality(builtins.object):
         """
 
     def read(self, fn) -> None:
-        """"""
+        r""""""
 
     @overload
     def create(self, modality_type) -> retval:
-        """
+        r"""
         * \brief Create modality by name.
         *
         * The following modality types are supported:
@@ -149,27 +149,27 @@ class Modality(builtins.object):
 
     @overload
     def create(self, fn) -> retval:
-        """
+        r"""
         * \brief Load a modality from file.
         """
 
 class QuantizedPyramid(builtins.object):
     def extractTemplate(self) -> tuple[retval, templ]:
-        """
+        r"""
         * \brief Extract most discriminant features at current pyramid level to form a new template.
         *
         * \param[out] templ The new template.
         """
 
     def pyrDown(self) -> None:
-        """
+        r"""
         * \brief Go to the next pyramid level.
         *
         * \todo Allow pyramid scale factor other than 2
         """
 
     def quantize(self, dst=...) -> dst:
-        """
+        r"""
         * \brief Compute quantized image at current pyramid level for online detection.
         *
         * \param[out] dst The destination 8-bit image. For each pixel at most one bit is set,
@@ -179,7 +179,7 @@ class QuantizedPyramid(builtins.object):
 class Template(builtins.object): ...
 
 def ColorGradient_create(weak_threshold, num_features, strong_threshold) -> retval:
-    """
+    r"""
     * \brief Constructor.
        *
        * \param weak_threshold   When quantizing, discard gradients with magnitude less than this.
@@ -189,7 +189,7 @@ def ColorGradient_create(weak_threshold, num_features, strong_threshold) -> retv
     """
 
 def DepthNormal_create(distance_threshold, difference_threshold, num_features, extract_threshold) -> retval:
-    """
+    r"""
     * \brief Constructor.
        *
        * \param distance_threshold   Ignore pixels beyond this distance.
@@ -202,7 +202,7 @@ def DepthNormal_create(distance_threshold, difference_threshold, num_features, e
 
 @overload
 def Modality_create(modality_type) -> retval:
-    """
+    r"""
     * \brief Create modality by name.
        *
        * The following modality types are supported:
@@ -212,17 +212,17 @@ def Modality_create(modality_type) -> retval:
 
 @overload
 def Modality_create(modality_type) -> retval:
-    """
+    r"""
     * \brief Load a modality from file.
     """
 
 def colormap(quantized, dst=...) -> dst:
-    """
+    r"""
     * \brief Debug function to colormap a quantized image for viewing.
     """
 
 def drawFeatures(img, templates, tl, size=...) -> img:
-    """
+    r"""
     * \brief Debug function to draw linemod features
     @param img
     @param templates see @ref Detector::addTemplate
@@ -231,14 +231,14 @@ def drawFeatures(img, templates, tl, size=...) -> img:
     """
 
 def getDefaultLINE() -> retval:
-    """
+    r"""
     * \brief Factory function for detector using LINE algorithm with color gradients.
 
     Default parameter settings suitable for VGA images.
     """
 
 def getDefaultLINEMOD() -> retval:
-    """
+    r"""
     * \brief Factory function for detector using LINE-MOD algorithm with color gradients
     and depth normals.
 

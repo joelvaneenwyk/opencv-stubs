@@ -11,21 +11,21 @@ retval: TypeAlias = Any
 
 class DenseRLOFOpticalFlow(cv2.DenseOpticalFlow):
     def getEPICK(self) -> retval:
-        """
+        r"""
         K is a number of nearest-neighbor matches considered, when fitting a locally affine
         *    model. Usually it should be around 128. However, lower values would make the interpolation noticeably faster.
         *    @see ximgproc::EdgeAwareInterpolator,  setEPICK
         """
 
     def getEPICLambda(self) -> retval:
-        """
+        r"""
         Lambda is a parameter defining the weight of the edge-aware term in geodesic distance,
         *    should be in the range of 0 to 1000.
         *    @see ximgproc::EdgeAwareInterpolator, setEPICSigma
         """
 
     def getEPICSigma(self) -> retval:
-        """
+        r"""
         Sigma is a parameter defining how fast the weights decrease in the locally-weighted affine
         *  fitting. Higher values can help preserve fine details, lower values can help to get rid of noise in the
         *  output flow.
@@ -33,98 +33,98 @@ class DenseRLOFOpticalFlow(cv2.DenseOpticalFlow):
         """
 
     def getFgsLambda(self) -> retval:
-        """
+        r"""
         Sets the respective fastGlobalSmootherFilter() parameter.
         *    @see ximgproc::EdgeAwareInterpolator, setFgsLambda
         """
 
     def getFgsSigma(self) -> retval:
-        """
+        r"""
         Sets the respective fastGlobalSmootherFilter() parameter.
         *    @see ximgproc::EdgeAwareInterpolator, ximgproc::fastGlobalSmootherFilter, setFgsSigma
         """
 
     def getForwardBackward(self) -> retval:
-        """
+        r"""
         @copybrief setForwardBackward
         @see setForwardBackward
         """
 
     def getGridStep(self) -> retval:
-        """
+        r"""
         For each grid point a motion vector is computed. Some motion vectors will be removed due to the forwatd backward
         *  threshold (if set >0). The rest will be the base of the vector field interpolation.
         *    @see getForwardBackward, setGridStep
         """
 
     def getInterpolation(self) -> retval:
-        """
+        r"""
         @copybrief setInterpolation
         *    @see ximgproc::EdgeAwareInterpolator, setInterpolation
         """
 
     def getRICSLICType(self) -> retval:
-        """
+        r"""
         @copybrief setRICSLICType
         *    @see setRICSLICType
         """
 
     def getRICSPSize(self) -> retval:
-        """
+        r"""
         @copybrief setRICSPSize
         *    @see setRICSPSize
         """
 
     def getRLOFOpticalFlowParameter(self) -> retval:
-        """
+        r"""
         @copybrief setRLOFOpticalFlowParameter
         @see optflow::RLOFOpticalFlowParameter, setRLOFOpticalFlowParameter
         """
 
     def getUsePostProc(self) -> retval:
-        """
+        r"""
         @copybrief setUsePostProc
         *    @see ximgproc::fastGlobalSmootherFilter, setUsePostProc
         """
 
     def getUseVariationalRefinement(self) -> retval:
-        """
+        r"""
         @copybrief setUseVariationalRefinement
         *    @see ximgproc::fastGlobalSmootherFilter, setUsePostProc
         """
 
     def setEPICK(self, val) -> None:
-        """
+        r"""
         @copybrief getEPICK
         *    @see ximgproc::EdgeAwareInterpolator, getEPICK
         """
 
     def setEPICLambda(self, val) -> None:
-        """
+        r"""
         @copybrief getEPICLambda
         *    @see ximgproc::EdgeAwareInterpolator, getEPICLambda
         """
 
     def setEPICSigma(self, val) -> None:
-        """
+        r"""
         @copybrief getEPICSigma
         *  @see ximgproc::EdgeAwareInterpolator, getEPICSigma
         """
 
     def setFgsLambda(self, val) -> None:
-        """
+        r"""
         @copybrief getFgsLambda
         *    @see ximgproc::EdgeAwareInterpolator, ximgproc::fastGlobalSmootherFilter, getFgsLambda
         """
 
     def setFgsSigma(self, val) -> None:
-        """
+        r"""
         @copybrief getFgsSigma
         *    @see ximgproc::EdgeAwareInterpolator, ximgproc::fastGlobalSmootherFilter, getFgsSigma
         """
 
     def setForwardBackward(self, val) -> None:
-        """
+        r"""
         For each grid point \f$ \mathbf{x} \f$ a motion vector \f$ d_{I0,I1}(\mathbf{x}) \f$ is computed.
         *     If the forward backward error \f[ EP_{FB} = || d_{I0,I1} + d_{I1,I0} || \f]
         *     is larger than threshold given by this function then the motion vector will not be used by the following
@@ -134,13 +134,13 @@ class DenseRLOFOpticalFlow(cv2.DenseOpticalFlow):
         """
 
     def setGridStep(self, val) -> None:
-        """
+        r"""
         @copybrief getGridStep
         *    @see getGridStep
         """
 
     def setInterpolation(self, val) -> None:
-        """
+        r"""
         Two interpolation algorithms are supported
         * - **INTERP_GEO** applies the fast geodesic interpolation, see @cite Geistert2016.
         * - **INTERP_EPIC_RESIDUAL** applies the edge-preserving interpolation, see @cite Revaud2015,Geistert2016.
@@ -148,7 +148,7 @@ class DenseRLOFOpticalFlow(cv2.DenseOpticalFlow):
         """
 
     def setRICSLICType(self, val) -> None:
-        """
+        r"""
         @brief Parameter to choose superpixel algorithm variant to use:
         * - cv::ximgproc::SLICType SLIC segments image using a desired region_size (value: 100)
         * - cv::ximgproc::SLICType SLICO will optimize using adaptive compactness factor (value: 101)
@@ -157,27 +157,27 @@ class DenseRLOFOpticalFlow(cv2.DenseOpticalFlow):
         """
 
     def setRICSPSize(self, val) -> None:
-        """
+        r"""
         * @see cv::ximgproc::createSuperpixelSLIC, cv::ximgproc::RICInterpolator
         """
 
     def setRLOFOpticalFlowParameter(self, val) -> None:
-        """
+        r"""
         @see optflow::RLOFOpticalFlowParameter, getRLOFOpticalFlowParameter
         """
 
     def setUsePostProc(self, val) -> None:
-        """
+        r"""
         * @see getUsePostProc
         """
 
     def setUseVariationalRefinement(self, val) -> None:
-        """
+        r"""
         * @see getUseVariationalRefinement
         """
 
     def create(self, rlofParam=..., forwardBackwardThreshold=..., gridStep=..., interp_type=..., epicK=..., epicSigma=..., epicLambda=..., ricSPSize=..., ricSLICType=..., use_post_proc=..., fgsLambda=..., fgsSigma=..., use_variational_refinement=...) -> retval:
-        """
+        r"""
         *    @param rlofParam see optflow::RLOFOpticalFlowParameter
         *    @param forwardBackwardThreshold see setForwardBackward
         *    @param gridStep see setGridStep
@@ -195,127 +195,127 @@ class DenseRLOFOpticalFlow(cv2.DenseOpticalFlow):
 
 class DualTVL1OpticalFlow(cv2.DenseOpticalFlow):
     def getEpsilon(self) -> retval:
-        """
+        r"""
         @see setEpsilon
         """
 
     def getGamma(self) -> retval:
-        """
+        r"""
         @see setGamma
         """
 
     def getInnerIterations(self) -> retval:
-        """
+        r"""
         @see setInnerIterations
         """
 
     def getLambda(self) -> retval:
-        """
+        r"""
         @see setLambda
         """
 
     def getMedianFiltering(self) -> retval:
-        """
+        r"""
         @see setMedianFiltering
         """
 
     def getOuterIterations(self) -> retval:
-        """
+        r"""
         @see setOuterIterations
         """
 
     def getScaleStep(self) -> retval:
-        """
+        r"""
         @see setScaleStep
         """
 
     def getScalesNumber(self) -> retval:
-        """
+        r"""
         @see setScalesNumber
         """
 
     def getTau(self) -> retval:
-        """
+        r"""
         @see setTau
         """
 
     def getTheta(self) -> retval:
-        """
+        r"""
         @see setTheta
         """
 
     def getUseInitialFlow(self) -> retval:
-        """
+        r"""
         @see setUseInitialFlow
         """
 
     def getWarpingsNumber(self) -> retval:
-        """
+        r"""
         @see setWarpingsNumber
         """
 
     def setEpsilon(self, val) -> None:
-        """
+        r"""
         @copybrief getEpsilon @see getEpsilon
         """
 
     def setGamma(self, val) -> None:
-        """
+        r"""
         @copybrief getGamma @see getGamma
         """
 
     def setInnerIterations(self, val) -> None:
-        """
+        r"""
         @copybrief getInnerIterations @see getInnerIterations
         """
 
     def setLambda(self, val) -> None:
-        """
+        r"""
         @copybrief getLambda @see getLambda
         """
 
     def setMedianFiltering(self, val) -> None:
-        """
+        r"""
         @copybrief getMedianFiltering @see getMedianFiltering
         """
 
     def setOuterIterations(self, val) -> None:
-        """
+        r"""
         @copybrief getOuterIterations @see getOuterIterations
         """
 
     def setScaleStep(self, val) -> None:
-        """
+        r"""
         @copybrief getScaleStep @see getScaleStep
         """
 
     def setScalesNumber(self, val) -> None:
-        """
+        r"""
         @copybrief getScalesNumber @see getScalesNumber
         """
 
     def setTau(self, val) -> None:
-        """
+        r"""
         @copybrief getTau @see getTau
         """
 
     def setTheta(self, val) -> None:
-        """
+        r"""
         @copybrief getTheta @see getTheta
         """
 
     def setUseInitialFlow(self, val) -> None:
-        """
+        r"""
         @copybrief getUseInitialFlow @see getUseInitialFlow
         """
 
     def setWarpingsNumber(self, val) -> None:
-        """
+        r"""
         @copybrief getWarpingsNumber @see getWarpingsNumber
         """
 
     def create(self, tau=..., lambda_=..., theta=..., nscales=..., warps=..., epsilon=..., innnerIterations=..., outerIterations=..., scaleStep=..., gamma=..., medianFiltering=..., useInitialFlow=...) -> retval:
-        """
+        r"""
         @brief Creates instance of cv::DualTVL1OpticalFlow
         """
 
@@ -329,114 +329,114 @@ class PCAPrior(builtins.object): ...
 
 class RLOFOpticalFlowParameter(builtins.object):
     def getCrossSegmentationThreshold(self) -> retval:
-        """"""
+        r""""""
 
     def getGlobalMotionRansacThreshold(self) -> retval:
-        """"""
+        r""""""
 
     def getLargeWinSize(self) -> retval:
-        """"""
+        r""""""
 
     def getMaxIteration(self) -> retval:
-        """"""
+        r""""""
 
     def getMaxLevel(self) -> retval:
-        """"""
+        r""""""
 
     def getMinEigenValue(self) -> retval:
-        """"""
+        r""""""
 
     def getNormSigma0(self) -> retval:
-        """"""
+        r""""""
 
     def getNormSigma1(self) -> retval:
-        """"""
+        r""""""
 
     def getSmallWinSize(self) -> retval:
-        """"""
+        r""""""
 
     def getSolverType(self) -> retval:
-        """"""
+        r""""""
 
     def getSupportRegionType(self) -> retval:
-        """"""
+        r""""""
 
     def getUseGlobalMotionPrior(self) -> retval:
-        """"""
+        r""""""
 
     def getUseIlluminationModel(self) -> retval:
-        """"""
+        r""""""
 
     def getUseInitialFlow(self) -> retval:
-        """"""
+        r""""""
 
     def setCrossSegmentationThreshold(self, val) -> None:
-        """"""
+        r""""""
 
     def setGlobalMotionRansacThreshold(self, val) -> None:
-        """"""
+        r""""""
 
     def setLargeWinSize(self, val) -> None:
-        """"""
+        r""""""
 
     def setMaxIteration(self, val) -> None:
-        """"""
+        r""""""
 
     def setMaxLevel(self, val) -> None:
-        """"""
+        r""""""
 
     def setMinEigenValue(self, val) -> None:
-        """"""
+        r""""""
 
     def setNormSigma0(self, val) -> None:
-        """"""
+        r""""""
 
     def setNormSigma1(self, val) -> None:
-        """"""
+        r""""""
 
     def setSmallWinSize(self, val) -> None:
-        """"""
+        r""""""
 
     def setSolverType(self, val) -> None:
-        """"""
+        r""""""
 
     def setSupportRegionType(self, val) -> None:
-        """"""
+        r""""""
 
     def setUseGlobalMotionPrior(self, val) -> None:
-        """"""
+        r""""""
 
     def setUseIlluminationModel(self, val) -> None:
-        """"""
+        r""""""
 
     def setUseInitialFlow(self, val) -> None:
-        """"""
+        r""""""
 
     def setUseMEstimator(self, val) -> None:
-        """
+        r"""
         Enables M-estimator by setting sigma parameters to (3.2, 7.0). Disabling M-estimator can reduce
         *  runtime, while enabling can improve the accuracy.
         *  @param val If true M-estimator is used. If false least-square estimator is used. *    @see setNormSigma0, setNormSigma1
         """
 
     def create(self) -> retval:
-        """"""
+        r""""""
 
 class SparseRLOFOpticalFlow(cv2.SparseOpticalFlow):
     def getForwardBackward(self) -> retval:
-        """
+        r"""
         @copybrief setForwardBackward
         *    @see setForwardBackward
         """
 
     def getRLOFOpticalFlowParameter(self) -> retval:
-        """
+        r"""
         @copybrief setRLOFOpticalFlowParameter
         *    @see setRLOFOpticalFlowParameter
         """
 
     def setForwardBackward(self, val) -> None:
-        """
+        r"""
         For each feature point a motion vector \f$ d_{I0,I1}(\mathbf{x}) \f$ is computed.
         *     If the forward backward error \f[ EP_{FB} = || d_{I0,I1} + d_{I1,I0} || \f]
         *     is larger than threshold given by this function then the status  will not be used by the following
@@ -446,18 +446,18 @@ class SparseRLOFOpticalFlow(cv2.SparseOpticalFlow):
         """
 
     def setRLOFOpticalFlowParameter(self, val) -> None:
-        """
+        r"""
         @copydoc DenseRLOFOpticalFlow::setRLOFOpticalFlowParameter
         """
 
     def create(self, rlofParam=..., forwardBackwardThreshold=...) -> retval:
-        """
+        r"""
         *    @param rlofParam see setRLOFOpticalFlowParameter
         *    @param forwardBackwardThreshold see setForwardBackward
         """
 
 def DenseRLOFOpticalFlow_create(rlofParam=..., forwardBackwardThreshold=..., gridStep=..., interp_type=..., epicK=..., epicSigma=..., epicLambda=..., ricSPSize=..., ricSLICType=..., use_post_proc=..., fgsLambda=..., fgsSigma=..., use_variational_refinement=...) -> retval:
-    """
+    r"""
     *    @param rlofParam see optflow::RLOFOpticalFlowParameter
          *    @param forwardBackwardThreshold see setForwardBackward
          *    @param gridStep see setGridStep
@@ -474,23 +474,23 @@ def DenseRLOFOpticalFlow_create(rlofParam=..., forwardBackwardThreshold=..., gri
     """
 
 def DualTVL1OpticalFlow_create(tau=..., lambda_=..., theta=..., nscales=..., warps=..., epsilon=..., innnerIterations=..., outerIterations=..., scaleStep=..., gamma=..., medianFiltering=..., useInitialFlow=...) -> retval:
-    """
+    r"""
     @brief Creates instance of cv::DualTVL1OpticalFlow
     """
 
 def RLOFOpticalFlowParameter_create() -> retval:
-    """
+    r"""
     .
     """
 
 def SparseRLOFOpticalFlow_create(rlofParam=..., forwardBackwardThreshold=...) -> retval:
-    """
+    r"""
     *    @param rlofParam see setRLOFOpticalFlowParameter
          *    @param forwardBackwardThreshold see setForwardBackward
     """
 
 def calcOpticalFlowDenseRLOF(I0, I1, flow, rlofParam=..., forwardBackwardThreshold=..., gridStep=..., interp_type=..., epicK=..., epicSigma=..., epicLambda=..., ricSPSize=..., ricSLICType=..., use_post_proc=..., fgsLambda=..., fgsSigma=..., use_variational_refinement=...) -> flow:
-    """
+    r"""
     @brief Fast dense optical flow computation based on robust local optical flow (RLOF) algorithms and sparse-to-dense interpolation scheme.
 
     The RLOF is a fast local optical flow approach described in @cite Senst2012 @cite Senst2013 @cite Senst2014
@@ -548,13 +548,13 @@ def calcOpticalFlowDenseRLOF(I0, I1, flow, rlofParam=..., forwardBackwardThresho
 
 @overload
 def calcOpticalFlowSF(from_, to, layers, averaging_block_size, max_flow, flow=...) -> flow:
-    """
+    r"""
     @overload
     """
 
 @overload
 def calcOpticalFlowSF(from_, to, layers, averaging_block_size, max_flow, flow=...) -> flow:
-    """
+    r"""
     @brief Calculate an optical flow using "SimpleFlow" algorithm.
 
     @param from First 8-bit 3-channel image.
@@ -583,7 +583,7 @@ def calcOpticalFlowSF(from_, to, layers, averaging_block_size, max_flow, flow=..
     """
 
 def calcOpticalFlowSparseRLOF(prevImg, nextImg, prevPts, nextPts, status=..., err=..., rlofParam=..., forwardBackwardThreshold=...) -> tuple[nextPts, status, err]:
-    """
+    r"""
     @brief Calculates fast optical flow for a sparse feature set using the robust local optical flow (RLOF) similar
     * to optflow::calcOpticalFlowPyrLK().
     *
@@ -614,7 +614,7 @@ def calcOpticalFlowSparseRLOF(prevImg, nextImg, prevPts, nextPts, status=..., er
     """
 
 def calcOpticalFlowSparseToDense(from_, to, flow=..., grid_step=..., k=..., sigma=..., use_post_proc=..., fgs_lambda=..., fgs_sigma=...) -> flow:
-    """
+    r"""
     @brief Fast dense optical flow based on PyrLK sparse matches interpolation.
 
     @param from first 8-bit 3-channel or 1-channel image.
@@ -635,7 +635,7 @@ def calcOpticalFlowSparseToDense(from_, to, flow=..., grid_step=..., k=..., sigm
     """
 
 def createOptFlow_DeepFlow() -> retval:
-    """
+    r"""
     @brief DeepFlow optical flow algorithm implementation.
 
     The class implements the DeepFlow optical flow algorithm described in @cite Weinzaepfel2013 . See
@@ -663,37 +663,37 @@ def createOptFlow_DeepFlow() -> retval:
     """
 
 def createOptFlow_DenseRLOF() -> retval:
-    """
+    r"""
     .
     """
 
 def createOptFlow_DualTVL1() -> retval:
-    """
+    r"""
     @brief Creates instance of cv::DenseOpticalFlow
     """
 
 def createOptFlow_Farneback() -> retval:
-    """
+    r"""
     .
     """
 
 def createOptFlow_PCAFlow() -> retval:
-    """
+    r"""
     @brief Creates an instance of PCAFlow
     """
 
 def createOptFlow_SimpleFlow() -> retval:
-    """
+    r"""
     .
     """
 
 def createOptFlow_SparseRLOF() -> retval:
-    """
+    r"""
     .
     """
 
 def createOptFlow_SparseToDense() -> retval:
-    """
+    r"""
     .
     """
 

@@ -9,52 +9,52 @@ retval: TypeAlias = Any
 
 class BufferPool(builtins.object):
     def getAllocator(self) -> retval:
-        """"""
+        r""""""
 
     @overload
     def getBuffer(self, rows, cols, type) -> retval:
-        """"""
+        r""""""
 
     @overload
     def getBuffer(self, size, type) -> retval:
-        """"""
+        r""""""
 
 class DeviceInfo(builtins.object):
     def ECCEnabled(self) -> retval:
-        """
+        r"""
 
         See help(type(self)) for accurate signature.
 
         """
 
     def asyncEngineCount(self) -> retval:
-        """"""
+        r""""""
 
     def canMapHostMemory(self) -> retval:
-        """"""
+        r""""""
 
     def clockRate(self) -> retval:
-        """"""
+        r""""""
 
     def computeMode(self) -> retval:
-        """"""
+        r""""""
 
     def concurrentKernels(self) -> retval:
-        """"""
+        r""""""
 
     def deviceID(self) -> retval:
-        """
+        r"""
         @brief Returns system index of the CUDA device starting with 0.
         """
 
     def freeMemory(self) -> retval:
-        """"""
+        r""""""
 
     def integrated(self) -> retval:
-        """"""
+        r""""""
 
     def isCompatible(self) -> retval:
-        """
+        r"""
         @brief Checks the CUDA module and device compatibility.
 
         This function returns true if the CUDA module can be run on the specified device. Otherwise, it
@@ -62,155 +62,155 @@ class DeviceInfo(builtins.object):
         """
 
     def kernelExecTimeoutEnabled(self) -> retval:
-        """"""
+        r""""""
 
     def l2CacheSize(self) -> retval:
-        """"""
+        r""""""
 
     def majorVersion(self) -> retval:
-        """"""
+        r""""""
 
     def maxGridSize(self) -> retval:
-        """"""
+        r""""""
 
     def maxSurface1D(self) -> retval:
-        """"""
+        r""""""
 
     def maxSurface1DLayered(self) -> retval:
-        """"""
+        r""""""
 
     def maxSurface2D(self) -> retval:
-        """"""
+        r""""""
 
     def maxSurface2DLayered(self) -> retval:
-        """"""
+        r""""""
 
     def maxSurface3D(self) -> retval:
-        """"""
+        r""""""
 
     def maxSurfaceCubemap(self) -> retval:
-        """"""
+        r""""""
 
     def maxSurfaceCubemapLayered(self) -> retval:
-        """"""
+        r""""""
 
     def maxTexture1D(self) -> retval:
-        """"""
+        r""""""
 
     def maxTexture1DLayered(self) -> retval:
-        """"""
+        r""""""
 
     def maxTexture1DLinear(self) -> retval:
-        """"""
+        r""""""
 
     def maxTexture1DMipmap(self) -> retval:
-        """"""
+        r""""""
 
     def maxTexture2D(self) -> retval:
-        """"""
+        r""""""
 
     def maxTexture2DGather(self) -> retval:
-        """"""
+        r""""""
 
     def maxTexture2DLayered(self) -> retval:
-        """"""
+        r""""""
 
     def maxTexture2DLinear(self) -> retval:
-        """"""
+        r""""""
 
     def maxTexture2DMipmap(self) -> retval:
-        """"""
+        r""""""
 
     def maxTexture3D(self) -> retval:
-        """"""
+        r""""""
 
     def maxTextureCubemap(self) -> retval:
-        """"""
+        r""""""
 
     def maxTextureCubemapLayered(self) -> retval:
-        """"""
+        r""""""
 
     def maxThreadsDim(self) -> retval:
-        """"""
+        r""""""
 
     def maxThreadsPerBlock(self) -> retval:
-        """"""
+        r""""""
 
     def maxThreadsPerMultiProcessor(self) -> retval:
-        """"""
+        r""""""
 
     def memPitch(self) -> retval:
-        """"""
+        r""""""
 
     def memoryBusWidth(self) -> retval:
-        """"""
+        r""""""
 
     def memoryClockRate(self) -> retval:
-        """"""
+        r""""""
 
     def minorVersion(self) -> retval:
-        """"""
+        r""""""
 
     def multiProcessorCount(self) -> retval:
-        """"""
+        r""""""
 
     def pciBusID(self) -> retval:
-        """"""
+        r""""""
 
     def pciDeviceID(self) -> retval:
-        """"""
+        r""""""
 
     def pciDomainID(self) -> retval:
-        """"""
+        r""""""
 
     def queryMemory(self, totalMemory, freeMemory) -> None:
-        """"""
+        r""""""
 
     def regsPerBlock(self) -> retval:
-        """"""
+        r""""""
 
     def sharedMemPerBlock(self) -> retval:
-        """"""
+        r""""""
 
     def surfaceAlignment(self) -> retval:
-        """"""
+        r""""""
 
     def tccDriver(self) -> retval:
-        """"""
+        r""""""
 
     def textureAlignment(self) -> retval:
-        """"""
+        r""""""
 
     def texturePitchAlignment(self) -> retval:
-        """"""
+        r""""""
 
     def totalConstMem(self) -> retval:
-        """"""
+        r""""""
 
     def totalGlobalMem(self) -> retval:
-        """"""
+        r""""""
 
     def totalMemory(self) -> retval:
-        """"""
+        r""""""
 
     def unifiedAddressing(self) -> retval:
-        """"""
+        r""""""
 
     def warpSize(self) -> retval:
-        """"""
+        r""""""
 
 class Event(builtins.object):
     def queryIfComplete(self) -> retval:
-        """"""
+        r""""""
 
     def record(self, stream=...) -> None:
-        """"""
+        r""""""
 
     def waitForCompletion(self) -> None:
-        """"""
+        r""""""
 
     def elapsedTime(self, start, end) -> retval:
-        """"""
+        r""""""
 
 class GpuData(builtins.object): ...
 
@@ -220,79 +220,79 @@ class GpuMat(builtins.object):
     class Allocator(builtins.object): ...
 
     def adjustROI(self, dtop, dbottom, dleft, dright) -> retval:
-        """"""
+        r""""""
 
     def assignTo(self, m, type=...) -> None:
-        """"""
+        r""""""
 
     def channels(self) -> retval:
-        """"""
+        r""""""
 
     def clone(self) -> retval:
-        """"""
+        r""""""
 
     def col(self, x) -> retval:
-        """"""
+        r""""""
 
     @overload
     def colRange(self, startcol, endcol) -> retval:
-        """"""
+        r""""""
 
     @overload
     def colRange(self, r) -> retval:
-        """"""
+        r""""""
 
     @overload
     def convertTo(self, rtype, dst=...) -> dst:
-        """"""
+        r""""""
 
     @overload
     def convertTo(self, rtype, stream, dst=...) -> dst:
-        """"""
+        r""""""
 
     @overload
     def convertTo(self, rtype, alpha, dst=..., beta=...) -> dst:
-        """"""
+        r""""""
 
     @overload
     def convertTo(self, rtype, alpha, stream, dst=...) -> dst:
-        """"""
+        r""""""
 
     def convertTo(self, rtype, alpha, beta, stream, dst=...) -> dst:
-        """"""
+        r""""""
 
     @overload
     def copyTo(self, dst=...) -> dst:
-        """"""
+        r""""""
 
     @overload
     def copyTo(self, stream, dst=...) -> dst:
-        """"""
+        r""""""
 
     @overload
     def copyTo(self, mask, dst=...) -> dst:
-        """"""
+        r""""""
 
     def copyTo(self, mask, stream, dst=...) -> dst:
-        """"""
+        r""""""
 
     @overload
     def create(self, rows, cols, type) -> None:
-        """"""
+        r""""""
 
     @overload
     def create(self, size, type) -> None:
-        """"""
+        r""""""
 
     def cudaPtr(self) -> retval:
-        """"""
+        r""""""
 
     def depth(self) -> retval:
-        """"""
+        r""""""
 
     @overload
     def download(self, dst=...) -> dst:
-        """
+        r"""
         @brief Performs data download from GpuMat (Blocking call)
 
         This function copies data from device memory to host memory. As being a blocking call, it is
@@ -301,7 +301,7 @@ class GpuMat(builtins.object):
 
     @overload
     def download(self, stream, dst=...) -> dst:
-        """
+        r"""
         @brief Performs data download from GpuMat (Non-Blocking call)
 
         This function copies data from device memory to host memory. As being a non-blocking call, this
@@ -312,70 +312,70 @@ class GpuMat(builtins.object):
         """
 
     def elemSize(self) -> retval:
-        """"""
+        r""""""
 
     def elemSize1(self) -> retval:
-        """"""
+        r""""""
 
     def empty(self) -> retval:
-        """"""
+        r""""""
 
     def isContinuous(self) -> retval:
-        """"""
+        r""""""
 
     def locateROI(self, wholeSize, ofs) -> None:
-        """"""
+        r""""""
 
     def release(self) -> None:
-        """"""
+        r""""""
 
     def reshape(self, cn, rows=...) -> retval:
-        """"""
+        r""""""
 
     def row(self, y) -> retval:
-        """"""
+        r""""""
 
     @overload
     def rowRange(self, startrow, endrow) -> retval:
-        """"""
+        r""""""
 
     @overload
     def rowRange(self, r) -> retval:
-        """"""
+        r""""""
 
     @overload
     def setTo(self, s) -> retval:
-        """"""
+        r""""""
 
     @overload
     def setTo(self, s, stream) -> retval:
-        """"""
+        r""""""
 
     @overload
     def setTo(self, s, mask) -> retval:
-        """"""
+        r""""""
 
     def setTo(self, s, mask, stream) -> retval:
-        """"""
+        r""""""
 
     def size(self) -> retval:
-        """"""
+        r""""""
 
     def step1(self) -> retval:
-        """"""
+        r""""""
 
     def swap(self, mat) -> None:
-        """"""
+        r""""""
 
     def type(self) -> retval:
-        """"""
+        r""""""
 
     def updateContinuityFlag(self) -> None:
-        """"""
+        r""""""
 
     @overload
     def upload(self, arr) -> None:
-        """
+        r"""
         @brief Performs data upload to GpuMat (Blocking call)
 
         This function copies data from host memory to device memory. As being a blocking call, it is
@@ -384,7 +384,7 @@ class GpuMat(builtins.object):
 
     @overload
     def upload(self, arr, stream) -> None:
-        """
+        r"""
         @brief Performs data upload to GpuMat (Non-Blocking call)
 
         This function copies data from host memory to device memory. As being a non-blocking call, this
@@ -395,40 +395,40 @@ class GpuMat(builtins.object):
         """
 
     def defaultAllocator(self) -> Allocator:
-        """"""
+        r""""""
 
     def setDefaultAllocator(self, allocator) -> None:
-        """"""
+        r""""""
 
 class GpuMatND(builtins.object): ...
 
 class HostMem(builtins.object):
     def channels(self) -> retval:
-        """"""
+        r""""""
 
     def clone(self) -> retval:
-        """"""
+        r""""""
 
     def create(self, rows, cols, type) -> None:
-        """"""
+        r""""""
 
     def createMatHeader(self) -> retval:
-        """"""
+        r""""""
 
     def depth(self) -> retval:
-        """"""
+        r""""""
 
     def elemSize(self) -> retval:
-        """"""
+        r""""""
 
     def elemSize1(self) -> retval:
-        """"""
+        r""""""
 
     def empty(self) -> retval:
-        """"""
+        r""""""
 
     def isContinuous(self) -> retval:
-        """
+        r"""
         @brief Maps CPU memory to GPU address space and creates the cuda::GpuMat header without reference counting
         for it.
 
@@ -438,29 +438,29 @@ class HostMem(builtins.object):
         """
 
     def reshape(self, cn, rows=...) -> retval:
-        """"""
+        r""""""
 
     def size(self) -> retval:
-        """"""
+        r""""""
 
     def step1(self) -> retval:
-        """"""
+        r""""""
 
     def swap(self, b) -> None:
-        """"""
+        r""""""
 
     def type(self) -> retval:
-        """"""
+        r""""""
 
 class SURF_CUDA(builtins.object):
     def defaultNorm(self) -> retval:
-        """"""
+        r""""""
 
     def descriptorSize(self) -> retval:
-        """"""
+        r""""""
 
     def detect(self, img, mask, keypoints=...) -> keypoints:
-        """
+        r"""
         @brief Finds the keypoints using fast hessian detector used in SURF
 
         @param img Source image, currently supports only CV_8UC1 images.
@@ -469,7 +469,7 @@ class SURF_CUDA(builtins.object):
         """
 
     def detectWithDescriptors(self, img, mask, keypoints=..., descriptors=..., useProvidedKeypoints=...) -> tuple[keypoints, descriptors]:
-        """
+        r"""
         @brief Finds the keypoints and computes their descriptors using fast hessian detector used in SURF
 
         @param img Source image, currently supports only CV_8UC1 images.
@@ -480,10 +480,10 @@ class SURF_CUDA(builtins.object):
         """
 
     def downloadKeypoints(self, keypointsGPU) -> keypoints:
-        """"""
+        r""""""
 
     def create(self, _hessianThreshold, _nOctaves=..., _nOctaveLayers=..., _extended=..., _keypointsRatio=..., _upright=...) -> retval:
-        """
+        r"""
         @param _hessianThreshold Threshold for hessian keypoint detector used in SURF.
         @param _nOctaves Number of pyramid octaves the keypoint detector will use.
         @param _nOctaveLayers Number of octave layers within each octave.
@@ -494,25 +494,25 @@ class SURF_CUDA(builtins.object):
 
 class Stream(builtins.object):
     def cudaPtr(self) -> retval:
-        """"""
+        r""""""
 
     def queryIfComplete(self) -> retval:
-        """
+        r"""
         @brief Returns true if the current stream queue is finished. Otherwise, it returns false.
         """
 
     def waitEvent(self, event) -> None:
-        """
+        r"""
         @brief Makes a compute stream wait on an event.
         """
 
     def waitForCompletion(self) -> None:
-        """
+        r"""
         @brief Blocks the current CPU thread until all operations in the stream are complete.
         """
 
     def Null(self) -> retval:
-        """
+        r"""
         @brief Adds a callback to be called on the host after all currently enqueued items in the stream have
         completed.
 
@@ -526,7 +526,7 @@ class Stream(builtins.object):
 
 class TargetArchs(builtins.object):
     def has(self, major, minor) -> retval:
-        """
+        r"""
         @brief There is a set of methods to check whether the module contains intermediate (PTX) or binary CUDA
         code for the given architecture(s):
 
@@ -535,22 +535,22 @@ class TargetArchs(builtins.object):
         """
 
     def hasBin(self, major, minor) -> retval:
-        """"""
+        r""""""
 
     def hasEqualOrGreater(self, major, minor) -> retval:
-        """"""
+        r""""""
 
     def hasEqualOrGreaterBin(self, major, minor) -> retval:
-        """"""
+        r""""""
 
     def hasEqualOrGreaterPtx(self, major, minor) -> retval:
-        """"""
+        r""""""
 
     def hasEqualOrLessPtx(self, major, minor) -> retval:
-        """"""
+        r""""""
 
     def hasPtx(self, major, minor) -> retval:
-        """"""
+        r""""""
 
 def Event_elapsedTime(start, end) -> retval:
     """

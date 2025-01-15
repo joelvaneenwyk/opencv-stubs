@@ -13,7 +13,7 @@ class GNetParam(builtins.object): ...
 class GOpaque(builtins.object): ...
 
 def BGR2Gray(src) -> retval:
-    """
+    r"""
     @brief Converts an image from BGR color space to gray-scaled.
 
     The conventional ranges for B, G, and R channel values are 0 to 255.
@@ -27,7 +27,7 @@ def BGR2Gray(src) -> retval:
     """
 
 def BGR2I420(src) -> retval:
-    """
+    r"""
     @brief Converts an image from BGR color space to I420 color space.
 
     The function converts an input image from BGR color space to I420.
@@ -44,7 +44,7 @@ def BGR2I420(src) -> retval:
     """
 
 def BGR2LUV(src) -> retval:
-    """
+    r"""
     @brief Converts an image from BGR color space to LUV color space.
 
     The function converts an input image from BGR color space to LUV.
@@ -59,7 +59,7 @@ def BGR2LUV(src) -> retval:
     """
 
 def BGR2RGB(src) -> retval:
-    """
+    r"""
     @brief Converts an image from BGR color space to RGB color space.
 
     The function converts an input image from BGR color space to RGB.
@@ -74,7 +74,7 @@ def BGR2RGB(src) -> retval:
     """
 
 def BGR2YUV(src) -> retval:
-    """
+    r"""
     @brief Converts an image from BGR color space to YUV color space.
 
     The function converts an input image from BGR color space to YUV.
@@ -89,7 +89,7 @@ def BGR2YUV(src) -> retval:
     """
 
 def BayerGR2RGB(src_gr) -> retval:
-    """
+    r"""
     @brief Converts an image from BayerGR color space to RGB.
     The function converts an input image from BayerGR color space to RGB.
     The conventional ranges for G, R, and B channel values are 0 to 255.
@@ -104,7 +104,7 @@ def BayerGR2RGB(src_gr) -> retval:
     """
 
 def Canny(image, threshold1, threshold2, apertureSize=..., L2gradient=...) -> retval:
-    """
+    r"""
     @brief Finds edges in an image using the Canny algorithm.
 
     The function finds edges in the input image and marks them in the output map edges using the
@@ -125,7 +125,7 @@ def Canny(image, threshold1, threshold2, apertureSize=..., L2gradient=...) -> re
     """
 
 def I4202BGR(src) -> retval:
-    """
+    r"""
     @brief Converts an image from I420 color space to BGR color space.
 
     The function converts an input image from I420 color space to BGR.
@@ -142,7 +142,7 @@ def I4202BGR(src) -> retval:
     """
 
 def I4202RGB(src) -> retval:
-    """
+    r"""
     @brief Converts an image from I420 color space to BGR color space.
 
     The function converts an input image from I420 color space to BGR.
@@ -159,7 +159,7 @@ def I4202RGB(src) -> retval:
     """
 
 def LUT(src, lut) -> retval:
-    """
+    r"""
     @brief Performs a look-up table transform of a matrix.
 
     The function LUT fills the output matrix with values from the look-up table. Indices of the entries
@@ -178,7 +178,7 @@ def LUT(src, lut) -> retval:
     """
 
 def LUV2BGR(src) -> retval:
-    """
+    r"""
     @brief Converts an image from LUV color space to BGR color space.
 
     The function converts an input image from LUV color space to BGR.
@@ -193,7 +193,7 @@ def LUV2BGR(src) -> retval:
     """
 
 def Laplacian(src, ddepth, ksize=..., scale=..., delta=..., borderType=...) -> retval:
-    """
+    r"""
     @brief Calculates the Laplacian of an image.
 
     The function calculates the Laplacian of the source image by adding up the second x and y
@@ -221,7 +221,7 @@ def Laplacian(src, ddepth, ksize=..., scale=..., delta=..., borderType=...) -> r
     """
 
 def NV12toBGR(src_y, src_uv) -> retval:
-    """
+    r"""
     @brief Converts an image from NV12 (YUV420p) color space to BGR.
     The function converts an input image from NV12 color space to RGB.
     The conventional ranges for Y, U, and V channel values are 0 to 255.
@@ -237,7 +237,7 @@ def NV12toBGR(src_y, src_uv) -> retval:
     """
 
 def NV12toGray(src_y, src_uv) -> retval:
-    """
+    r"""
     @brief Converts an image from NV12 (YUV420p) color space to gray-scaled.
     The function converts an input image from NV12 color space to gray-scaled.
     The conventional ranges for Y, U, and V channel values are 0 to 255.
@@ -253,7 +253,7 @@ def NV12toGray(src_y, src_uv) -> retval:
     """
 
 def NV12toRGB(src_y, src_uv) -> retval:
-    """
+    r"""
     @brief Converts an image from NV12 (YUV420p) color space to RGB.
     The function converts an input image from NV12 color space to RGB.
     The conventional ranges for Y, U, and V channel values are 0 to 255.
@@ -270,7 +270,7 @@ def NV12toRGB(src_y, src_uv) -> retval:
 
 @overload
 def RGB2Gray(src) -> retval:
-    """
+    r"""
     @brief Converts an image from RGB color space to gray-scaled.
 
     The conventional ranges for R, G, and B channel values are 0 to 255.
@@ -285,7 +285,7 @@ def RGB2Gray(src) -> retval:
 
 @overload
 def RGB2Gray(src) -> retval:
-    """
+    r"""
     @overload
     Resulting gray color value computed as
     \f[\texttt{dst} (I)= \texttt{rY} * \texttt{src}(I).R + \texttt{gY} * \texttt{src}(I).G  + \texttt{bY} * \texttt{src}(I).B \f]
@@ -300,7 +300,7 @@ def RGB2Gray(src) -> retval:
     """
 
 def RGB2HSV(src) -> retval:
-    """
+    r"""
     @brief Converts an image from RGB color space to HSV.
     The function converts an input image from RGB color space to HSV.
     The conventional ranges for R, G, and B channel values are 0 to 255.
@@ -315,7 +315,7 @@ def RGB2HSV(src) -> retval:
     """
 
 def RGB2I420(src) -> retval:
-    """
+    r"""
     @brief Converts an image from RGB color space to I420 color space.
 
     The function converts an input image from RGB color space to I420.
@@ -332,7 +332,7 @@ def RGB2I420(src) -> retval:
     """
 
 def RGB2Lab(src) -> retval:
-    """
+    r"""
     @brief Converts an image from RGB color space to Lab color space.
 
     The function converts an input image from BGR color space to Lab.
@@ -347,7 +347,7 @@ def RGB2Lab(src) -> retval:
     """
 
 def RGB2YUV(src) -> retval:
-    """
+    r"""
     @brief Converts an image from RGB color space to YUV color space.
 
     The function converts an input image from RGB color space to YUV.
@@ -365,7 +365,7 @@ def RGB2YUV(src) -> retval:
     """
 
 def RGB2YUV422(src) -> retval:
-    """
+    r"""
     @brief Converts an image from RGB color space to YUV422.
     The function converts an input image from RGB color space to YUV422.
     The conventional ranges for R, G, and B channel values are 0 to 255.
@@ -380,7 +380,7 @@ def RGB2YUV422(src) -> retval:
     """
 
 def Sobel(src, ddepth, dx, dy, ksize=..., scale=..., delta=..., borderType=..., borderValue=...) -> retval:
-    """
+    r"""
     @brief Calculates the first, second, third, or mixed image derivatives using an extended Sobel operator.
 
     In all cases except one, the \f$\texttt{ksize} \times \texttt{ksize}\f$ separable kernel is used to
@@ -429,7 +429,7 @@ def Sobel(src, ddepth, dx, dy, ksize=..., scale=..., delta=..., borderType=..., 
     """
 
 def SobelXY(src, ddepth, order, ksize=..., scale=..., delta=..., borderType=..., borderValue=...) -> retval:
-    """
+    r"""
     @brief Calculates the first, second, third, or mixed image derivatives using an extended Sobel operator.
 
     In all cases except one, the \f$\texttt{ksize} \times \texttt{ksize}\f$ separable kernel is used to
@@ -478,7 +478,7 @@ def SobelXY(src, ddepth, order, ksize=..., scale=..., delta=..., borderType=...,
     """
 
 def YUV2BGR(src) -> retval:
-    """
+    r"""
     @brief Converts an image from YUV color space to BGR color space.
 
     The function converts an input image from YUV color space to BGR.
@@ -493,7 +493,7 @@ def YUV2BGR(src) -> retval:
     """
 
 def YUV2RGB(src) -> retval:
-    """
+    r"""
     @brief Converts an image from YUV color space to RGB.
     The function converts an input image from YUV color space to RGB.
     The conventional ranges for Y, U, and V channel values are 0 to 255.
@@ -509,7 +509,7 @@ def YUV2RGB(src) -> retval:
 
 @overload
 def absDiff(src1, src2) -> retval:
-    """
+    r"""
     @brief Calculates the per-element absolute difference between two matrices.
 
     The function absDiff calculates absolute difference between two matrices of the same size and depth:
@@ -518,11 +518,11 @@ def absDiff(src1, src2) -> retval:
 
 @overload
 def absDiff(src1, src2) -> retval:
-    """"""
+    r""""""
 
 @overload
 def absDiff(src1, src2) -> retval:
-    """
+    r"""
     Output matrix must have the same size and depth as input matrices.
 
     Supported matrix data types are @ref CV_8UC1, @ref CV_8UC3, @ref CV_16UC1, @ref CV_16SC1, @ref CV_32FC1.
@@ -535,7 +535,7 @@ def absDiff(src1, src2) -> retval:
 
 @overload
 def absDiffC(src, c) -> retval:
-    """
+    r"""
     @brief Calculates absolute value of matrix elements.
 
     The function abs calculates absolute difference between matrix elements and given scalar value:
@@ -544,7 +544,7 @@ def absDiffC(src, c) -> retval:
 
 @overload
 def absDiffC(src, c) -> retval:
-    """
+    r"""
 
     Output matrix must be of the same size and depth as src.
 
@@ -557,7 +557,7 @@ def absDiffC(src, c) -> retval:
     """
 
 def add(src1, src2, ddepth=...) -> retval:
-    """
+    r"""
     @brief Calculates the per-element sum of two matrices.
 
     The function add calculates sum of two matrices of the same size and the same number of channels:
@@ -583,7 +583,7 @@ def add(src1, src2, ddepth=...) -> retval:
 
 @overload
 def addC(src1, c, ddepth=...) -> retval:
-    """
+    r"""
     @brief Calculates the per-element sum of matrix and given scalar.
 
     The function addC adds a given scalar value to each element of given matrix.
@@ -606,10 +606,10 @@ def addC(src1, c, ddepth=...) -> retval:
 
 @overload
 def addC(src1, c, ddepth=...) -> retval:
-    """"""
+    r""""""
 
 def addWeighted(src1, alpha, src2, beta, gamma, ddepth=...) -> retval:
-    """
+    r"""
     @brief Calculates the weighted sum of two matrices.
 
     The function addWeighted calculates the weighted sum of two matrices as follows:
@@ -633,7 +633,7 @@ def addWeighted(src1, alpha, src2, beta, gamma, ddepth=...) -> retval:
     """
 
 def bilateralFilter(src, d, sigmaColor, sigmaSpace, borderType=...) -> retval:
-    """
+    r"""
     @brief Applies the bilateral filter to an image.
 
     The function applies bilateral filtering to the input image, as described in
@@ -667,7 +667,7 @@ def bilateralFilter(src, d, sigmaColor, sigmaSpace, borderType=...) -> retval:
     """
 
 def bitwise_and(src1, src2) -> retval:
-    """
+    r"""
     @brief computes bitwise conjunction of the two matrixes (src1 & src2)
     Calculates the per-element bit-wise logical conjunction of two matrices of the same size.
 
@@ -686,7 +686,7 @@ def bitwise_and(src1, src2) -> retval:
     """
 
 def bitwise_not(src) -> retval:
-    """
+    r"""
     @brief Inverts every bit of an array.
 
     The function bitwise_not calculates per-element bit-wise inversion of the input
@@ -707,7 +707,7 @@ def bitwise_not(src) -> retval:
     """
 
 def bitwise_or(src1, src2) -> retval:
-    """
+    r"""
     @brief computes bitwise disjunction of the two matrixes (src1 | src2)
     Calculates the per-element bit-wise logical disjunction of two matrices of the same size.
 
@@ -726,7 +726,7 @@ def bitwise_or(src1, src2) -> retval:
     """
 
 def bitwise_xor(src1, src2) -> retval:
-    """
+    r"""
     @brief computes bitwise logical "exclusive or" of the two matrixes (src1 ^ src2)
     Calculates the per-element bit-wise logical "exclusive or" of two matrices of the same size.
 
@@ -745,7 +745,7 @@ def bitwise_xor(src1, src2) -> retval:
     """
 
 def blur(src, ksize, anchor=..., borderType=..., borderValue=...) -> retval:
-    """
+    r"""
     @brief Blurs an image using the normalized box filter.
 
     The function smooths an image using the kernel:
@@ -771,7 +771,7 @@ def blur(src, ksize, anchor=..., borderType=..., borderValue=...) -> retval:
     """
 
 def boundingRect(src) -> retval:
-    """
+    r"""
     @brief Calculates the up-right bounding rectangle of a point set or non-zero pixels
     of gray-scale image.
 
@@ -789,7 +789,7 @@ def boundingRect(src) -> retval:
     """
 
 def boxFilter(src, dtype, ksize, anchor=..., normalize=..., borderType=..., borderValue=...) -> retval:
-    """
+    r"""
     @brief Blurs an image using the box filter.
 
     The function smooths an image using the kernel:
@@ -822,7 +822,7 @@ def boxFilter(src, dtype, ksize, anchor=..., normalize=..., borderType=..., bord
     """
 
 def cartToPolar(x, y, angleInDegrees=...) -> retval:
-    """
+    r"""
     @brief Calculates the magnitude and angle of 2D vectors.
 
     The function cartToPolar calculates either the magnitude, angle, or both
@@ -847,7 +847,7 @@ def cartToPolar(x, y, angleInDegrees=...) -> retval:
 
 @overload
 def cmpEQ(src1, src2) -> retval:
-    """
+    r"""
     @brief Performs the per-element comparison of two matrices checking if elements from first matrix are equal to elements in second.
 
     The function compares elements of two matrices src1 and src2 of the same size:
@@ -863,7 +863,7 @@ def cmpEQ(src1, src2) -> retval:
 
 @overload
 def cmpEQ(src1, src2) -> retval:
-    """
+    r"""
 
     Supported input matrix data types are @ref CV_8UC1, @ref CV_8UC3, @ref CV_16UC1, @ref CV_16SC1, @ref CV_32FC1.
 
@@ -875,7 +875,7 @@ def cmpEQ(src1, src2) -> retval:
 
 @overload
 def cmpGE(src1, src2) -> retval:
-    """
+    r"""
     @brief Performs the per-element comparison of two matrices checking if elements from first matrix are greater or equal compare to elements in second.
 
     The function compares elements of two matrices src1 and src2 of the same size:
@@ -891,7 +891,7 @@ def cmpGE(src1, src2) -> retval:
 
 @overload
 def cmpGE(src1, src2) -> retval:
-    """
+    r"""
 
     Supported input matrix data types are @ref CV_8UC1, @ref CV_8UC3, @ref CV_16UC1, @ref CV_16SC1, @ref CV_32FC1.
 
@@ -903,7 +903,7 @@ def cmpGE(src1, src2) -> retval:
 
 @overload
 def cmpGT(src1, src2) -> retval:
-    """
+    r"""
     @brief Performs the per-element comparison of two matrices checking if elements from first matrix are greater compare to elements in second.
 
     The function compares elements of two matrices src1 and src2 of the same size:
@@ -919,7 +919,7 @@ def cmpGT(src1, src2) -> retval:
 
 @overload
 def cmpGT(src1, src2) -> retval:
-    """
+    r"""
 
     Supported input matrix data types are @ref CV_8UC1, @ref CV_16UC1, @ref CV_16SC1, @ref CV_32FC1.
 
@@ -931,7 +931,7 @@ def cmpGT(src1, src2) -> retval:
 
 @overload
 def cmpLE(src1, src2) -> retval:
-    """
+    r"""
     @brief Performs the per-element comparison of two matrices checking if elements from first matrix are less or equal compare to elements in second.
 
     The function compares elements of two matrices src1 and src2 of the same size:
@@ -947,7 +947,7 @@ def cmpLE(src1, src2) -> retval:
 
 @overload
 def cmpLE(src1, src2) -> retval:
-    """
+    r"""
 
     Supported input matrix data types are @ref CV_8UC1, @ref CV_8UC3, @ref CV_16UC1, @ref CV_16SC1, @ref CV_32FC1.
 
@@ -959,7 +959,7 @@ def cmpLE(src1, src2) -> retval:
 
 @overload
 def cmpLT(src1, src2) -> retval:
-    """
+    r"""
     @brief Performs the per-element comparison of two matrices checking if elements from first matrix are less than elements in second.
 
     The function compares elements of two matrices src1 and src2 of the same size:
@@ -975,7 +975,7 @@ def cmpLT(src1, src2) -> retval:
 
 @overload
 def cmpLT(src1, src2) -> retval:
-    """
+    r"""
 
     Supported input matrix data types are @ref CV_8UC1, @ref CV_8UC3, @ref CV_16UC1, @ref CV_16SC1, @ref CV_32FC1.
 
@@ -987,7 +987,7 @@ def cmpLT(src1, src2) -> retval:
 
 @overload
 def cmpNE(src1, src2) -> retval:
-    """
+    r"""
     @brief Performs the per-element comparison of two matrices checking if elements from first matrix are not equal to elements in second.
 
     The function compares elements of two matrices src1 and src2 of the same size:
@@ -1003,7 +1003,7 @@ def cmpNE(src1, src2) -> retval:
 
 @overload
 def cmpNE(src1, src2) -> retval:
-    """
+    r"""
 
     Supported input matrix data types are @ref CV_8UC1, @ref CV_8UC3, @ref CV_16UC1, @ref CV_16SC1, @ref CV_32FC1.
 
@@ -1015,7 +1015,7 @@ def cmpNE(src1, src2) -> retval:
 
 @overload
 def concatHor(src1, src2) -> retval:
-    """
+    r"""
     @brief Applies horizontal concatenation to given matrices.
 
     The function horizontally concatenates two GMat matrices (with the same number of rows).
@@ -1024,21 +1024,21 @@ def concatHor(src1, src2) -> retval:
 
 @overload
 def concatHor(src1, src2) -> retval:
-    """
+    r"""
     2, 5,
     3, 6 };
     """
 
 @overload
 def concatHor(src1, src2) -> retval:
-    """
+    r"""
     8, 11,
     9, 12 };
     """
 
 @overload
 def concatHor(src1, src2) -> retval:
-    """
+    r"""
         //C:
         //[1, 4, 7, 10;
         // 2, 5, 8, 11;
@@ -1056,7 +1056,7 @@ def concatHor(src1, src2) -> retval:
 
 @overload
 def concatHor(src1, src2) -> retval:
-    """
+    r"""
     @overload
     The function horizontally concatenates given number of GMat matrices (with the same number of columns).
     Output matrix must the same number of columns and depth as the input matrices, and the sum of rows of input matrices.
@@ -1066,7 +1066,7 @@ def concatHor(src1, src2) -> retval:
 
 @overload
 def concatVert(src1, src2) -> retval:
-    """
+    r"""
     @brief Applies vertical concatenation to given matrices.
 
     The function vertically concatenates two GMat matrices (with the same number of cols).
@@ -1075,21 +1075,21 @@ def concatVert(src1, src2) -> retval:
 
 @overload
 def concatVert(src1, src2) -> retval:
-    """
+    r"""
     2, 8,
     3, 9 };
     """
 
 @overload
 def concatVert(src1, src2) -> retval:
-    """
+    r"""
     5, 11,
     6, 12 };
     """
 
 @overload
 def concatVert(src1, src2) -> retval:
-    """
+    r"""
         //C:
         //[1, 7;
         // 2, 8;
@@ -1111,7 +1111,7 @@ def concatVert(src1, src2) -> retval:
 
 @overload
 def concatVert(src1, src2) -> retval:
-    """
+    r"""
     @overload
     The function vertically concatenates given number of GMat matrices (with the same number of columns).
     Output matrix must the same number of columns and depth as the input matrices, and the sum of rows of input matrices.
@@ -1120,7 +1120,7 @@ def concatVert(src1, src2) -> retval:
     """
 
 def convertTo(src, rdepth, alpha=..., beta=...) -> retval:
-    """
+    r"""
     @brief Converts a matrix to another data depth with optional scaling.
 
     The method converts source pixel values to the target data depth. saturate_cast\<\> is applied at
@@ -1138,7 +1138,7 @@ def convertTo(src, rdepth, alpha=..., beta=...) -> retval:
     """
 
 def copy(in_) -> retval:
-    """
+    r"""
     @brief Makes a copy of the input image. Note that this copy may be not real
     (no actual data copied). Use this function to maintain graph contracts,
     e.g when graph's input needs to be passed directly to output, like in Streaming mode.
@@ -1150,7 +1150,7 @@ def copy(in_) -> retval:
     """
 
 def countNonZero(src) -> retval:
-    """
+    r"""
     @brief Counts non-zero array elements.
 
     The function returns the number of non-zero elements in src :
@@ -1164,7 +1164,7 @@ def countNonZero(src) -> retval:
     """
 
 def crop(src, rect) -> retval:
-    """
+    r"""
     @brief Crops a 2D matrix.
 
     The function crops the matrix by given cv::Rect.
@@ -1179,7 +1179,7 @@ def crop(src, rect) -> retval:
     """
 
 def dilate(src, kernel, anchor=..., iterations=..., borderType=..., borderValue=...) -> retval:
-    """
+    r"""
     @brief Dilates an image by using a specific structuring element.
 
     The function dilates the source image using the specified structuring element that determines the
@@ -1205,7 +1205,7 @@ def dilate(src, kernel, anchor=..., iterations=..., borderType=..., borderValue=
     """
 
 def dilate3x3(src, iterations=..., borderType=..., borderValue=...) -> retval:
-    """
+    r"""
     @brief Dilates an image by using 3 by 3 rectangular structuring element.
 
     The function dilates the source image using the specified structuring element that determines the
@@ -1227,7 +1227,7 @@ def dilate3x3(src, iterations=..., borderType=..., borderValue=...) -> retval:
     """
 
 def div(src1, src2, scale, ddepth=...) -> retval:
-    """
+    r"""
     @brief Performs per-element division of two matrices.
 
     The function divides one matrix by another:
@@ -1251,7 +1251,7 @@ def div(src1, src2, scale, ddepth=...) -> retval:
     """
 
 def divC(src, divisor, scale, ddepth=...) -> retval:
-    """
+    r"""
     @brief Divides matrix by scalar.
 
     The function divC divides each element of matrix src by given scalar value:
@@ -1273,7 +1273,7 @@ def divC(src, divisor, scale, ddepth=...) -> retval:
     """
 
 def divRC(divident, src, scale, ddepth=...) -> retval:
-    """
+    r"""
     @brief Divides scalar by matrix.
 
     The function divRC divides given scalar by each element of matrix src and keep the division result in new matrix of the same size and type as src:
@@ -1295,7 +1295,7 @@ def divRC(divident, src, scale, ddepth=...) -> retval:
     """
 
 def equalizeHist(src) -> retval:
-    """
+    r"""
     @brief Equalizes the histogram of a grayscale image.
 
     //! @} gapi_feature
@@ -1317,7 +1317,7 @@ def equalizeHist(src) -> retval:
     """
 
 def erode(src, kernel, anchor=..., iterations=..., borderType=..., borderValue=...) -> retval:
-    """
+    r"""
     @brief Erodes an image by using a specific structuring element.
 
     The function erodes the source image using the specified structuring element that determines the
@@ -1344,7 +1344,7 @@ def erode(src, kernel, anchor=..., iterations=..., borderType=..., borderValue=.
     """
 
 def erode3x3(src, iterations=..., borderType=..., borderValue=...) -> retval:
-    """
+    r"""
     @brief Erodes an image by using 3 by 3 rectangular structuring element.
 
     The function erodes the source image using the rectangular structuring element with rectangle center as an anchor.
@@ -1363,7 +1363,7 @@ def erode3x3(src, iterations=..., borderType=..., borderValue=...) -> retval:
     """
 
 def filter2D(src, ddepth, kernel, anchor=..., delta=..., borderType=..., borderValue=...) -> retval:
-    """
+    r"""
     @brief Convolves an image with the kernel.
 
     The function applies an arbitrary linear filter to an image. When
@@ -1400,7 +1400,7 @@ def filter2D(src, ddepth, kernel, anchor=..., delta=..., borderType=..., borderV
 
 @overload
 def flip(src, flipCode) -> retval:
-    """
+    r"""
     @brief Flips a 2D matrix around vertical, horizontal, or both axes.
 
     The function flips the matrix in one of three different ways (row
@@ -1419,37 +1419,37 @@ def flip(src, flipCode) -> retval:
 
 @overload
 def flip(src, flipCode) -> retval:
-    """"""
+    r""""""
 
 @overload
 def flip(src, flipCode) -> retval:
-    """
+    r"""
     *   Horizontal flipping of the image with the subsequent horizontal
     """
 
 @overload
 def flip(src, flipCode) -> retval:
-    """"""
+    r""""""
 
 @overload
 def flip(src, flipCode) -> retval:
-    """
+    r"""
     *   Simultaneous horizontal and vertical flipping of the image with
     """
 
 @overload
 def flip(src, flipCode) -> retval:
-    """"""
+    r""""""
 
 @overload
 def flip(src, flipCode) -> retval:
-    """
+    r"""
     *   Reversing the order of point arrays (flipCode \> 0 or
     """
 
 @overload
 def flip(src, flipCode) -> retval:
-    """
+    r"""
     Output image must be of the same depth as input one, size should be correct for given flipCode.
 
     @note Function textual ID is "org.opencv.core.transform.flip"
@@ -1463,7 +1463,7 @@ def flip(src, flipCode) -> retval:
     """
 
 def gaussianBlur(src, ksize, sigmaX, sigmaY=..., borderType=..., borderValue=...) -> retval:
-    """
+    r"""
     @brief Blurs an image using a Gaussian filter.
 
     The function filter2Ds the source image with the specified Gaussian kernel.
@@ -1491,7 +1491,7 @@ def gaussianBlur(src, ksize, sigmaX, sigmaY=..., borderType=..., borderValue=...
 
 @overload
 def goodFeaturesToTrack(image, maxCorners, qualityLevel, minDistance, mask=..., blockSize=..., useHarrisDetector=..., k=...) -> retval:
-    """
+    r"""
     @brief Determines strong corners on an image.
 
     The function finds the most prominent corners in the image or in the specified image region, as
@@ -1504,7 +1504,7 @@ def goodFeaturesToTrack(image, maxCorners, qualityLevel, minDistance, mask=..., 
 
 @overload
 def goodFeaturesToTrack(image, maxCorners, qualityLevel, minDistance, mask=..., blockSize=..., useHarrisDetector=..., k=...) -> retval:
-    """
+    r"""
     -   The corners with the minimal eigenvalue less than
         \f$\texttt{qualityLevel} \cdot \max_{x,y} qualityMeasureMap(x,y)\f$ are rejected.
     -   The remaining corners are sorted by the quality measure in the descending order.
@@ -1513,7 +1513,7 @@ def goodFeaturesToTrack(image, maxCorners, qualityLevel, minDistance, mask=..., 
 
 @overload
 def goodFeaturesToTrack(image, maxCorners, qualityLevel, minDistance, mask=..., blockSize=..., useHarrisDetector=..., k=...) -> retval:
-    """
+    r"""
 
     The function can be used to initialize a point-based tracker of an object.
 
@@ -1546,7 +1546,7 @@ def goodFeaturesToTrack(image, maxCorners, qualityLevel, minDistance, mask=..., 
     """
 
 def inRange(src, threshLow, threshUp) -> retval:
-    """
+    r"""
     @brief Applies a range-level threshold to each matrix element.
 
     The function applies range-level thresholding to a single- or multiple-channel matrix.
@@ -1565,21 +1565,21 @@ def inRange(src, threshLow, threshUp) -> retval:
 
 @overload
 def infer(name, inputs) -> retval:
-    """"""
+    r""""""
 
 @overload
 def infer(name, inputs) -> retval:
-    """"""
+    r""""""
 
 @overload
 def infer(name, inputs) -> retval:
-    """"""
+    r""""""
 
 def infer2(name, in_, inputs) -> retval:
-    """"""
+    r""""""
 
 def integral(src, sdepth=..., sqdepth=...) -> retval:
-    """
+    r"""
     @brief Calculates the integral of an image.
 
     The function calculates one or more integral images for the source image as follows:
@@ -1600,11 +1600,11 @@ def integral(src, sdepth=..., sqdepth=...) -> retval:
     """
 
 def kernels() -> GKernelPackage:
-    """"""
+    r""""""
 
 @overload
 def kmeans(data, K, bestLabels, criteria, attempts, flags) -> retval:
-    """
+    r"""
     @brief Finds centers of clusters and groups input samples around the clusters.
 
     The function kmeans implements a k-means algorithm that finds the centers of K clusters
@@ -1654,7 +1654,7 @@ def kmeans(data, K, bestLabels, criteria, attempts, flags) -> retval:
 
 @overload
 def kmeans(data, K, bestLabels, criteria, attempts, flags) -> retval:
-    """
+    r"""
     @overload
     @note
      - Function textual ID is "org.opencv.core.kmeansNDNoInit"
@@ -1662,7 +1662,7 @@ def kmeans(data, K, bestLabels, criteria, attempts, flags) -> retval:
     """
 
 def mask(src, mask) -> retval:
-    """
+    r"""
     @brief Applies a mask to a matrix.
 
     The function mask set value from given matrix if the corresponding pixel value in mask matrix set to true,
@@ -1677,7 +1677,7 @@ def mask(src, mask) -> retval:
 
 @overload
 def max(src1, src2) -> retval:
-    """
+    r"""
     @brief Calculates per-element maximum of two matrices.
 
     The function max calculates the per-element maximum of two matrices of the same size, number of channels and depth:
@@ -1686,11 +1686,11 @@ def max(src1, src2) -> retval:
 
 @overload
 def max(src1, src2) -> retval:
-    """"""
+    r""""""
 
 @overload
 def max(src1, src2) -> retval:
-    """
+    r"""
     Output matrix must be of the same size and depth as src1.
 
     Supported matrix data types are @ref CV_8UC1, @ref CV_8UC3, @ref CV_16UC1, @ref CV_16SC1, @ref CV_32FC1.
@@ -1702,7 +1702,7 @@ def max(src1, src2) -> retval:
     """
 
 def mean(src) -> retval:
-    """
+    r"""
     @brief Calculates an average (mean) of matrix elements.
 
     The function mean calculates the mean value M of matrix elements,
@@ -1716,7 +1716,7 @@ def mean(src) -> retval:
     """
 
 def medianBlur(src, ksize) -> retval:
-    """
+    r"""
     @brief Blurs an image using the median filter.
 
     The function smoothes an image using the median filter with the \f$\texttt{ksize} \times
@@ -1733,7 +1733,7 @@ def medianBlur(src, ksize) -> retval:
     """
 
 def merge3(src1, src2, src3) -> retval:
-    """
+    r"""
     @brief Creates one 3-channel matrix out of 3 single-channel ones.
 
     The function merges several matrices to make a single multi-channel matrix. That is, each
@@ -1753,7 +1753,7 @@ def merge3(src1, src2, src3) -> retval:
     """
 
 def merge4(src1, src2, src3, src4) -> retval:
-    """
+    r"""
     @brief Creates one 4-channel matrix out of 4 single-channel ones.
 
     The function merges several matrices to make a single multi-channel matrix. That is, each
@@ -1775,7 +1775,7 @@ def merge4(src1, src2, src3, src4) -> retval:
 
 @overload
 def min(src1, src2) -> retval:
-    """
+    r"""
     @brief Calculates per-element minimum of two matrices.
 
     The function min calculates the per-element minimum of two matrices of the same size, number of channels and depth:
@@ -1784,11 +1784,11 @@ def min(src1, src2) -> retval:
 
 @overload
 def min(src1, src2) -> retval:
-    """"""
+    r""""""
 
 @overload
 def min(src1, src2) -> retval:
-    """
+    r"""
     Output matrix must be of the same size and depth as src1.
 
     Supported input matrix data types are @ref CV_8UC1, @ref CV_8UC3, @ref CV_16UC1, @ref CV_16SC1, @ref CV_32FC1.
@@ -1800,7 +1800,7 @@ def min(src1, src2) -> retval:
     """
 
 def morphologyEx(src, op, kernel, anchor=..., iterations=..., borderType=..., borderValue=...) -> retval:
-    """
+    r"""
     @brief Performs advanced morphological transformations.
 
     The function can perform advanced morphological transformations using an erosion and dilation as
@@ -1829,7 +1829,7 @@ def morphologyEx(src, op, kernel, anchor=..., iterations=..., borderType=..., bo
     """
 
 def mul(src1, src2, scale=..., ddepth=...) -> retval:
-    """
+    r"""
     @brief Calculates the per-element scaled product of two matrices.
 
     The function mul calculates the per-element product of two matrices:
@@ -1852,7 +1852,7 @@ def mul(src1, src2, scale=..., ddepth=...) -> retval:
 
 @overload
 def mulC(src, multiplier, ddepth=...) -> retval:
-    """
+    r"""
     @brief Multiplies matrix by scalar.
 
     The function mulC multiplies each element of matrix src by given scalar value:
@@ -1872,10 +1872,10 @@ def mulC(src, multiplier, ddepth=...) -> retval:
 
 @overload
 def mulC(src, multiplier, ddepth=...) -> retval:
-    """"""
+    r""""""
 
 def normInf(src) -> retval:
-    """
+    r"""
     @brief Calculates the absolute infinite norm of a matrix.
 
     This version of normInf calculates the absolute infinite norm of src.
@@ -1899,7 +1899,7 @@ def normInf(src) -> retval:
     """
 
 def normL1(src) -> retval:
-    """
+    r"""
     @brief Calculates the  absolute L1 norm of a matrix.
 
     This version of normL1 calculates the absolute L1 norm of src.
@@ -1923,7 +1923,7 @@ def normL1(src) -> retval:
     """
 
 def normL2(src) -> retval:
-    """
+    r"""
     @brief Calculates the absolute L2 norm of a matrix.
 
     This version of normL2 calculates the absolute L2 norm of src.
@@ -1946,7 +1946,7 @@ def normL2(src) -> retval:
     """
 
 def normalize(src, alpha, beta, norm_type, ddepth=...) -> retval:
-    """
+    r"""
     @brief Normalizes the norm or value range of an array.
 
     The function normalizes scale and shift the input array elements so that
@@ -1970,7 +1970,7 @@ def normalize(src, alpha, beta, norm_type, ddepth=...) -> retval:
 
 @overload
 def parseSSD(in_, inSz, confidenceThreshold=..., filterLabel=...) -> retval:
-    """
+    r"""
     @brief Parses output of SSD network.
 
     Extracts detection information (box, confidence, label) from SSD output and
@@ -1989,7 +1989,7 @@ def parseSSD(in_, inSz, confidenceThreshold=..., filterLabel=...) -> retval:
 
 @overload
 def parseSSD(in_, inSz, confidenceThreshold=..., filterLabel=...) -> retval:
-    """
+    r"""
     @brief Parses output of SSD network.
 
     Extracts detection information (box, confidence) from SSD output and
@@ -2051,7 +2051,7 @@ def phase(x, y, angleInDegrees=...) -> retval:
     """
 
 def polarToCart(magnitude, angle, angleInDegrees=...) -> retval:
-    """
+    r"""
     @brief Calculates x and y coordinates of 2D vectors from their magnitude and angle.
 
     The function polarToCart calculates the Cartesian coordinates of each 2D
@@ -2074,7 +2074,7 @@ def polarToCart(magnitude, angle, angleInDegrees=...) -> retval:
     """
 
 def remap(src, map1, map2, interpolation, borderMode=..., borderValue=...) -> retval:
-    """
+    r"""
     @brief Applies a generic geometrical transformation to an image.
 
     The function remap transforms the source image using the specified map:
@@ -2109,7 +2109,7 @@ def remap(src, map1, map2, interpolation, borderMode=..., borderValue=...) -> re
 
 @overload
 def resize(src, dsize, fx=..., fy=..., interpolation=...) -> retval:
-    """
+    r"""
     @brief Resizes an image.
 
     The function resizes the image src down to or up to the specified size.
@@ -2125,7 +2125,7 @@ def resize(src, dsize, fx=..., fy=..., interpolation=...) -> retval:
 
 @overload
 def resize(src, dsize, fx=..., fy=..., interpolation=...) -> retval:
-    """
+    r"""
     @endcode
     If you want to decimate the image by factor of 2 in each direction, you can call the function this
     way:
@@ -2135,7 +2135,7 @@ def resize(src, dsize, fx=..., fy=..., interpolation=...) -> retval:
 
 @overload
 def resize(src, dsize, fx=..., fy=..., interpolation=...) -> retval:
-    """
+    r"""
     @endcode
     To shrink an image, it will generally look best with cv::INTER_AREA interpolation, whereas to
     enlarge an image, it will generally look best with cv::INTER_CUBIC (slow) or cv::INTER_LINEAR
@@ -2157,7 +2157,7 @@ def resize(src, dsize, fx=..., fy=..., interpolation=...) -> retval:
     """
 
 def select(src1, src2, mask) -> retval:
-    """
+    r"""
     @brief Select values from either first or second of input matrices by given mask.
     The function set to the output matrix either the value from the first input matrix if corresponding value of mask matrix is 255,
      or value from the second input matrix (if value of mask matrix set to 0).
@@ -2174,7 +2174,7 @@ def select(src1, src2, mask) -> retval:
     """
 
 def sepFilter(src, ddepth, kernelX, kernelY, anchor, delta, borderType=..., borderValue=...) -> retval:
-    """
+    r"""
     @brief Applies a separable linear filter to a matrix(image).
 
     The function applies a separable linear filter to the matrix. That is, first, every row of src is
@@ -2207,7 +2207,7 @@ def sepFilter(src, ddepth, kernelX, kernelY, anchor, delta, borderType=..., bord
     """
 
 def split3(src) -> retval:
-    """
+    r"""
     @brief Divides a 3-channel matrix into 3 single-channel matrices.
 
     The function splits a 3-channel matrix into 3 single-channel matrices:
@@ -2225,7 +2225,7 @@ def split3(src) -> retval:
     """
 
 def split4(src) -> retval:
-    """
+    r"""
     @brief Divides a 4-channel matrix into 4 single-channel matrices.
 
     The function splits a 4-channel matrix into 4 single-channel matrices:
@@ -2243,7 +2243,7 @@ def split4(src) -> retval:
     """
 
 def sqrt(src) -> retval:
-    """
+    r"""
     @brief Calculates a square root of array elements.
 
     The function cv::gapi::sqrt calculates a square root of each input array element.
@@ -2255,7 +2255,7 @@ def sqrt(src) -> retval:
     """
 
 def sub(src1, src2, ddepth=...) -> retval:
-    """
+    r"""
     @brief Calculates the per-element difference between two matrices.
 
     The function sub calculates difference between two matrices, when both matrices have the same size and the same number of
@@ -2281,7 +2281,7 @@ def sub(src1, src2, ddepth=...) -> retval:
     """
 
 def subC(src, c, ddepth=...) -> retval:
-    """
+    r"""
     @brief Calculates the per-element difference between matrix and given scalar.
 
     The function can be replaced with matrix expressions:
@@ -2301,7 +2301,7 @@ def subC(src, c, ddepth=...) -> retval:
     """
 
 def subRC(c, src, ddepth=...) -> retval:
-    """
+    r"""
     @brief Calculates the per-element difference between given scalar and the matrix.
 
     The function can be replaced with matrix expressions:
@@ -2321,7 +2321,7 @@ def subRC(c, src, ddepth=...) -> retval:
     """
 
 def sum(src) -> retval:
-    """
+    r"""
     @brief Calculates sum of all matrix elements.
 
     The function sum calculates sum of all matrix elements, independently for each channel.
@@ -2335,7 +2335,7 @@ def sum(src) -> retval:
 
 @overload
 def threshold(src, thresh, maxval, type) -> retval:
-    """
+    r"""
     @brief Applies a fixed-level threshold to each matrix element.
 
     The function applies fixed-level thresholding to a single- or multiple-channel matrix.
@@ -2366,14 +2366,14 @@ def threshold(src, thresh, maxval, type) -> retval:
 
 @overload
 def threshold(src, thresh, maxval, type) -> retval:
-    """
+    r"""
     @overload
     This function applicable for all threshold types except CV_THRESH_OTSU and CV_THRESH_TRIANGLE
     @note Function textual ID is "org.opencv.core.matrixop.thresholdOT"
     """
 
 def transpose(src) -> retval:
-    """
+    r"""
     @brief Transposes a matrix.
 
     The function transposes the matrix:
@@ -2387,7 +2387,7 @@ def transpose(src) -> retval:
     """
 
 def warpAffine(src, M, dsize, flags=..., borderMode=..., borderValue=...) -> retval:
-    """
+    r"""
     @brief Applies an affine transformation to an image.
 
     The function warpAffine transforms the source image using the specified matrix:
@@ -2412,7 +2412,7 @@ def warpAffine(src, M, dsize, flags=..., borderMode=..., borderValue=...) -> ret
     """
 
 def warpPerspective(src, M, dsize, flags=..., borderMode=..., borderValue=...) -> retval:
-    """
+    r"""
     @brief Applies a perspective transformation to an image.
 
     The function warpPerspective transforms the source image using the specified matrix:

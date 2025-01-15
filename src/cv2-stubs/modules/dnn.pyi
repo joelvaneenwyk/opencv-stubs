@@ -32,19 +32,19 @@ retval: TypeAlias = Any
 
 class ClassificationModel(Model):
     def classify(self, frame) -> tuple[classId, conf]:
-        """
+        r"""
         @overload
         """
 
     def getEnableSoftmaxPostProcessing(self) -> retval:
-        """
+        r"""
         * @brief Get enable/disable softmax post processing option.
         *
         * This option defaults to false, softmax post processing is not applied within the classify() function.
         """
 
     def setEnableSoftmaxPostProcessing(self, enable) -> retval:
-        """
+        r"""
         * @brief Set enable/disable softmax post processing option.
         *
         * If this option is true, softmax is applied after forward inference within the classify() function
@@ -56,7 +56,7 @@ class ClassificationModel(Model):
 
 class DetectionModel(Model):
     def detect(self, frame, confThreshold=..., nmsThreshold=...) -> tuple[classIds, confidences, boxes]:
-        """
+        r"""
         @brief Given the @p input frame, create input blob, run net and return result detections.
         *  @param[in]  frame  The input image.
         *  @param[out] classIds Class indexes in result detection.
@@ -67,13 +67,13 @@ class DetectionModel(Model):
         """
 
     def getNmsAcrossClasses(self) -> retval:
-        """
+        r"""
         * @brief Getter for nmsAcrossClasses. This variable defaults to false,
         * such that when non max suppression is used during the detect() function, it will do so only per-class
         """
 
     def setNmsAcrossClasses(self, value) -> retval:
-        """
+        r"""
         * @brief nmsAcrossClasses defaults to false,
         * such that when non max suppression is used during the detect() function, it will do so per-class.
         * This function allows you to toggle this behaviour.
@@ -82,26 +82,26 @@ class DetectionModel(Model):
 
 class DictValue(builtins.object):
     def getIntValue(self, idx=...) -> retval:
-        """"""
+        r""""""
 
     def getRealValue(self, idx=...) -> retval:
-        """"""
+        r""""""
 
     def getStringValue(self, idx=...) -> retval:
-        """"""
+        r""""""
 
     def isInt(self) -> retval:
-        """"""
+        r""""""
 
     def isReal(self) -> retval:
-        """"""
+        r""""""
 
     def isString(self) -> retval:
-        """"""
+        r""""""
 
 class KeypointsModel(Model):
     def estimate(self, frame, thresh=...) -> retval:
-        """
+        r"""
         @brief Given the @p input frame, create input blob, run net
         *  @param[in]  frame  The input image.
         *  @param thresh minimum confidence threshold to select a keypoint *  @returns a vector holding the x and y coordinates of each detected keypoint *
@@ -109,46 +109,46 @@ class KeypointsModel(Model):
 
 class Layer(cv2.Algorithm):
     def finalize(self, inputs, outputs=...) -> outputs:
-        """
+        r"""
         @brief Computes and sets internal parameters according to inputs, outputs and blobs.
         *  @param[in]  inputs  vector of already allocated input blobs
         *  @param[out] outputs vector of already allocated output blobs * * If this method is called after network has allocated all memory for input and output blobs * and before inferencing.
         """
 
     def outputNameToIndex(self, outputName) -> retval:
-        """
+        r"""
         @brief Returns index of output blob in output array.
         *  @see inputNameToIndex()
         """
 
     def run(self, inputs, internals, outputs=...) -> tuple[outputs, internals]:
-        """
+        r"""
         @brief Allocates layer and computes output.
         *  @deprecated This method will be removed in the future release.
         """
 
 class Model(builtins.object):
     def predict(self, frame, outs=...) -> outs:
-        """
+        r"""
         @brief Given the @p input frame, create input blob, run net and return the output @p blobs.
         *  @param[in]  frame  The input image.
         *  @param[out] outs Allocated output blobs, which will store results of the computation.
         """
 
     def setInputCrop(self, crop) -> retval:
-        """
+        r"""
         @brief Set flag crop for frame.
         *  @param[in] crop Flag which indicates whether image will be cropped after resize or not.
         """
 
     def setInputMean(self, mean) -> retval:
-        """
+        r"""
         @brief Set mean value for frame.
         *  @param[in] mean Scalar with mean values which are subtracted from channels.
         """
 
     def setInputParams(self, scale=..., size=..., mean=..., swapRB=..., crop=...) -> None:
-        """
+        r"""
         @brief Set preprocessing parameters for frame.
         *  @param[in] size New input size.
         *  @param[in] mean Scalar with mean values which are subtracted from channels.
@@ -158,72 +158,72 @@ class Model(builtins.object):
         """
 
     def setInputScale(self, scale) -> retval:
-        """
+        r"""
         @brief Set scalefactor value for frame.
         *  @param[in] scale Multiplier for frame values.
         """
 
     @overload
     def setInputSize(self, size) -> retval:
-        """
+        r"""
         @brief Set input size for frame.
         *  @param[in] size New input size. *  @note If shape of the new blob less than 0, then frame size not change.
         """
 
     @overload
     def setInputSize(self, width, height) -> retval:
-        """
+        r"""
         @overload
         *  @param[in] width New input width.
         *  @param[in] height New input height.
         """
 
     def setInputSwapRB(self, swapRB) -> retval:
-        """
+        r"""
         @brief Set flag swapRB for frame.
         *  @param[in] swapRB Flag which indicates that swap first and last channels.
         """
 
     def setPreferableBackend(self, backendId) -> retval:
-        """"""
+        r""""""
 
     def setPreferableTarget(self, targetId) -> retval:
-        """"""
+        r""""""
 
 class Net(builtins.object):
     def connect(self, outPin, inpPin) -> None:
-        """
+        r"""
         @brief Connects output of the first layer to input of the second layer.
         *  @param outPin descriptor of the first layer output.
         *  @param inpPin descriptor of the second layer input. * * Descriptors have the following template <DFN>&lt;layer_name&gt;[.input_number]</DFN>: * - the first part of the template <DFN>layer_name</DFN> is string name of the added layer. *   If this part is empty then the network input pseudo layer will be used; * - the second optional part of the template <DFN>input_number</DFN> *   is either number of the layer input, either label one. *   If this part is omitted then the first layer input will be used. * *  @see setNetInputs(), Layer::inputNameToIndex(), Layer::outputNameToIndex()
         """
 
     def dump(self) -> retval:
-        """
+        r"""
         @brief Dump net to String
         *  @returns String with structure, hyperparameters, backend, target and fusion
         *  Call method after setInput(). To see correct backend, target and fusion run after forward().
         """
 
     def dumpToFile(self, path) -> None:
-        """
+        r"""
         @brief Dump net structure, hyperparameters, backend, target and fusion to dot file
         *  @param path   path to output file with .dot extension *  @see dump()
         """
 
     def empty(self) -> retval:
-        """
+        r"""
         Returns true if there are no layers in the network.
         """
 
     def enableFusion(self, fusion) -> None:
-        """
+        r"""
         @brief Enables or disables layer fusion in the network.
         * @param fusion true to enable the fusion, false to disable. The fusion is enabled by default.
         """
 
     def enableWinograd(self, useWinograd) -> None:
-        """
+        r"""
         @brief Enables or disables the Winograd compute branch. The Winograd compute branch can speed up
         * 3x3 Convolution at a small loss of accuracy.
         * @param useWinograd true to enable the Winograd compute branch. The default is true.
@@ -231,66 +231,66 @@ class Net(builtins.object):
 
     @overload
     def forward(self, outputName=...) -> retval:
-        """
+        r"""
         @brief Runs forward pass to compute output of layer with name @p outputName.
         *  @param outputName name for layer which output is needed to get *  @return blob for first output of specified layer. *  @details By default runs forward pass for the whole network.
         """
 
     @overload
     def forward(self, outputBlobs=..., outputName=...) -> outputBlobs:
-        """
+        r"""
         @brief Runs forward pass to compute output of layer with name @p outputName.
         *  @param outputBlobs contains all output blobs for specified layer.
         *  @param outputName name for layer which output is needed to get *  @details If @p outputName is empty, runs forward pass for the whole network.
         """
 
     def forward(self, outBlobNames, outputBlobs=...) -> outputBlobs:
-        """
+        r"""
         @brief Runs forward pass to compute outputs of layers listed in @p outBlobNames.
         *  @param outputBlobs contains blobs for first outputs of specified layers.
         *  @param outBlobNames names for layers which outputs are needed to get
         """
 
     def forwardAndRetrieve(self, outBlobNames) -> outputBlobs:
-        """
+        r"""
         @brief Runs forward pass to compute outputs of layers listed in @p outBlobNames.
         *  @param outputBlobs contains all output blobs for each layer specified in @p outBlobNames.
         *  @param outBlobNames names for layers which outputs are needed to get
         """
 
     def forwardAsync(self, outputName=...) -> retval:
-        """
+        r"""
         @brief Runs forward pass to compute output of layer with name @p outputName.
         *  @param outputName name for layer which output is needed to get *  @details By default runs forward pass for the whole network. * *  This is an asynchronous version of forward(const String&). *  dnn::DNN_BACKEND_INFERENCE_ENGINE backend is required.
         """
 
     @overload
     def getFLOPS(self, netInputShapes) -> retval:
-        """
+        r"""
         @brief Computes FLOP for whole loaded model with specified input shapes.
         * @param netInputShapes vector of shapes for all net inputs. * @returns computed FLOP.
         """
 
     @overload
     def getFLOPS(self, netInputShape) -> retval:
-        """
+        r"""
         @overload
         """
 
     @overload
     def getFLOPS(self, layerId, netInputShapes) -> retval:
-        """
+        r"""
         @overload
         """
 
     @overload
     def getFLOPS(self, layerId, netInputShape) -> retval:
-        """
+        r"""
         @overload
         """
 
     def getInputDetails(self) -> tuple[scales, zeropoints]:
-        """
+        r"""
         @brief Returns input scale and zeropoint for a quantized Net.
         *  @param scales output parameter for returning input scales.
         *  @param zeropoints output parameter for returning input zeropoints.
@@ -298,41 +298,41 @@ class Net(builtins.object):
 
     @overload
     def getLayer(self, layerId) -> retval:
-        """
+        r"""
         @brief Returns pointer to layer with specified id or name which the network use.
         """
 
     @overload
     def getLayer(self, layerName) -> retval:
-        """
+        r"""
         @overload
         *  @deprecated Use int getLayerId(const String &layer)
         """
 
     def getLayerId(self, layer) -> retval:
-        """
+        r"""
         @brief Converts string name of the layer to the integer identifier.
         *  @returns id of the layer, or -1 if the layer wasn't found.
         """
 
     def getLayerNames(self) -> retval:
-        """"""
+        r""""""
 
     def getLayerTypes(self) -> layersTypes:
-        """
+        r"""
         @brief Returns list of types for layer used in model.
         * @param layersTypes output parameter for returning types.
         """
 
     def getLayersCount(self, layerType) -> retval:
-        """
+        r"""
         @brief Returns count of layers of specified type.
         * @param layerType type. * @returns count of layers
         """
 
     @overload
     def getLayersShapes(self, netInputShapes) -> tuple[layersIds, inLayersShapes, outLayersShapes]:
-        """
+        r"""
         @brief Returns input and output shapes for all layers in loaded model;
         *  preliminary inferencing isn't necessary.
         *  @param netInputShapes shapes for all input blobs in net input layer.
@@ -343,30 +343,30 @@ class Net(builtins.object):
 
     @overload
     def getLayersShapes(self, netInputShape) -> tuple[layersIds, inLayersShapes, outLayersShapes]:
-        """
+        r"""
         @overload
         """
 
     @overload
     def getMemoryConsumption(self, netInputShape) -> tuple[weights, blobs]:
-        """
+        r"""
         @overload
         """
 
     @overload
     def getMemoryConsumption(self, layerId, netInputShapes) -> tuple[weights, blobs]:
-        """
+        r"""
         @overload
         """
 
     @overload
     def getMemoryConsumption(self, layerId, netInputShape) -> tuple[weights, blobs]:
-        """
+        r"""
         @overload
         """
 
     def getOutputDetails(self) -> tuple[scales, zeropoints]:
-        """
+        r"""
         @brief Returns output scale and zeropoint for a quantized Net.
         *  @param scales output parameter for returning output scales.
         *  @param zeropoints output parameter for returning output zeropoints.
@@ -374,7 +374,7 @@ class Net(builtins.object):
 
     @overload
     def getParam(self, layer, numParam=...) -> retval:
-        """
+        r"""
         @brief Returns parameter blob of the layer.
         *  @param layer name or id of the layer.
         *  @param numParam index of the layer parameter in the Layer::blobs array. *  @see Layer::blobs
@@ -382,10 +382,10 @@ class Net(builtins.object):
 
     @overload
     def getParam(self, layerName, numParam=...) -> retval:
-        """"""
+        r""""""
 
     def getPerfProfile(self) -> tuple[retval, timings]:
-        """
+        r"""
         @brief Returns overall time for inference and timings (in ticks) for layers.
         *
         * Indexes in returned vector correspond to layers ids. Some layers can be fused with others,
@@ -395,21 +395,21 @@ class Net(builtins.object):
         """
 
     def getUnconnectedOutLayers(self) -> retval:
-        """
+        r"""
         @brief Returns indexes of layers with unconnected outputs.
         *
         * FIXIT: Rework API to registerOutput() approach, deprecate this call
         """
 
     def getUnconnectedOutLayersNames(self) -> retval:
-        """
+        r"""
         @brief Returns names of layers with unconnected outputs.
         *
         * FIXIT: Rework API to registerOutput() approach, deprecate this call
         """
 
     def quantize(self, calibData, inputsDtype, outputsDtype, perChannel=...) -> retval:
-        """
+        r"""
         @brief Returns a quantized Net from a floating-point Net.
         *  @param calibData Calibration data to compute the quantization parameters.
         *  @param inputsDtype Datatype of quantized net's inputs. Can be CV_32F or CV_8S.
@@ -418,13 +418,13 @@ class Net(builtins.object):
         """
 
     def setHalideScheduler(self, scheduler) -> None:
-        """
+        r"""
         * @brief Compile Halide layers.
         * @param[in] scheduler Path to YAML file with scheduling directives. * @see setPreferableBackend * * Schedule layers that support Halide backend. Then compile them for * specific target. For layers that not represented in scheduling file * or if no manual scheduling used at all, automatic scheduling will be applied.
         """
 
     def setInput(self, blob, name=..., scalefactor=..., mean=...) -> None:
-        """
+        r"""
         @brief Sets the new input value for the network
         *  @param blob        A new blob. Should have CV_32F or CV_8U depth.
         *  @param name        A name of input layer.
@@ -433,12 +433,12 @@ class Net(builtins.object):
         """
 
     def setInputShape(self, inputName, shape) -> None:
-        """
+        r"""
         @brief Specify shape of network input.
         """
 
     def setInputsNames(self, inputBlobNames) -> None:
-        """
+        r"""
         @brief Sets outputs names of the network input pseudo layer.
         *
         * Each net always has special own the network input pseudo layer with id=0.
@@ -449,7 +449,7 @@ class Net(builtins.object):
 
     @overload
     def setParam(self, layer, numParam, blob) -> None:
-        """
+        r"""
         @brief Sets the new value for the learned param of the layer.
         *  @param layer name or id of the layer.
         *  @param numParam index of the layer parameter in the Layer::blobs array.
@@ -458,23 +458,23 @@ class Net(builtins.object):
 
     @overload
     def setParam(self, layerName, numParam, blob) -> None:
-        """"""
+        r""""""
 
     def setPreferableBackend(self, backendId) -> None:
-        """
+        r"""
         * @brief Ask network to use specific computation backend where it supported.
         * @param[in] backendId backend identifier. * @see Backend * * If OpenCV is compiled with Intel's Inference Engine library, DNN_BACKEND_DEFAULT * means DNN_BACKEND_INFERENCE_ENGINE. Otherwise it equals to DNN_BACKEND_OPENCV.
         """
 
     def setPreferableTarget(self, targetId) -> None:
-        """
+        r"""
         * @brief Ask network to make computations on specific target device.
         * @param[in] targetId target identifier. * @see Target * * List of supported combinations backend / target: * |                        | DNN_BACKEND_OPENCV | DNN_BACKEND_INFERENCE_ENGINE | DNN_BACKEND_HALIDE |  DNN_BACKEND_CUDA | * |------------------------|--------------------|------------------------------|--------------------|-------------------| * | DNN_TARGET_CPU         |                  + |                            + |                  + |                   | * | DNN_TARGET_OPENCL      |                  + |                            + |                  + |                   | * | DNN_TARGET_OPENCL_FP16 |                  + |                            + |                    |                   | * | DNN_TARGET_MYRIAD      |                    |                            + |                    |                   | * | DNN_TARGET_FPGA        |                    |                            + |                    |                   | * | DNN_TARGET_CUDA        |                    |                              |                    |                 + | * | DNN_TARGET_CUDA_FP16   |                    |                              |                    |                 + | * | DNN_TARGET_HDDL        |                    |                            + |                    |                   |
         """
 
     @overload
     def readFromModelOptimizer(self, xml, bin) -> retval:
-        """
+        r"""
         @brief Create a network from Intel's Model Optimizer intermediate representation (IR).
         *  @param[in] xml XML configuration file with network's topology.
         *  @param[in] bin Binary file with trained weights. *  Networks imported from Intel's Model Optimizer are launched in Intel's Inference Engine *  backend.
@@ -482,7 +482,7 @@ class Net(builtins.object):
 
     @overload
     def readFromModelOptimizer(self, bufferModelConfig, bufferWeights) -> retval:
-        """
+        r"""
         @brief Create a network from Intel's Model Optimizer in-memory buffers with intermediate representation (IR).
         *  @param[in] bufferModelConfig buffer with model's configuration.
         *  @param[in] bufferWeights buffer with model's trained weights. *  @returns Net object.
@@ -490,7 +490,7 @@ class Net(builtins.object):
 
 class SegmentationModel(Model):
     def segment(self, frame, mask=...) -> mask:
-        """
+        r"""
         @brief Given the @p input frame, create input blob, run net
         *  @param[in]  frame  The input image.
         *  @param[out] mask Allocated class prediction for each pixel
@@ -499,7 +499,7 @@ class SegmentationModel(Model):
 class TextDetectionModel(Model):
     @overload
     def detect(self, frame) -> tuple[detections, confidences]:
-        """
+        r"""
         @brief Performs detection
         *
         * Given the input @p frame, prepare network input, run network inference, post-process network output and return result detections.
@@ -521,13 +521,13 @@ class TextDetectionModel(Model):
 
     @overload
     def detect(self, frame) -> detections:
-        """
+        r"""
         @overload
         """
 
     @overload
     def detectTextRectangles(self, frame) -> tuple[detections, confidences]:
-        """
+        r"""
         @brief Performs detection
         *
         * Given the input @p frame, prepare network input, run network inference, post-process network output and return result detections.
@@ -543,81 +543,81 @@ class TextDetectionModel(Model):
 
     @overload
     def detectTextRectangles(self, frame) -> detections:
-        """
+        r"""
         @overload
         """
 
 class TextDetectionModel_DB(TextDetectionModel):
     def getBinaryThreshold(self) -> retval:
-        """"""
+        r""""""
 
     def getMaxCandidates(self) -> retval:
-        """"""
+        r""""""
 
     def getPolygonThreshold(self) -> retval:
-        """"""
+        r""""""
 
     def getUnclipRatio(self) -> retval:
-        """"""
+        r""""""
 
     def setBinaryThreshold(self, binaryThreshold) -> retval:
-        """"""
+        r""""""
 
     def setMaxCandidates(self, maxCandidates) -> retval:
-        """"""
+        r""""""
 
     def setPolygonThreshold(self, polygonThreshold) -> retval:
-        """"""
+        r""""""
 
     def setUnclipRatio(self, unclipRatio) -> retval:
-        """"""
+        r""""""
 
 class TextDetectionModel_EAST(TextDetectionModel):
     def getConfidenceThreshold(self) -> retval:
-        """
+        r"""
         * @brief Get the detection confidence threshold
         """
 
     def getNMSThreshold(self) -> retval:
-        """
+        r"""
         * @brief Get the detection confidence threshold
         """
 
     def setConfidenceThreshold(self, confThreshold) -> retval:
-        """
+        r"""
         * @brief Set the detection confidence threshold
         * @param[in] confThreshold A threshold used to filter boxes by confidences
         """
 
     def setNMSThreshold(self, nmsThreshold) -> retval:
-        """
+        r"""
         * @brief Set the detection NMS filter threshold
         * @param[in] nmsThreshold A threshold used in non maximum suppression
         """
 
 class TextRecognitionModel(Model):
     def getDecodeType(self) -> retval:
-        """
+        r"""
         * @brief Get the decoding method
         * @return the decoding method
         """
 
     def getVocabulary(self) -> retval:
-        """
+        r"""
         * @brief Get the vocabulary for recognition.
         * @return vocabulary the associated vocabulary
         """
 
     @overload
     def recognize(self, frame) -> retval:
-        """
+        r"""
         * @brief Given the @p input frame, create input blob, run net and return recognition result
         * @param[in] frame The input image * @return The text recognition result
         """
 
     @overload
     def recognize(self, frame, roiRects) -> results:
-        """
+        r"""
         * @brief Given the @p input frame, create input blob, run net and return recognition result
         * @param[in] frame The input image
         * @param[in] roiRects List of text detection regions of interest (cv::Rect, CV_32SC4). ROIs is be cropped as the network inputs
@@ -625,26 +625,26 @@ class TextRecognitionModel(Model):
         """
 
     def setDecodeOptsCTCPrefixBeamSearch(self, beamSize, vocPruneSize=...) -> retval:
-        """
+        r"""
         * @brief Set the decoding method options for `"CTC-prefix-beam-search"` decode usage
         * @param[in] beamSize Beam size for search
         * @param[in] vocPruneSize Parameter to optimize big vocabulary search, * only take top @p vocPruneSize tokens in each search step, @p vocPruneSize <= 0 stands for disable this prune.
         """
 
     def setDecodeType(self, decodeType) -> retval:
-        """
+        r"""
         * @brief Set the decoding method of translating the network output into string
         * @param[in] decodeType The decoding method of translating the network output into string, currently supported type: *    - `"CTC-greedy"` greedy decoding for the output of CTC-based methods *    - `"CTC-prefix-beam-search"` Prefix beam search decoding for the output of CTC-based methods
         """
 
     def setVocabulary(self, vocabulary) -> retval:
-        """
+        r"""
         * @brief Set the vocabulary for recognition.
         * @param[in] vocabulary the associated vocabulary of the network.
         """
 
 def NMSBoxes(bboxes, scores, score_threshold, nms_threshold, eta=..., top_k=...) -> indices:
-    """
+    r"""
     @brief Performs non maximum suppression given boxes and corresponding scores.
 
          * @param bboxes a set of bounding boxes to apply NMS.
@@ -657,7 +657,7 @@ def NMSBoxes(bboxes, scores, score_threshold, nms_threshold, eta=..., top_k=...)
     """
 
 def NMSBoxesBatched(bboxes, scores, class_ids, score_threshold, nms_threshold, eta=..., top_k=...) -> indices:
-    """
+    r"""
     @brief Performs batched non maximum suppression on given boxes and corresponding scores across different classes.
 
          * @param bboxes a set of bounding boxes to apply NMS.

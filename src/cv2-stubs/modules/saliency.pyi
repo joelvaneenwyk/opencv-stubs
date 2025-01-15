@@ -58,7 +58,7 @@ class ObjectnessBING(Objectness):
         """"""
 
     def getobjectnessValues(self) -> retval:
-        """
+        r"""
         @brief Return the list of the rectangles' objectness value,
 
         in the same order as the *vector\<Vec4i\> objectnessBoundingBox* returned by the algorithm (in
@@ -103,7 +103,7 @@ class ObjectnessBING(Objectness):
 
 class Saliency(cv2.Algorithm):
     def computeSaliency(self, image, saliencyMap=...) -> tuple[retval, saliencyMap]:
-        """
+        r"""
         * \brief Compute the saliency
         * \param image        The image.
         * \param saliencyMap      The computed saliency map.
@@ -159,21 +159,21 @@ class StaticSaliencySpectralResidual(StaticSaliency):
         """"""
 
 def MotionSaliencyBinWangApr2014_create() -> retval:
-    """
+    r"""
     .
     """
 
 def ObjectnessBING_create() -> retval:
-    """
+    r"""
     .
     """
 
 def StaticSaliencyFineGrained_create() -> retval:
-    """
+    r"""
     .
     """
 
 def StaticSaliencySpectralResidual_create() -> retval:
-    """
+    r"""
     .
     """

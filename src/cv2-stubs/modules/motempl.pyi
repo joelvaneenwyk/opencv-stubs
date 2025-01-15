@@ -9,7 +9,7 @@ segmask: TypeAlias = Any
 retval: TypeAlias = Any
 
 def calcGlobalOrientation(orientation, mask, mhi, timestamp, duration) -> retval:
-    """
+    r"""
     @brief Calculates a global motion orientation in a selected region.
 
     @param orientation Motion gradient orientation image calculated by the function calcMotionGradient
@@ -26,7 +26,7 @@ def calcGlobalOrientation(orientation, mask, mhi, timestamp, duration) -> retval
     """
 
 def calcMotionGradient(mhi, delta1, delta2, mask=..., orientation=..., apertureSize=...) -> tuple[mask, orientation]:
-    """
+    r"""
     @brief Calculates a gradient orientation of a motion history image.
 
     @param mhi Motion history single-channel floating-point image.
@@ -57,7 +57,7 @@ def calcMotionGradient(mhi, delta1, delta2, mask=..., orientation=..., apertureS
     """
 
 def segmentMotion(mhi, timestamp, segThresh, segmask=...) -> tuple[segmask, boundingRects]:
-    """
+    r"""
     @brief Splits a motion history image into a few parts corresponding to separate independent motions (for
     example, left hand, right hand).
 
@@ -75,7 +75,7 @@ def segmentMotion(mhi, timestamp, segThresh, segmask=...) -> tuple[segmask, boun
     """
 
 def updateMotionHistory(silhouette, mhi, timestamp, duration) -> mhi:
-    """
+    r"""
     @brief Updates the motion history image by a moving silhouette.
 
     @param silhouette Silhouette mask that has non-zero pixels where the motion occurs.
