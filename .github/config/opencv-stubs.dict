@@ -20,10 +20,12 @@ bboxes
 behaviour
 BGGR
 BGRA
+bgsegm
 BHATTACHARYYA
 BILEVEL
 BINNINGX
 BINNINGY
+bioinspired
 BLACKANDWHITE
 BLACKHAT
 BOLELLI
@@ -84,6 +86,7 @@ DSHOW
 dstpt
 DWAA
 DWAB
+dynafu
 editables
 EIGENVALS
 endcode
@@ -171,6 +174,7 @@ KCOS
 KEEPRATIO
 keypoint
 keypoints
+kinfu
 KMEANS
 KNEEPOINT
 ksize
@@ -181,6 +185,7 @@ LBUTTONDBLCLK
 LBUTTONDOWN
 LBUTTONUP
 leftarrow
+linemod
 LMEDS
 LRGB
 luma
@@ -196,6 +201,7 @@ Mikic
 MINMAX
 MJPEG
 MLDB
+motempl
 MOUSEHWHEEL
 MOUSEMOVE
 MSAC
@@ -203,6 +209,7 @@ mser
 MSER
 msers
 MSMF
+multicalib
 MULTICASTIP
 mypy
 NAPSAC
@@ -226,6 +233,7 @@ NSTRIPES
 numpy
 OBSENSOR
 oldcascade
+omnidir
 OPENCL
 opencv
 opengl
@@ -280,6 +288,7 @@ reinitalized
 reprojected
 reprojection
 RESUNIT
+rgbd
 RGGB
 RMAT
 Rodrigues
@@ -311,6 +320,7 @@ SUBDIV
 submatrix
 SUBPIX
 Subtractor
+superres
 SXGA
 SYNCIN
 TAUX
@@ -343,6 +353,8 @@ UYNV
 UYVY
 VAAPI
 vecthreethree
+videoio
+videostab
 VIDEOWRITER
 VIRIDIS
 virtualenv
@@ -353,9 +365,12 @@ WELSCH
 WHITEBALANCE
 WINRT
 XDPI
+xfeatures
 XIAPI
+ximgproc
 XINE
 xmap
+xphoto
 XSOBEL
 YDPI
 ymap
