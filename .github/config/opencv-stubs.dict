@@ -9,6 +9,7 @@ ANYDEPTH
 anyio
 APRILTAG
 ARAVIS
+Aray
 aruco
 Aruco
 ASUS
@@ -72,6 +73,7 @@ DECIMATIONVERTICAL
 Decomp
 DECOMP
 DEEPGREEN
+Defualt
 DEMIBOLD
 Demosaicing
 DESCR
@@ -87,6 +89,7 @@ dstpt
 DWAA
 DWAB
 dynafu
+edgenms
 editables
 EIGENVALS
 endcode
@@ -127,6 +130,7 @@ GFRAME
 GFTT
 GIGA
 GIGANETIX
+gnrm
 GOPAQUE
 GPHOTO
 gradiant
@@ -134,6 +138,7 @@ GRBG
 Grimson
 GSCALAR
 GSHAPE
+gsmth
 GSTREAMER
 haartraining
 HAMMINGLUT
@@ -185,7 +190,9 @@ LBUTTONDBLCLK
 LBUTTONDOWN
 LBUTTONUP
 leftarrow
+linecolor
 linemod
+linethickness
 LMEDS
 LRGB
 luma
@@ -201,6 +208,7 @@ Mikic
 MINMAX
 MJPEG
 MLDB
+Modles
 motempl
 MOUSEHWHEEL
 MOUSEMOVE
@@ -208,6 +216,7 @@ MSAC
 mser
 MSER
 msers
+MSLIC
 MSMF
 multicalib
 MULTICASTIP
@@ -245,10 +254,12 @@ orgpt
 OTSU
 OUTIMG
 OUTOF
+oversegmentation
 PAMI
 pano
 PARULA
 pathspec
+Persoon
 pexpect
 PIXELFORMAT
 platformdirs
@@ -275,14 +286,19 @@ pypi
 pyright
 pywin
 pyyaml
+qcimg
+qimg
+qnimg
 qrcodes
 QVGA
+Raghunathan
 RANSAC
 rawdata
 RBUTTONDBLCLK
 RBUTTONDOWN
 RBUTTONUP
 REALSENSE
+rects
 Refind
 reinitalized
 reprojected
@@ -307,6 +323,8 @@ shellingham
 SHIFTKEY
 shough
 Slabaugh
+SLIC
+SLICO
 sniffio
 snowballstemmer
 Sobel
@@ -314,12 +332,18 @@ SOLVELP
 SOLVEPNP
 SQDIFF
 SQPNP
+ssthe
 Stauffer
+streamidx
 Subdiv
 SUBDIV
 submatrix
 SUBPIX
 Subtractor
+superpixel
+Superpixel
+superpixels
+Superpixels
 superres
 SXGA
 SYNCIN
@@ -333,6 +357,7 @@ tomlkit
 TOPHAT
 TOZERO
 traincascade
+treshold
 Trivedi
 TSAI
 TUPLETYPE
