@@ -1,10 +1,9 @@
 """Script to add the overload decorator to any method/function missing it."""
 
 import argparse
-import subprocess
 from pathlib import Path
 
-from .processing_utils import pyright_run
+from .processing_utils import pyright_run, sed
 
 
 def get_line() -> str | None:

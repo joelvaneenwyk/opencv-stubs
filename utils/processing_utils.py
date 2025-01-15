@@ -1,5 +1,6 @@
 import re
 import subprocess
+import sys
 from pathlib import Path
 
 import pyright
@@ -168,7 +169,7 @@ def sed(output_lines: set[str], line_index: int, format_string: str, file_path: 
         stub_file.writelines(lines)
 
 
-def run_pydoc(name):
+def run_pydoc(name: str) -> str:
     """
     Run pydoc for a given OpenCV module or class and return the result.
 

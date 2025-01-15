@@ -1,13 +1,14 @@
+"""Generate the module stubs for the cv2 module."""
+
 import argparse
 import inspect
 import re
-import subprocess
 from pathlib import Path
 from types import ModuleType
 
 import cv2
 
-from .processing_utils import process_class, process_function
+from .processing_utils import process_class, process_function, sed
 
 
 def add_module(module_name: str, module: ModuleType, output_path: Path) -> None:
