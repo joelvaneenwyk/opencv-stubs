@@ -1,3 +1,5 @@
+"""Utilities for processing OpenCV source."""
+
 import re
 import subprocess
 import sys
@@ -6,13 +8,13 @@ from pathlib import Path
 import pyright
 
 
-def process_function_signature(method_signature: str) -> str:
+def _process_function_signature(method_signature: str) -> str:
     method_signature = process_default_args(method_signature)
     method_signature = process_tuple_return(method_signature)
     return method_signature
 
 
-def process_method_signature(method_signature: str) -> str:
+def _process_method_signature(method_signature: str) -> str:
     method_signature = process_default_args(method_signature)
     method_signature = process_tuple_return(method_signature)
     method_signature = add_self(method_signature)
@@ -96,7 +98,8 @@ def process_class(name: str, stubs: list[str]) -> None:
     # Not in root module
     if len(class_path[4:].split("_")) != 1 and "." not in class_path[4:]:
         stubs.append("")
-        stubs.append(f"{class_path[4:]} = {class_path[4:].split('_')[0]}.{class_signature.split(' ')[1].split('(')[0]}")
+        stubs.append(
+            f"{class_path[4:]} = {class_path[4:].split('_')[0]}.{class_signature.split(' ')[1].split('(')[0]}")
         stubs.append("")
         return
 
@@ -110,11 +113,14 @@ def process_class(name: str, stubs: list[str]) -> None:
             found_at_least_one_method = True
             # Add function signature.
             line_idx += 1
-            stubs.append(f"    def {process_method_signature(help_text_lines[line_idx].replace(' | ', '', 1))}:")
+            stubs.append(
+                f"    def {_process_method_signature(help_text_lines[line_idx].replace(' | ', '', 1))}:")
             line_idx += 1
             # Add docstring.
             stubs.append('        """')
-            while line_idx < len(help_text_lines) and "(...)" not in help_text_lines[line_idx] and " |  --" not in help_text_lines[line_idx]:
+            while (line_idx < len(help_text_lines)
+                   and "(...)" not in help_text_lines[line_idx]
+                   and " |  --" not in help_text_lines[line_idx]):
                 if "." in help_text_lines[line_idx]:
                     line = help_text_lines[line_idx].split(".", maxsplit=1)[1].lstrip()
                     if line == "@overload":
@@ -128,7 +134,7 @@ def process_class(name: str, stubs: list[str]) -> None:
                 elif re.match(r" \|      [a-zA-Z]", help_text_lines[line_idx][:9]):
                     stubs.append('        """')
                     stubs.append("")  # New line
-                    stubs.append(f"    def {process_method_signature(help_text_lines[line_idx][8:])}:")
+                    stubs.append(f"    def {_process_method_signature(help_text_lines[line_idx][8:])}:")
                     stubs.append('        """')
                 line_idx += 1
             stubs.append('        """')
@@ -193,7 +199,7 @@ def process_function(name: str, stubs: list[str]) -> None:
 
     function_stubs: list[str] = []
     function_stubs.append("")
-    function_stubs.append(f"def {process_function_signature(help_text_lines[3].lstrip())}:")
+    function_stubs.append(f"def {_process_function_signature(help_text_lines[3].lstrip())}:")
     function_stubs.append('    """')
 
     # Pre-process all the lines to make it easier to handle newlines later.
@@ -212,7 +218,7 @@ def process_function(name: str, stubs: list[str]) -> None:
             function_stubs.append("@overload")
             if function_stubs[1] != "@overload":
                 function_stubs.insert(1, "@overload")
-            function_stubs.append(f"def {process_function_signature(help_text_lines[3].lstrip())}:")
+            function_stubs.append(f"def {_process_function_signature(help_text_lines[3].lstrip())}:")
             function_stubs.append('    """')
         else:
             if line == "":
