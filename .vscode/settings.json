@@ -1,0 +1,12 @@
+{
+    "python.analysis.typeEvaluation.enableReachabilityAnalysis": true,
+    "python.createEnvironment.trigger": "off",
+    "python.experiments.enabled": false,
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "python.terminal.executeInFileDir": true,
+    "python.terminal.shellIntegration.enabled": true,
+    "python.testing.pytestEnabled": true,
+    "python.analysis.diagnosticMode": "workspace",
+    "python.analysis.enableNotebookDataTips": true,
+    "python.analysis.typeCheckingMode": "strict"
+}
