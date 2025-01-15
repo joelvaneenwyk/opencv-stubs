@@ -20,7 +20,6 @@ from . import (
     gapi,
     hfs,
     img_hash,
-    importlib,
     intensity_transform,
     ipp,
     kinfu,
@@ -53,7 +52,6 @@ from . import (
     segmentation,
     stereo,
     structured_light,
-    sys,
     text,
     utils,
     version,
@@ -65,3 +63,5 @@ from . import (
     xphoto,
 )
 from . import error as Error
+import importlib
+import sys
