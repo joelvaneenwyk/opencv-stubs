@@ -4,7 +4,7 @@
 #
 #    pip-compile --output-file=requirements/requirements.txt --resolver=backtracking pyproject.toml
 #
-numpy==1.24.2
+numpy==2.2.1
     # via
     #   opencv-python
     #   opencv-stubs (pyproject.toml)
