@@ -1,5 +1,5 @@
 import builtins
-from typing import Any, overload, TypeAlias
+from typing import Any, TypeAlias, overload
 
 normals: TypeAlias = Any
 points: TypeAlias = Any

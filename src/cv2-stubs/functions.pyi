@@ -1,5 +1,5 @@
 from collections.abc import Iterable, Sequence
-from typing import Any, Literal, overload, TypeVar
+from typing import Any, Literal, TypeVar, overload
 
 import numpy as np
 import numpy.typing as npt
