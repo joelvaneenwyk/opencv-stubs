@@ -2318,6 +2318,7 @@ dependencies = [
     { name = "numpy", version = "1.24.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.8.*'" },
     { name = "numpy", version = "2.0.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.9.*'" },
     { name = "numpy", version = "2.2.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
+    { name = "opencv-python" },
 ]
 
 [package.optional-dependencies]
@@ -2422,6 +2423,7 @@ requires-dist = [
     { name = "hatch", marker = "extra == 'build'" },
     { name = "numpy", specifier = ">=1.21" },
     { name = "opencv-contrib-python", marker = "extra == 'opencv-contrib'", specifier = ">=4.7.0" },
+    { name = "opencv-python", specifier = ">=4.10.0.84" },
     { name = "opencv-python", marker = "extra == 'opencv'", specifier = ">=4.7.0" },
     { name = "opencv-python-headless", marker = "extra == 'opencv-headless'", specifier = ">=4.7.0" },
     { name = "pep8-naming", marker = "extra == 'flake8'" },
