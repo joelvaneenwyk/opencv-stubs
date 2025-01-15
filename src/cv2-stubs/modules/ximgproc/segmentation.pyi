@@ -1,13 +1,9 @@
-from typing import Any, overload, TypeAlias
+from typing import overload, TYPE_CHECKING
 
-from ... import functions as cv2
+if TYPE_CHECKING:
+    from ..core import Algorithm, retval, rects, dst
 
-rects: TypeAlias = Any
-
-dst: TypeAlias = Any
-retval: TypeAlias = Any
-
-class GraphSegmentation(cv2.Algorithm):
+class GraphSegmentation(Algorithm):
     def getK(self) -> retval:
         """"""
 
@@ -33,7 +29,7 @@ class GraphSegmentation(cv2.Algorithm):
     def setSigma(self, sigma) -> None:
         """"""
 
-class SelectiveSearchSegmentation(cv2.Algorithm):
+class SelectiveSearchSegmentation(Algorithm):
     def addGraphSegmentation(self, g) -> None:
         """
         @brief Add a new graph segmentation in the list of graph segementations to process.
@@ -102,7 +98,7 @@ class SelectiveSearchSegmentation(cv2.Algorithm):
         @param sigma The sigma parameter for the graph segmentation
         """
 
-class SelectiveSearchSegmentationStrategy(cv2.Algorithm):
+class SelectiveSearchSegmentationStrategy(Algorithm):
     def get(self, r1, r2) -> retval:
         """
         @brief Return the score between two regions (between 0 and 1)

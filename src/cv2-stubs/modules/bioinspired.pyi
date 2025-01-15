@@ -1,6 +1,6 @@
 from typing import Any, Final, overload, TypeAlias
 
-from .. import functions as cv2
+from .core import Algorithm
 
 outputToneMappedImage: TypeAlias = Any
 retinaOutput_parvo: TypeAlias = Any
@@ -8,7 +8,7 @@ retinaOutput_magno: TypeAlias = Any
 transientAreas: TypeAlias = Any
 retval: TypeAlias = Any
 
-class Retina(cv2.Algorithm):
+class Retina(Algorithm):
     def activateContoursProcessing(self, activate) -> None:
         r"""
         @brief Activate/desactivate the Parvocellular pathway processing (contours information extraction), by
@@ -204,7 +204,7 @@ class Retina(cv2.Algorithm):
         @param samplingStrength only usefull if param useRetinaLogSampling=true, specifies the strength of the log scale that is applied
         """
 
-class RetinaFastToneMapping(cv2.Algorithm):
+class RetinaFastToneMapping(Algorithm):
     def applyFastToneMapping(self, inputImage, outputToneMappedImage=...) -> outputToneMappedImage:
         r"""
         @brief applies a luminance correction (initially High Dynamic Range (HDR) tone mapping)
@@ -236,7 +236,7 @@ class RetinaFastToneMapping(cv2.Algorithm):
     def create(self, inputSize) -> retval:
         r""""""
 
-class TransientAreasSegmentationModule(cv2.Algorithm):
+class TransientAreasSegmentationModule(Algorithm):
     def clearAllBuffers(self) -> None:
         r"""
         @brief cleans all the buffers of the instance

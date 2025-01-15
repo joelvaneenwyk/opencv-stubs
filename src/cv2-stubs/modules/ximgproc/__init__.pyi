@@ -1,11 +1,13 @@
 import builtins
-from typing import Any, Final, TypeAlias
+from typing import Any, Final, TypeAlias, TYPE_CHECKING
 
 import numpy as _np
 import numpy.typing as _npt
 
-from ... import functions as cv2
 from . import segmentation
+
+if TYPE_CHECKING:
+    from ..core import Algorithm
 
 lines: TypeAlias = Any
 qnimg: TypeAlias = Any
@@ -26,7 +28,7 @@ _dst: TypeAlias = Any
 dst: TypeAlias = Any
 retval: TypeAlias = Any
 
-class AdaptiveManifoldFilter(cv2.Algorithm):
+class AdaptiveManifoldFilter(Algorithm):
     def collectGarbage(self) -> None:
         r""""""
 
@@ -42,7 +44,7 @@ class AdaptiveManifoldFilter(cv2.Algorithm):
     def create(self) -> retval:
         r""""""
 
-class ContourFitting(cv2.Algorithm):
+class ContourFitting(Algorithm):
     def estimateTransformation(self, src, dst, alphaPhiST=..., fdContour=...) -> tuple[alphaPhiST, dist]:
         r"""
         @brief Fit two closed curves using fourier descriptors. More details in @cite PersoonFu1977 and @cite BergerRaghunathan1998
@@ -78,7 +80,7 @@ class ContourFitting(cv2.Algorithm):
         @param n number of fourier descriptors used for optimal curve matching.
         """
 
-class DTFilter(cv2.Algorithm):
+class DTFilter(Algorithm):
     def filter(self, src, dst=..., dDepth=...) -> dst:
         r"""
         @brief Produce domain transform filtering operation on source image.
@@ -88,7 +90,7 @@ class DTFilter(cv2.Algorithm):
         @param dDepth optional depth of the output image. dDepth can be set to -1, which will be equivalent to src.depth().
         """
 
-class DisparityFilter(cv2.Algorithm):
+class DisparityFilter(Algorithm):
     def filter(self, disparity_map_left, left_view, filtered_disparity_map=..., disparity_map_right=..., ROI=..., right_view=...) -> filtered_disparity_map:
         r"""
         @brief Apply filtering to the disparity map.
@@ -236,7 +238,7 @@ class EdgeAwareInterpolator(SparseMatchInterpolator):
         default.
         """
 
-class EdgeBoxes(cv2.Algorithm):
+class EdgeBoxes(Algorithm):
     def getAlpha(self) -> retval:
         r"""
         @brief Returns the step size of sliding window search.
@@ -367,7 +369,7 @@ class EdgeBoxes(cv2.Algorithm):
         @brief Sets the min score of boxes to detect.
         """
 
-class EdgeDrawing(cv2.Algorithm):
+class EdgeDrawing(Algorithm):
     def detectEdges(self, src) -> None:
         r"""
         @brief Detects edges in a grayscale image and prepares them to detect lines and ellipses.
@@ -436,7 +438,7 @@ class EdgeDrawing(cv2.Algorithm):
         Sigma: float = 1.0
         SumFlag: bool = True
 
-class FastBilateralSolverFilter(cv2.Algorithm):
+class FastBilateralSolverFilter(Algorithm):
     def filter(self, src, confidence, dst=...) -> dst:
         r"""
         @brief Apply smoothing operation to the source image.
@@ -446,7 +448,7 @@ class FastBilateralSolverFilter(cv2.Algorithm):
         @param dst destination image.  @note Confidence images with CV_8U depth are expected to in [0, 255] and CV_32F in [0, 1] range.
         """
 
-class FastGlobalSmootherFilter(cv2.Algorithm):
+class FastGlobalSmootherFilter(Algorithm):
     def filter(self, src, dst=...) -> dst:
         r"""
         @brief Apply smoothing operation to the source image.
@@ -455,7 +457,7 @@ class FastGlobalSmootherFilter(cv2.Algorithm):
         @param dst destination image.
         """
 
-class FastLineDetector(cv2.Algorithm):
+class FastLineDetector(Algorithm):
     def detect(self, image, lines=...) -> lines:
         r"""
         @brief Finds lines in the input image.
@@ -478,7 +480,7 @@ class FastLineDetector(cv2.Algorithm):
         @param linethickness Line thickness.
         """
 
-class GuidedFilter(cv2.Algorithm):
+class GuidedFilter(Algorithm):
     def filter(self, src, dst=..., dDepth=...) -> dst:
         r"""
         @brief Apply Guided Filter to the filtering image.
@@ -488,7 +490,7 @@ class GuidedFilter(cv2.Algorithm):
         @param dDepth optional depth of the output image. dDepth can be set to -1, which will be equivalent to src.depth().
         """
 
-class RFFeatureGetter(cv2.Algorithm):
+class RFFeatureGetter(Algorithm):
     def getFeatures(self, src, features, gnrmRad, gsmthRad, shrink, outNum, gradNum) -> None:
         r""""""
 
@@ -656,7 +658,7 @@ class RICInterpolator(SparseMatchInterpolator):
         @brief Parameter to choose wether the VariationalRefinement post-processing  is employed.
         """
 
-class RidgeDetectionFilter(cv2.Algorithm):
+class RidgeDetectionFilter(Algorithm):
     def getRidgeFilteredImage(self, _img, out=...) -> out:
         r"""
         @brief Apply Ridge detection filter on input image.
@@ -677,7 +679,7 @@ class RidgeDetectionFilter(cv2.Algorithm):
         @param borderType Pixel extrapolation method, default is BORDER_DEFAULT @see Sobel, threshold, getStructuringElement, morphologyEx.( for additional refinement)
         """
 
-class ScanSegment(cv2.Algorithm):
+class ScanSegment(Algorithm):
     def getLabelContourMask(self, image=..., thick_line=...) -> image:
         r"""
         @brief Returns the mask of the superpixel segmentation stored in the ScanSegment object.
@@ -715,7 +717,7 @@ class ScanSegment(cv2.Algorithm):
         @param img Input image. Supported format: CV_8UC3. Image size must match with the initialized image size with the function createScanSegment(). It MUST be in Lab color space.
         """
 
-class SparseMatchInterpolator(cv2.Algorithm):
+class SparseMatchInterpolator(Algorithm):
     def interpolate(self, from_image, from_points, to_image, to_points, dense_flow=...) -> dense_flow:
         r"""
         @brief Interpolate input sparse matches.
@@ -727,7 +729,7 @@ class SparseMatchInterpolator(cv2.Algorithm):
         @param dense_flow output dense matching (two-channel CV_32F image)
         """
 
-class StructuredEdgeDetection(cv2.Algorithm):
+class StructuredEdgeDetection(Algorithm):
     def computeOrientation(self, src, dst=...) -> dst:
         r"""
         @brief The function computes orientation from edge image.
@@ -759,7 +761,7 @@ class StructuredEdgeDetection(cv2.Algorithm):
         @param isParallel enables/disables parallel computing.
         """
 
-class SuperpixelLSC(cv2.Algorithm):
+class SuperpixelLSC(Algorithm):
     def enforceLabelConnectivity(self, min_element_size=...) -> None:
         r"""
         @brief Enforce label connectivity.
@@ -802,7 +804,7 @@ class SuperpixelLSC(cv2.Algorithm):
         @param num_iterations Number of iterations. Higher number improves the result.  The function computes the superpixels segmentation of an image with the parameters initialized with the function createSuperpixelLSC(). The algorithms starts from a grid of superpixels and then refines the boundaries by proposing updates of edges boundaries.
         """
 
-class SuperpixelSEEDS(cv2.Algorithm):
+class SuperpixelSEEDS(Algorithm):
     def getLabelContourMask(self, image=..., thick_line=...) -> image:
         r"""
         @brief Returns the mask of the superpixel segmentation stored in SuperpixelSEEDS object.
@@ -841,7 +843,7 @@ class SuperpixelSEEDS(cv2.Algorithm):
         @param num_iterations Number of pixel level iterations. Higher number improves the result.  The function computes the superpixels segmentation of an image with the parameters initialized with the function createSuperpixelSEEDS(). The algorithms starts from a grid of superpixels and then refines the boundaries by proposing updates of blocks of pixels that lie at the boundaries from large to smaller size, finalizing with proposing pixel updates. An illustrative example can be seen below.  ![image](pics/superpixels_blocks2.png)
         """
 
-class SuperpixelSLIC(cv2.Algorithm):
+class SuperpixelSLIC(Algorithm):
     def enforceLabelConnectivity(self, min_element_size=...) -> None:
         r"""
         @brief Enforce label connectivity.
