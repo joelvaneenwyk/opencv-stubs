@@ -10,9 +10,7 @@ from .processing_utils import pyright_run, sed
 def main() -> None:
     """Open scripts and add aliases to undefined types."""
 
-    argparse.ArgumentParser(
-        description="Script to set every undefined type as an alias of Any.",
-        formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    argparse.ArgumentParser(description="Script to set every undefined type as an alias of Any.", formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
     print("Running pyright")
     pyright_result = pyright_run()

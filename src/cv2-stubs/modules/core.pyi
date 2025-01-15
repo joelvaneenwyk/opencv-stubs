@@ -78,7 +78,6 @@ class FileNode(builtins.object):
         @returns Type of the node. See FileNode::Type
         """
 
-
 class FileStorage(builtins.object):
     def endWriteStruct(self) -> None:
         r"""

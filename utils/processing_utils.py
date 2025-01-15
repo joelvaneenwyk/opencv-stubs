@@ -98,8 +98,7 @@ def process_class(name: str, stubs: list[str]) -> None:  # pylint: disable=too-m
     # Not in root module
     if len(class_path[4:].split("_")) != 1 and "." not in class_path[4:]:
         stubs.append("")
-        stubs.append(
-            f"{class_path[4:]} = {class_path[4:].split('_')[0]}.{class_signature.split(' ')[1].split('(')[0]}")
+        stubs.append(f"{class_path[4:]} = {class_path[4:].split('_')[0]}.{class_signature.split(' ')[1].split('(')[0]}")
         stubs.append("")
         return
 
@@ -113,14 +112,11 @@ def process_class(name: str, stubs: list[str]) -> None:  # pylint: disable=too-m
             found_at_least_one_method = True
             # Add function signature.
             line_idx += 1
-            stubs.append(
-                f"    def {_process_method_signature(help_text_lines[line_idx].replace(' | ', '', 1))}:")
+            stubs.append(f"    def {_process_method_signature(help_text_lines[line_idx].replace(' | ', '', 1))}:")
             line_idx += 1
             # Add docstring.
             stubs.append('        """')
-            while (line_idx < len(help_text_lines)
-                   and "(...)" not in help_text_lines[line_idx]
-                   and " |  --" not in help_text_lines[line_idx]):
+            while line_idx < len(help_text_lines) and "(...)" not in help_text_lines[line_idx] and " |  --" not in help_text_lines[line_idx]:
                 if "." in help_text_lines[line_idx]:
                     line = help_text_lines[line_idx].split(".", maxsplit=1)[1].lstrip()
                     if line == "@overload":

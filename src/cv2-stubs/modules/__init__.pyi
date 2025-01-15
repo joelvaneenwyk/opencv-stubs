@@ -71,8 +71,11 @@ import importlib
 import sys
 
 __all__ = [
-    "Algorithm", "FileStorage", "FileNode",
-    "importlib", "sys",
+    "Algorithm",
+    "FileStorage",
+    "FileNode",
+    "importlib",
+    "sys",
     "Error",
     "aruco",
     "barcode",
