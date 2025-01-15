@@ -26,7 +26,7 @@ def main() -> None:
     for path, names in aliases_to_add.items():
         print(f"{path}: {names}")
 
-    for path, names in aliases_to_add.items():
+    for path, _names in aliases_to_add.items():
         print(f"Adding aliases to file {path.name}")
         write_line = 0
         with path.open("r", encoding="utf-8") as stub_file:
@@ -35,8 +35,8 @@ def main() -> None:
                 continue
 
         write_line = max(1, write_line)
-        sed(names, write_line, "{line_content}: TypeAlias = Any\n", path)
-        sed(names, write_line, "{line_content}i\n", path)
+        sed("{line_content}: TypeAlias = Any\n", path)
+        sed("{line_content}i\n", path)
 
     print("Finished")
 

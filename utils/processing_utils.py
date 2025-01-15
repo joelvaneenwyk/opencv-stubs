@@ -88,7 +88,7 @@ def process_class(name: str, stubs: list[str]) -> None:
     """Adds the methods of `name` to the stubs."""
     print(f"    Adding class: {name}")
     result = run_pydoc(f"cv2.{name}")
-    help_text = result.stdout.split(b"\n\n", maxsplit=1)[1].decode()
+    help_text = result.split("\n\n", maxsplit=1)[1]
     help_text_lines = help_text.splitlines()
 
     class_path, class_signature = help_text_lines[0].split(" = ")
@@ -156,14 +156,14 @@ def pyright_run() -> list[str]:
     return pyright_result
 
 
-def sed(output_lines: set[str], line_index: int, format_string: str, file_path: Path) -> None:
+def sed(format_string: str, file_path: Path) -> None:
+    """Function to add a line to a file at a specific location."""
     with file_path.open("r", encoding="utf-8") as stub_file:
         lines = stub_file.readlines()
 
-    insertion_line = line_index
-    for line in output_lines:
+    output_lines: list[str] = []
+    for insertion_line, line in enumerate(output_lines):
         lines.insert(insertion_line, format_string.format(line_content=line))
-        insertion_line += 1
 
     with file_path.open("w", encoding="utf-8") as stub_file:
         stub_file.writelines(lines)
@@ -186,7 +186,7 @@ def run_pydoc(name: str) -> str:
 def process_function(name: str, stubs: list[str]) -> None:
     print(f"    Adding function: {name}")
     result = run_pydoc(name)
-    help_text_lines = result.stdout.decode().splitlines()
+    help_text_lines = result.splitlines()
 
     if not len(help_text_lines) >= 4:
         return
