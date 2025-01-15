@@ -1,7 +1,7 @@
 import builtins
 from typing import Any, Final, overload, TypeAlias
 
-from . import core, cv, ie, oak, onnx, own, render, streaming, video, wip
+from . import core, ie, oak, onnx, own, render, streaming, video, wip
 
 GKernelPackage: TypeAlias = Any
 dst: TypeAlias = Any
