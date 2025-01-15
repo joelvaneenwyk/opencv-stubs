@@ -17,22 +17,22 @@ def main() -> None:
     head: list[str] = []
     with my_stubs.open("r", encoding="utf-8") as stubs:
         stub_lines = stubs.readlines()
-    for i in range(len(stub_lines)):
-        if stub_lines[i][:3] == "def":
-            function_name = stub_lines[i][4:].split("(")[0]
+    for i, stub_line in enumerate(stub_lines):
+        if stub_line[:3] == "def":
+            function_name = stub_line[4:].split("(")[0]
             done_functions_names.add(function_name)
-            functions[stub_lines[i]] = stub_lines[i + 1]
+            functions[stub_line] = stub_lines[i + 1]
 
         if len(done_functions_names) == 0:
-            head.append(stub_lines[i])
+            head.append(stub_line)
     print(f"Found {len(done_functions_names)} functions.")
 
     print("Reading Microsoft stubs")
     with microsoft_stubs.open("r", encoding="utf-8") as stubs:
         stub_lines = stubs.readlines()
-    for i in range(len(stub_lines)):
-        if stub_lines[i][:3] == "def" and stub_lines[i][4:].split("(")[0] not in done_functions_names:
-            functions[stub_lines[i]] = stub_lines[i + 1]
+    for i, stub_line in enumerate(stub_lines):
+        if stub_line[:3] == "def" and stub_line[4:].split("(")[0] not in done_functions_names:
+            functions[stub_line] = stub_lines[i + 1]
 
     print("Writing new stubs")
     with my_stubs.open("w", encoding="utf-8") as new_file:

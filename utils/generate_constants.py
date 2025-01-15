@@ -23,7 +23,13 @@ def main() -> None:
 
     stubs: list[str] = ["\n\n\n"]
     for name, member in inspect.getmembers(cv2):
-        if not inspect.isfunction(member) and not inspect.isclass(member) and not inspect.isbuiltin(member) and not inspect.ismodule(member) and not name.startswith("_") and name not in existing_constants:
+        # pylint: disable=too-many-boolean-expressions
+        if (not inspect.isfunction(member)
+            and not inspect.isclass(member)
+            and not inspect.isbuiltin(member)
+            and not inspect.ismodule(member)
+            and not name.startswith("_")
+            and name not in existing_constants):
             stubs.append(f"{name}: int\n")
 
     with output_path.open("a", encoding="utf-8") as stub_file:

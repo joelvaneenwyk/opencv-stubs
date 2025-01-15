@@ -86,7 +86,7 @@ def add_self(method_signature: str) -> str:
     return "(".join(parts)
 
 
-def process_class(name: str, stubs: list[str]) -> None:
+def process_class(name: str, stubs: list[str]) -> None:  # pylint: disable=too-many-branches
     """Adds the methods of `name` to the stubs."""
     print(f"    Adding class: {name}")
     result = run_pydoc(f"cv2.{name}")
