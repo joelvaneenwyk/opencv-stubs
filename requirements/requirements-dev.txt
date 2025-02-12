@@ -24,7 +24,7 @@ numpy==1.24.2
     # via
     #   opencv-python
     #   opencv-stubs (pyproject.toml)
-opencv-python==4.7.0.72
+opencv-python==4.8.1.78
     # via opencv-stubs (pyproject.toml)
 packaging==23.0
     # via build
@@ -46,7 +46,7 @@ tomli==2.0.1
     # via
     #   build
     #   pyproject-hooks
-virtualenv==20.21.0
+virtualenv==20.26.6
     # via pre-commit
 wheel==0.40.0
     # via pip-tools
