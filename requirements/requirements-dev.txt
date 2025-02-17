@@ -20,7 +20,7 @@ nodeenv==1.7.0
     # via
     #   pre-commit
     #   pyright
-numpy==1.24.2
+numpy==2.2.3
     # via
     #   opencv-python
     #   opencv-stubs (pyproject.toml)
